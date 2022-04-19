@@ -8,6 +8,7 @@
     font-size: 8px;
     text-align: center;
     text-transform: uppercase;
+
   }
   &__list{
     display: flex;
@@ -18,5 +19,13 @@
     text-transform: uppercase;
     list-style-type: none;
     gap: 50px;
+    a{
+      text-decoration: none;
+      color: black;
+    }
   }
+  a{
+      text-decoration: none;
+      color: black;
+    }
 }
