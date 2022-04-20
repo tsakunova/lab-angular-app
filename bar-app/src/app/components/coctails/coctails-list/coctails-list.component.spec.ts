@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MyBarComponent } from './my-bar.component';
+import { CoctailsListComponent } from './coctails-list.component';
 
-describe('MyBarComponent', () => {
-  let component: MyBarComponent;
-  let fixture: ComponentFixture<MyBarComponent>;
+describe('CoctailsListComponent', () => {
+  let component: CoctailsListComponent;
+  let fixture: ComponentFixture<CoctailsListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MyBarComponent ]
+      declarations: [ CoctailsListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MyBarComponent);
+    fixture = TestBed.createComponent(CoctailsListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {CoctailsComponent} from "./components/coctails/coctails.component";
-import {IngredientsComponent} from "./components/ingredients/ingredients.component";
-import {HistoryComponent} from "./components/history/history.component";
-import {MyBarComponent} from "./components/my-bar/my-bar.component";
-import {HomeComponent} from "./components/home/home.component";
+import {CoctailsModule} from "./components/coctails/coctails.module";
+import {IngredientsModule} from "./components/ingredients/ingredients.module";
+import {MyBarModule} from "./components/my-bar/my-bar.module";
+import {HistoryModule} from "./components/history/history.module";
+import {HomeModule} from "./components/home/home.module";
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
-  { path: 'coctails', component: CoctailsComponent},
-  { path: 'ingredients', component:  IngredientsComponent},
-  { path: 'history', component:  HistoryComponent},
-  { path: 'my-bar', component:  MyBarComponent},
+  { path: '', loadChildren:()=>HomeModule},
+  {path: 'coctails', loadChildren:()=> CoctailsModule},
+  { path: 'ingredients', loadChildren:()=> IngredientsModule},
+  { path: 'history', loadChildren:()=> HistoryModule},
+  { path: 'my-bar', loadChildren:()=> MyBarModule},
   {path: '**', redirectTo: '/'}
 ];
 

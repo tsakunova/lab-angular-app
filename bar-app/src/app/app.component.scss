@@ -3,8 +3,13 @@
   display: flex;
   justify-content: center;
   gap: 100px;
+  &__logo{
+    height: 80px;
+    img{
+      height: 100%;
+    }
+  }
   &__title{
-    font-family: Arial;
     font-size: 8px;
     text-align: center;
     text-transform: uppercase;
@@ -14,7 +19,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: Arial;
     font-size: 24px;
     text-transform: uppercase;
     list-style-type: none;
@@ -22,6 +26,9 @@
     a{
       text-decoration: none;
       color: black;
+      &:hover{
+      color: gray;
+    }
     }
   }
   a{

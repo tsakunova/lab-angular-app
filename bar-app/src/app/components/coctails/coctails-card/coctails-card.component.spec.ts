@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoctailsComponent } from './coctails.component';
+import { CoctailsCardComponent } from './coctails-card.component';
 
-describe('CoctailsComponent', () => {
-  let component: CoctailsComponent;
-  let fixture: ComponentFixture<CoctailsComponent>;
+describe('CoctailsCardComponent', () => {
+  let component: CoctailsCardComponent;
+  let fixture: ComponentFixture<CoctailsCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoctailsComponent ]
+      declarations: [ CoctailsCardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CoctailsComponent);
+    fixture = TestBed.createComponent(CoctailsCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
