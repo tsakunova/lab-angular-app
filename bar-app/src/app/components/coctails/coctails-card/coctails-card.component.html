@@ -1,1 +1,21 @@
-<p>coctails-card works!</p>
+<div class="coctail-card">
+  <div class="coctail-card__text-container">
+    <h4 class="coctail-card__title">{{item.name}}</h4>
+    <p class="coctail-card__type">
+      <span *ngFor="let type of item.type">{{type}} / </span>
+    </p>
+    <div class="coctail-card__description">
+      <div class="coctail-card__image">
+        <img src="{{item.imageSrc}}">
+      </div>
+      <ul class="coctail-card__composition">
+        <li *ngFor="let composition of item.composition">
+          <span>{{composition.name}} </span>
+          <span>{{composition.amount}} {{composition.unit}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button class="coctail-card__btn" [routerLink]="['item', item.id]">Рецепт</button>
+</div>
+

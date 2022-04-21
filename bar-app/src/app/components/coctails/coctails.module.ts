@@ -5,6 +5,7 @@ import {RouterModule} from "@angular/router";
 import { CoctailsSearchComponent } from './coctails-search/coctails-search.component';
 import { CoctailsListComponent } from './coctails-list/coctails-list.component';
 import { CoctailsCardComponent } from './coctails-card/coctails-card.component';
+import { CoctailsCurrentCardComponent } from './coctails-current-card/coctails-current-card.component';
 
 
 
@@ -13,13 +14,15 @@ import { CoctailsCardComponent } from './coctails-card/coctails-card.component';
     CoctailsPageComponent,
     CoctailsSearchComponent,
     CoctailsListComponent,
-    CoctailsCardComponent
+    CoctailsCardComponent,
+    CoctailsCurrentCardComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild([{
-      path: '', component: CoctailsPageComponent
-    }])
+    RouterModule.forChild([
+      { path: '', component: CoctailsPageComponent},
+      {path: 'item/:id', component: CoctailsCurrentCardComponent},
+    ])
 
   ]
 

@@ -8,3 +8,11 @@ body{
   margin: 0 auto;
 }
 
+.section{
+  margin: 50px auto;
+  &__title{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+}

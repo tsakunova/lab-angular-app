@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IngredientsService} from "../../shared/ingredients/ingredients.service";
-import {IngredientItem} from "../../shared/ingredients/ingredient-item.model";
+import {IIngredientItem} from "../../shared/ingredients/ingredient-item.model";
 
 @Component({
   selector: 'app-ingredients-page',
@@ -8,7 +8,7 @@ import {IngredientItem} from "../../shared/ingredients/ingredient-item.model";
   styleUrls: ['./ingredients-page.component.scss']
 })
 export class IngredientsPageComponent implements OnInit {
-  ingredientsList: IngredientItem[]
+  ingredientsList: IIngredientItem[];
 
   constructor(private ingredientsService: IngredientsService ) { }
 

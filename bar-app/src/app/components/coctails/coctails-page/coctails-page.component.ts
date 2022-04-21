@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ICoctailItem} from "../../shared/coctails/coctail-item.model";
+import {CoctailsService} from "../../shared/coctails/coctails.service";
 
 @Component({
   selector: 'app-coctails-page',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coctails-page.component.scss']
 })
 export class CoctailsPageComponent implements OnInit {
+  coctailsList: ICoctailItem[];
 
-  constructor() { }
+  constructor(private coctailServise: CoctailsService) { }
 
   ngOnInit(): void {
+    this.coctailsList = this.coctailServise.getCoctails()
   }
 
 }
