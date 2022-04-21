@@ -1,1 +1,5 @@
-<p>ingredients-page works!</p>
+<section class="ingredients">
+  <h2 class="ingredients__title">Список ингредиентов</h2>
+  <app-ingredients-list [ingredients]="ingredientsList" class="ingredients__list" (deleteCard)="deleteCardHandler($event)">></app-ingredients-list>
+</section>
+

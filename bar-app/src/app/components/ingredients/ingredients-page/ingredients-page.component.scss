@@ -1,0 +1,14 @@
+.ingredients{
+  margin: 50px auto;
+  &__title{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+  &__list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
