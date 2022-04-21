@@ -1,0 +1,10 @@
+<div class="ingredients__list">
+  <app-ingredients-card
+    *ngFor="let ingredient of ingredients"
+    [item]="ingredient"
+    (deleteCard)="deleteCardHandler($event)">
+    >
+  </app-ingredients-card>
+</div>
+
+

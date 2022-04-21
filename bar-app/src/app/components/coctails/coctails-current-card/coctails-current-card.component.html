@@ -1,0 +1,24 @@
+<div class="coctail-card">
+  <h4 class="coctail-card__title">{{currentItem.name}}</h4>
+  <p>{{currentItem.description}}</p>
+  <p>
+    <span *ngFor="let type of currentItem.type">{{type}} / </span>
+  </p>
+  <ul class="coctail-card__composition">
+    <li *ngFor="let composition of currentItem.composition">
+      <span>{{composition.name}} </span>
+      <span>{{composition.amount}} {{composition.unit}}</span>
+    </li>
+  </ul>
+  <h5>Рецепт коктейля {{currentItem.name}}</h5>
+  <div>
+    <ol>
+      <li *ngFor="let recipeUnit of currentItem.recipe">
+        {{recipeUnit}}
+      </li>
+    </ol>
+    <div class="coctail-card__image">
+      <img src="{{currentItem.imageSrc}}">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.ingredient-card{
+  position: relative;
+  min-width: 190px;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  &__title{
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__list{
+    list-style-type: none;
+  }
+  &__delete-btn{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    svg{
+      width: 20px;
+      height: 20px;
+      fill: gray;
+    }
+  }
+}
