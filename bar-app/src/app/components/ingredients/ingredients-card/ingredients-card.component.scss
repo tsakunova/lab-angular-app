@@ -1,15 +1,12 @@
 .ingredient-card{
   position: relative;
-  min-width: 190px;
+  min-width: 200px;
   padding: 20px;
   border: 1px solid #000;
   border-radius: 5px;
+  text-align: center;
   &__title{
-    text-align: center;
     text-transform: uppercase;
-  }
-  &__list{
-    list-style-type: none;
   }
   &__delete-btn{
     position: absolute;

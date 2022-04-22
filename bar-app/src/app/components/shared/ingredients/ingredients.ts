@@ -332,4 +332,16 @@ export const INGREDIENTS = [
     type: 'Фрукты',
     unit: 'г'
   },
+  {
+    id: 56,
+    name: 'Содовая',
+    type: 'Вода и напитки',
+    unit: 'мл'
+  },
+  {
+    id: 57,
+    name: 'Апельсин',
+    type: 'Фрукты',
+    unit: 'г'
+  },
 ]
