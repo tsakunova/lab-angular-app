@@ -7,6 +7,8 @@ import { IngredientsListComponent } from './ingredients-list/ingredients-list.co
 import { IngredientsCardComponent } from './ingredients-card/ingredients-card.component';
 import { IngredientsSearchComponent } from './ingredients-search/ingredients-search.component';
 import { IngredientsFilterComponent } from './ingredients-filter/ingredients-filter.component';
+import { IngredientsFormComponent } from './ingredients-form/ingredients-form.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -16,11 +18,13 @@ import { IngredientsFilterComponent } from './ingredients-filter/ingredients-fil
     IngredientsCardComponent,
     IngredientsSearchComponent,
     IngredientsFilterComponent,
+    IngredientsFormComponent,
 
   ],
   imports: [
     CommonModule,
     SharedModule,
+    FormsModule,
     RouterModule.forChild([{
       path: '', component: IngredientsPageComponent,
     }])

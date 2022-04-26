@@ -1,27 +1,36 @@
 import { Injectable } from '@angular/core';
-import {INGREDIENTS} from "./ingredients";
-import {IIngredientItem} from "./ingredient-item.model";
+import {INGREDIENTS, INGREDIENTS_TYPES, INGREDIENTS_UNIT} from "./ingredients";
+import {IIngredientItem, IngredientForSave, IngredientType, IngredientUnit} from "./ingredient-item.model";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class IngredientsService {
-
+  private ingredients = [...INGREDIENTS];
+  private ingredientTypes = [...INGREDIENTS_TYPES];
+  private ingredientUnits = [...INGREDIENTS_UNIT];
   constructor() { }
   getIngredients(): IIngredientItem[]{
-    return INGREDIENTS
+    return this.ingredients
   }
-  getIngredient(id: number): IIngredientItem{
-    return INGREDIENTS[id]
+  getIngredient(id: number): IIngredientItem | undefined {
+    return this.ingredients.find(item => item.id === id );
   }
-  addIngredient(name: string, type: string, unit: string): void {
+  addIngredient(item: IngredientForSave) {
     const newIngredient: IIngredientItem = {
-      'id': INGREDIENTS.length,
-      'name': name,
-      'type': type,
-      'unit': unit
+      'id': this.ingredients[this.ingredients.length-1].id+1,
+      'name': item.name,
+      'type': this.ingredientTypes[+item.type].name,
+      'unit': this.ingredientUnits[+item.type].name,
     };
-    INGREDIENTS.push(newIngredient);
+    this.ingredients = [...this.ingredients, newIngredient];
+    return this.ingredients
+  }
+  getIngredientsTypes(): Array<{id: number, name: IngredientType}> {
+    return this.ingredientTypes
+  }
+  getIngredientsUnits(): Array<{id: number, name: IngredientUnit}> {
+    return this.ingredientUnits
   }
 }

@@ -1,5 +1,15 @@
 <section class="ingredients section">
   <h2 class="section__title">Ингредиенты</h2>
+  <div class="ingredients__menu">
+    <app-ingredients-filter></app-ingredients-filter>
+    <app-ingredients-search></app-ingredients-search>
+    <button class="ingredients__btn-new" (click)="isAddNewIngredients=!isAddNewIngredients">+</button>
+  </div>
+  <app-ingredients-form
+    [ingredientsTypes]="ingredientsTypes"
+    [ingredientsUnits]="ingredientsUnits"
+    *ngIf="isAddNewIngredients"
+    (addCard)="addCardHandler($event)"></app-ingredients-form>
   <app-ingredients-list [ingredients]="ingredientsList" (deleteCard)="deleteCardHandler($event)">></app-ingredients-list>
 </section>
 
