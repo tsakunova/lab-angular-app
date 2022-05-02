@@ -3,348 +3,348 @@ import {IngredientType, IngredientUnit} from "./ingredient-item.model";
 export const INGREDIENTS = [
   {
     id: 0,
-    name: 'Водка',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Vodka',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 1,
-    name: 'Джин',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Gin',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 2,
-    name: 'Белый ром',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'White rum',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 3,
-    name: 'Серебряная текила',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Silver tequila',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 4,
-    name: 'Коньяк',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Cognac',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 5,
-    name: 'Бурбон',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Bourbon',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 6,
-    name: 'Шотландский виски',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Scotch whisky',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 7,
-    name: 'Абсент',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Absinthe',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 8,
-    name: 'Золотая текила',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Gold tequila',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 9,
-    name: 'Темный ром',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Dark rum',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 10,
-    name: 'Золотой ром',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Gold rum',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 11,
-    name: 'Кальвадос',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Calvados',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 12,
-    name: 'Самбука',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Sambuca',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 13,
-    name: 'Мескаль',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Mezcal',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 14,
-    name: 'Кашаса',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Cachaca',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 15,
-    name: 'Граппа',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'Grappa',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 16,
-    name: 'Американский виски',
-    type: 'Крепкий алкоголь',
-    unit: 'мл'
+    name: 'American whiskey',
+    type: 'Strong spirits',
+    unit: 'ml'
   },
   {
     id: 17,
-    name: 'Красный вермут',
-    type: 'Вермуты',
-    unit: 'мл'
+    name: 'Red vermouth',
+    type: 'Vermouth',
+    unit: 'ml'
   },
   {
     id: 18,
-    name: 'Сухой вермут',
-    type: 'Вермуты',
-    unit: 'мл'
+    name: 'Dry vermouth',
+    type: 'Vermouth',
+    unit: 'ml'
   },
   {
     id: 19,
-    name: 'Белый вермут',
-    type: 'Вермуты',
-    unit: 'мл'
+    name: 'White vermouth',
+    type: 'Vermouth',
+    unit: 'ml'
   },
 
   {
     id: 20,
-    name: 'Розовый вермут',
-    type: 'Вермуты',
-    unit: 'мл'
+    name: 'Rose vermouth',
+    type: 'Vermouth',
+    unit: 'ml'
   },
   {
     id: 21,
-    name: 'Трипл сек',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Triple sec',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 22,
-    name: 'Кампари',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Red bitter',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 23,
-    name: 'Кофейный ликер',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Coffee liqueur',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 24,
-    name: 'Айриш крим',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Irish cream liqueur',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },{
     id: 25,
-    name: 'Персиковый ликер',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Peach liqueur',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 26,
-    name: 'Кокосовый ликер',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Coconut liqueur',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },{
     id: 27,
-    name: 'Амаретто',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Amaretto liqueur',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 28,
-    name: 'Блю Кюрасао',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Blue curacao liqueur',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 29,
-    name: 'Лимончелло',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Limoncello',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 30,
-    name: 'Какао ликер светлый',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'White cacao liqueur',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 31,
-    name: 'Бехеровка',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Becherovka',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 32,
-    name: 'Какао ликер коричневый',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Dark cacao liqueur',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 33,
-    name: 'Яичный ликер',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Advocaat liqueur',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 34,
-    name: 'Апероль',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Aperol',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },{
     id: 35,
-    name: 'Мятный ликер',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'White mint liqueur',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 36,
-    name: 'Дюбонне',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Dubonnet',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },{
     id: 37,
-    name: 'Егермейстер',
-    type: 'Ликеры и биттеры',
-    unit: 'мл'
+    name: 'Jagermeister',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 38,
-    name: 'Просекко',
-    type: 'Вина',
-    unit: 'мл'
+    name: 'Prosecco',
+    type: 'Wines',
+    unit: 'ml'
   },
   {
     id: 39,
-    name: 'Красное сухое вино',
-    type: 'Вина',
-    unit: 'мл'
+    name: 'Dry red wine',
+    type: 'Wines',
+    unit: 'ml'
   },
   {
     id: 40,
-    name: 'Белое сухое вино',
-    type: 'Вина',
-    unit: 'мл'
+    name: 'Dry white wine',
+    type: 'Wines',
+    unit: 'ml'
   },
   {
     id: 41,
-    name: 'Херес',
-    type: 'Вина',
-    unit: 'мл'
+    name: 'Pedro Ximenez sherry',
+    type: 'Wines',
+    unit: 'ml'
   },
   {
     id: 42,
-    name: 'Белое десертное вино',
-    type: 'Вина',
-    unit: 'мл'
+    name: 'White wine dessert',
+    type: 'Wines',
+    unit: 'ml'
   },
   {
     id: 43,
-    name: 'Портвейн',
-    type: 'Вина',
-    unit: 'мл'
+    name: 'Tawny port',
+    type: 'Wines',
+    unit: 'ml'
   },
   {
     id: 44,
-    name: 'Светлое пиво',
-    type: 'Пиво и сидр',
-    unit: 'мл'
+    name: 'Lager beer',
+    type: 'Beer and cider',
+    unit: 'ml'
   },
   {
     id: 45,
-    name: 'Яблочный сидр',
-    type: 'Пиво и сидр',
-    unit: 'мл'
+    name: 'Apple Cider',
+    type: 'Beer and cider',
+    unit: 'ml'
   },
   {
     id: 46,
-    name: 'Темное пиво',
-    type: 'Пиво и сидр',
-    unit: 'мл'
+    name: 'Dark beer',
+    type: 'Beer and cider',
+    unit: 'ml'
   },
   {
     id: 47,
-    name: 'Стаут',
-    type: 'Пиво и сидр',
-    unit: 'мл'
+    name: 'Stout',
+    type: 'Beer and cider',
+    unit: 'ml'
   },
   {
     id: 48,
-    name: 'Эль',
-    type: 'Пиво и сидр',
-    unit: 'мл'
+    name: 'Hazelnut liqueur',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 49,
-    name: 'Пшеничное пиво',
-    type: 'Пиво и сидр',
-    unit: 'мл'
+    name: 'Strawberry liqueur',
+    type: 'Liqueurs and Bitters',
+    unit: 'ml'
   },
   {
     id: 50,
-    name: 'Сахарный сироп',
-    type: 'Сиропы',
-    unit: 'мл'
+    name: 'Sugar syrup',
+    type: 'Syrups',
+    unit: 'ml'
   },
   {
     id: 51,
-    name: 'Тоник',
-    type: 'Вода и напитки',
-    unit: 'мл'
+    name: 'Tonic',
+    type: 'Water and drinks',
+    unit: 'ml'
   },
   {
     id: 52,
-    name: 'Лайм',
-    type: 'Фрукты',
-    unit: 'г'
+    name: 'Lime',
+    type: 'Fruits',
+    unit: 'g'
   },
   {
     id: 53,
-    name: 'Лед в кубиках',
-    type: 'Лед',
-    unit: 'г'
+    name: 'Ice cubes',
+    type: 'Ice',
+    unit: 'g'
   },
   {
     id: 54,
-    name: 'Спрайт',
-    type: 'Вода и напитки',
-    unit: 'мл'
+    name: 'Sprite',
+    type: 'Water and drinks',
+    unit: 'ml'
   },
   {
     id: 55,
-    name: 'Ананас',
-    type: 'Фрукты',
-    unit: 'г'
+    name: 'Pineapple',
+    type: 'Fruits',
+    unit: 'g'
   },
   {
     id: 56,
-    name: 'Содовая',
-    type: 'Вода и напитки',
-    unit: 'мл'
+    name: 'Club soda',
+    type: 'Water and drinks',
+    unit: 'ml'
   },
   {
     id: 57,
-    name: 'Апельсин',
-    type: 'Фрукты',
-    unit: 'г'
+    name: 'Orange',
+    type: 'Fruits',
+    unit: 'g'
   },
 ];
 

@@ -1,0 +1,30 @@
+<div>
+  <label>Ingredient name:
+    <input
+      type="text"
+      class=""
+      name="ingredientName"
+      placeholder="Введите название ингредиента"
+      [(ngModel)]="name"
+    >
+  </label>
+  <label>Type:
+    <select
+      ngModel (ngModelChange)="onTypeChanged($event)"
+      name="ingredientTypes"
+    >
+      <option *ngFor="let i of ingredientsTypes" [value]="i.id">{{i.name}}</option>
+    </select>
+  </label>
+  <label
+    [(ngModel)]="unit"
+    name="ingredientUnits"
+  >Units
+    <select
+      ngModel (ngModelChange)="onUnitChanged($event)"
+    >
+      <option *ngFor="let i of ingredientsUnits" [value]="i.id">{{i.name}}</option>
+    </select>
+  </label>
+  <button (click)="addIngredient()">Add</button>
+</div>

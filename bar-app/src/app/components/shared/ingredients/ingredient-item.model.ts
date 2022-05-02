@@ -7,19 +7,19 @@ export interface IIngredientItem {
 export type IngredientForSave = Omit<IIngredientItem, 'id'>;
 
 export enum IngredientType {
-  alco = 'Крепкий алкоголь',
-  vermut = 'Вермуты',
-  bitter = 'Ликеры и биттеры',
-  vine = 'Вина',
-  beer = 'Пиво и сидр',
-  syrop = 'Сиропы',
-  water = 'Вода и напитки',
-  fruits = 'Фрукты',
-  ice = 'Лед'
+  alco = 'Strong spirits',
+  vermut = 'Vermouth',
+  bitter = 'Liqueurs and Bitters',
+  vine = 'Wines',
+  beer = 'Beer and cider',
+  syrop = 'Syrups',
+  water = 'Water and drinks',
+  fruits = 'Fruits',
+  ice = 'Ice'
 }
 export enum IngredientUnit {
-  ml = 'мл',
-  g = 'г',
-  piece = 'шт'
+  ml = 'ml',
+  g = 'g',
+  piece = 'piece'
 }
 

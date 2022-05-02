@@ -4,14 +4,14 @@
   <p class="coctail-item__type">
     <span *ngFor="let type of currentItem.type">{{type}} / </span>
   </p>
-  <h5 class="coctail-item__subtitle">Состав коктейля {{currentItem.name}}</h5>
+  <h5 class="coctail-item__subtitle">Cocktail ingredients {{currentItem.name}}</h5>
   <ul class="coctail-item__composition">
     <li *ngFor="let composition of currentItem.composition">
       <span>{{composition.name}} </span>
       <span>{{composition.amount}} {{composition.unit}}</span>
     </li>
   </ul>
-  <h5 class="coctail-item__subtitle">Рецепт коктейля {{currentItem.name}}</h5>
+  <h5 class="coctail-item__subtitle">Cocktail recipe {{currentItem.name}}</h5>
   <div class="coctail-item__recipe">
     <ol>
       <li *ngFor="let recipeUnit of currentItem.recipe">
