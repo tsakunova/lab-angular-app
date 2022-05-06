@@ -12,6 +12,7 @@ import {
   styleUrls: ['./ingredients-page.component.scss']
 })
 export class IngredientsPageComponent implements OnInit {
+  loading = false;
   search: '';
   ingredientsList: IIngredientItem[] = [];
   isAddNewIngredients = false;
@@ -22,9 +23,7 @@ export class IngredientsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchIngredients();
-  //this.ingredientsList = this.ingredientsService.getIngredients();
     this.ingredientsTypes = this.ingredientsService.getIngredientsTypes();
-    console.log(this.ingredientsTypes)
     this.ingredientsUnits = this.ingredientsService.getIngredientsUnits();
   }
 
@@ -36,19 +35,25 @@ export class IngredientsPageComponent implements OnInit {
   }
 
   addCardHandler(item: IIngredientItem){
+    if(!item.name.trim()){
+      return
+    }
     const newIngredient = {
       name: item.name,
-      type: this.ingredientsTypes[+item.type].name,
-      unit: this.ingredientsUnits[+item.type].name,
+      type: this.ingredientsTypes[+item.type]?.name,
+      unit: this.ingredientsUnits[+item.unit]?.name,
     }
     this.ingredientsService.addIngredient(newIngredient).subscribe(ingredient => {
       this.ingredientsList = [...this.ingredientsList, ingredient];
     })
   }
+
   fetchIngredients(){
+    this.loading = true;
     this.ingredientsService.getIngredients()
       .subscribe(ingredients =>{
-        this.ingredientsList = ingredients
+        this.ingredientsList = ingredients;
+        this.loading = false;
       })
   }
 

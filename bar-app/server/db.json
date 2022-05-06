@@ -331,12 +331,6 @@
       "unit": "ml"
     },
     {
-      "id": 55,
-      "name": "Pineapple",
-      "type": "Fruits",
-      "unit": "g"
-    },
-    {
       "id": 56,
       "name": "Club soda",
       "type": "Water and drinks",
@@ -347,6 +341,18 @@
       "name": "Orange",
       "type": "Fruits",
       "unit": "g"
+    },
+    {
+      "name": "Apple",
+      "type": "Fruits",
+      "unit": "g",
+      "id": 58
+    },
+    {
+      "name": "Banana",
+      "type": "Fruits",
+      "unit": "g",
+      "id": 59
     }
   ],
   "coctails": [

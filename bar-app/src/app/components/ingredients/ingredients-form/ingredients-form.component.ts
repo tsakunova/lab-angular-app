@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {
-  IngredientForSave,
+  IIngredientItem,
   IngredientType,
   IngredientUnit
 } from "../../shared/ingredients/ingredient-item.model";
@@ -15,20 +15,21 @@ export class IngredientsFormComponent{
   type = '';
   unit = '';
 
-  @Input() ingredientsTypes: any;
-  @Input() ingredientsUnits: any;
+  @Input() ingredientsType: any;
+  @Input() ingredientsUnit: any;
 
-  @Output() addCard: EventEmitter<IngredientForSave> = new EventEmitter<IngredientForSave>();
+  @Output() addCard: EventEmitter<IIngredientItem> = new EventEmitter<IIngredientItem>();
 
   constructor() { }
 
   addIngredient(){
-    const ingredient:  IngredientForSave = {
+    const ingredient:  IIngredientItem = {
       name: this.name,
       type: this.type,
       unit: this.unit
     }
     this.addCard.emit(ingredient);
+    this.name = '';
   }
 
   onTypeChanged(value: IngredientType) {

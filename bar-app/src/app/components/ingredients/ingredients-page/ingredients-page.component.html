@@ -1,19 +1,24 @@
 <section class="ingredients section">
-  <h2 class="section__title">Ингредиенты</h2>
+  <h2 class="section__title">ingredients</h2>
   <div class="ingredients__menu">
     <app-ingredients-filter></app-ingredients-filter>
     <app-ingredients-search (searchValue)="test($event)"></app-ingredients-search>
     <button class="ingredients__btn-new" (click)="isAddNewIngredients=!isAddNewIngredients">+</button>
   </div>
   <app-ingredients-form
-    [ingredientsTypes]="ingredientsTypes"
-    [ingredientsUnits]="ingredientsUnits"
+    [ingredientsType]="ingredientsTypes"
+    [ingredientsUnit]="ingredientsUnits"
     *ngIf="isAddNewIngredients"
     (addCard)="addCardHandler($event)"></app-ingredients-form>
-  <app-ingredients-list
-    [ingredients]="ingredientsList"
-    (deleteCard)="deleteCardHandler($event)"
-    [search]="search"
-  >></app-ingredients-list>
+  <div *ngIf="!loading;else loadingBlock" >
+    <app-ingredients-list
+      [ingredients]="ingredientsList"
+      (deleteCard)="deleteCardHandler($event)"
+      [search]="search"
+    ></app-ingredients-list>
+  </div>
+  <ng-template #loadingBlock>
+  <p>Loading...</p>
+  </ng-template>
 </section>
 
