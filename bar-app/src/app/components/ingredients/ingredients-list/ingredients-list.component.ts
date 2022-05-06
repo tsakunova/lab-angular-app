@@ -8,6 +8,7 @@ import {IIngredientItem} from "../../shared/ingredients/ingredient-item.model";
 })
 export class IngredientsListComponent {
   @Input() ingredients: IIngredientItem[];
+  @Input() search: string;
   @Output()
   deleteCard: EventEmitter<number> = new EventEmitter<number>();
   deleteCardHandler(id: number) {

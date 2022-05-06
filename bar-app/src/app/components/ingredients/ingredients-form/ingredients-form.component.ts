@@ -11,13 +11,17 @@ import {
   styleUrls: ['./ingredients-form.component.scss']
 })
 export class IngredientsFormComponent{
-  @Input() ingredientsTypes: any;
-  @Input() ingredientsUnits: any;
   name = '';
   type = '';
   unit = '';
- @Output() addCard: EventEmitter<IngredientForSave> = new EventEmitter<IngredientForSave>();
+
+  @Input() ingredientsTypes: any;
+  @Input() ingredientsUnits: any;
+
+  @Output() addCard: EventEmitter<IngredientForSave> = new EventEmitter<IngredientForSave>();
+
   constructor() { }
+
   addIngredient(){
     const ingredient:  IngredientForSave = {
       name: this.name,
@@ -26,9 +30,11 @@ export class IngredientsFormComponent{
     }
     this.addCard.emit(ingredient);
   }
+
   onTypeChanged(value: IngredientType) {
     this.type = value;
   }
+
   onUnitChanged(value: IngredientUnit) {
     this.unit = value;
   }

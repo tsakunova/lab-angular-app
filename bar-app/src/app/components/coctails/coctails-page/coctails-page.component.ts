@@ -13,7 +13,10 @@ export class CoctailsPageComponent implements OnInit {
   constructor(private coctailServise: CoctailsService) { }
 
   ngOnInit(): void {
-    this.coctailsList = this.coctailServise.getCoctails()
+    this.coctailServise.getCoctails()
+      .subscribe(coctails =>{
+      this.coctailsList = coctails
+    })
   }
 
 }

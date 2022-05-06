@@ -2,7 +2,7 @@
   <h2 class="section__title">Ингредиенты</h2>
   <div class="ingredients__menu">
     <app-ingredients-filter></app-ingredients-filter>
-    <app-ingredients-search></app-ingredients-search>
+    <app-ingredients-search (searchValue)="test($event)"></app-ingredients-search>
     <button class="ingredients__btn-new" (click)="isAddNewIngredients=!isAddNewIngredients">+</button>
   </div>
   <app-ingredients-form
@@ -10,6 +10,10 @@
     [ingredientsUnits]="ingredientsUnits"
     *ngIf="isAddNewIngredients"
     (addCard)="addCardHandler($event)"></app-ingredients-form>
-  <app-ingredients-list [ingredients]="ingredientsList" (deleteCard)="deleteCardHandler($event)">></app-ingredients-list>
+  <app-ingredients-list
+    [ingredients]="ingredientsList"
+    (deleteCard)="deleteCardHandler($event)"
+    [search]="search"
+  >></app-ingredients-list>
 </section>
 

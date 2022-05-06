@@ -1,7 +1,7 @@
 import {IIngredientItem} from "../ingredients/ingredient-item.model";
 
 export interface ICoctailItem {
-  id: number;
+  id?: number;
   imageSrc?: string;
   name: string;
   type: string[];

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ICoctailItem} from "../../shared/coctails/coctail-item.model";
 import {ActivatedRoute} from "@angular/router";
 import {CoctailsService} from "../../shared/coctails/coctails.service";
@@ -13,7 +13,10 @@ export class CoctailsCurrentCardComponent{
   constructor( private route: ActivatedRoute, private coctailsService: CoctailsService) { }
 
   ngOnInit(): void {
-    this.currentItem = this.coctailsService.getCoctail(this.route.snapshot.paramMap.get('id'));
+   this.coctailsService.getCoctail(this.route.snapshot.paramMap.get('id'))
+     .subscribe(coctail =>{
+       this.currentItem = coctail
+     })
   }
 
 }
