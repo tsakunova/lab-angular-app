@@ -9,6 +9,7 @@ import { IngredientsSearchComponent } from './ingredients-search/ingredients-sea
 import { IngredientsFilterComponent } from './ingredients-filter/ingredients-filter.component';
 import { IngredientsFormComponent } from './ingredients-form/ingredients-form.component';
 import {FormsModule} from "@angular/forms";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 @NgModule({
@@ -21,13 +22,14 @@ import {FormsModule} from "@angular/forms";
     IngredientsFormComponent,
 
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    FormsModule,
-    RouterModule.forChild([{
-      path: '', component: IngredientsPageComponent,
-    }])
-  ]
+    imports: [
+        CommonModule,
+        SharedModule,
+        FormsModule,
+        RouterModule.forChild([{
+            path: '', component: IngredientsPageComponent,
+        }]),
+        MatProgressSpinnerModule
+    ]
 })
 export class IngredientsModule { }
