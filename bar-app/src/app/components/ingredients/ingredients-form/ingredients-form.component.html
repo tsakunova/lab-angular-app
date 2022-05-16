@@ -1,29 +1,26 @@
 <div>
-  <h2>Add new ingredien</h2>
-  <label>Ingredient name:
-    <input
-      type="text"
-      class=""
-      name="ingredientName"
-      placeholder="Enter the name of the ingredient"
-      [(ngModel)]="name"
-    >
-  </label>
-  <label>Type:
-    <select ngDefaultControl
-      ngModel (ngModelChange)="onTypeChanged($event)"
-      name="ingredientTypes"
-    >
-      <option *ngFor="let i of ingredientsType" [value]="i.id">{{i.name}}</option>
-    </select>
-  </label>
-  <label>Units:
-    <select ngDefaultControl
-            name="ingredientUnits"
-            ngModel (ngModelChange)="onUnitChanged($event)"
-    >
-      <option *ngFor="let i of ingredientsUnit" [value]="i.id">{{i.name}}</option>
-    </select>
-  </label>
-  <button (click)="addIngredient()">Add</button>
+  <form [formGroup]="form" (ngSubmit)="addIngredient()">
+    <h2>Add new ingredient</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Ingredient name:</mat-label>
+      <input matInput name="ingredientName" formControlName="name" maxlength="12" placeholder="Enter the name of the ingredient">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Type:</mat-label>
+      <mat-select formControlName="type" >
+        <mat-option *ngFor="let i of ingredientsType" [value]="i.id">{{i.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Units:</mat-label>
+      <mat-select formControlName="unit">
+        <mat-option *ngFor="let i of ingredientsUnit" [value]="i.id">{{i.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button type="submit" [disabled]="form.invalid">Add</button>
+  </form>
+
 </div>

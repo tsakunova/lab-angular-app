@@ -7,9 +7,12 @@ import { IngredientsListComponent } from './ingredients-list/ingredients-list.co
 import { IngredientsCardComponent } from './ingredients-card/ingredients-card.component';
 import { IngredientsSearchComponent } from './ingredients-search/ingredients-search.component';
 import { IngredientsFormComponent } from './ingredients-form/ingredients-form.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { IngredientsSortComponent } from './ingredients-sort/ingredients-sort.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -22,14 +25,23 @@ import { IngredientsSortComponent } from './ingredients-sort/ingredients-sort.co
     IngredientsSortComponent,
 
   ],
-    imports: [
-        CommonModule,
-        SharedModule,
-        FormsModule,
-        RouterModule.forChild([{
-            path: '', component: IngredientsPageComponent,
-        }]),
-        MatProgressSpinnerModule
-    ]
+  imports: [
+    CommonModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forChild([{
+      path: '', component: IngredientsPageComponent,
+    }]),
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule
+  ],
+  exports: [
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule
+  ]
 })
 export class IngredientsModule { }

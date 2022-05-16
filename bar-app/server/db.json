@@ -343,10 +343,16 @@
       "id": 58
     },
     {
-      "name": "Banana",
+      "name": "Gin",
+      "type": "Strong spirits",
+      "unit": "ml",
+      "id": 60
+    },
+    {
+      "name": "banana",
       "type": "Fruits",
       "unit": "g",
-      "id": 59
+      "id": 62
     }
   ],
   "coctails": [

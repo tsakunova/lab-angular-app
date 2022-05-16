@@ -1,19 +1,16 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {
-  IIngredientItem,
-  IngredientType,
-  IngredientUnit
+  IIngredientItem
 } from "../../shared/ingredients/ingredient-item.model";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-ingredients-form',
   templateUrl: './ingredients-form.component.html',
   styleUrls: ['./ingredients-form.component.scss']
 })
-export class IngredientsFormComponent{
-  name = '';
-  type = '';
-  unit = '';
+export class IngredientsFormComponent implements OnInit{
+  form: FormGroup;
 
   @Input() ingredientsType: any;
   @Input() ingredientsUnit: any;
@@ -22,22 +19,21 @@ export class IngredientsFormComponent{
 
   constructor() { }
 
+  ngOnInit() {
+    this.form = new FormGroup({
+      name: new FormControl('', [Validators.minLength(2), Validators.required]),
+      type: new FormControl( '', Validators.required),
+      unit: new FormControl('', Validators.required)
+    });
+  }
+
   addIngredient(){
-    const ingredient:  IIngredientItem = {
-      name: this.name,
-      type: this.type,
-      unit: this.unit
+    if(this.form.valid){
+      const formData:  IIngredientItem = {...this.form.value};
+      this.addCard.emit(formData);
+      this.form.reset()
     }
-    this.addCard.emit(ingredient);
-    this.name = '';
-  }
 
-  onTypeChanged(value: IngredientType) {
-    this.type = value;
-  }
-
-  onUnitChanged(value: IngredientUnit) {
-    this.unit = value;
   }
 
 }
