@@ -1,0 +1,9 @@
+<label>Sort:
+  <select ngDefaultControl
+          ngModel (ngModelChange)="onSortChanged($event)"
+          name="ingredientSort"
+  >
+    <option *ngFor="let i of selects" [value]="i">{{i}}</option>
+  </select>
+</label>
+<span (click)="addDirection()">{{direction === 'up' ? '↑' : '↓' }}</span>

@@ -8,7 +8,6 @@ import {IIngredientItem} from "../ingredients/ingredient-item.model";
 export class FilterPipe implements PipeTransform {
 
   transform<T>(items: any, search: string = '') {
-    // console.log(items, search)
     if (!search.trim()){
       return items;
     }

@@ -6,10 +6,10 @@ import {SharedModule} from "../shared/shared.module";
 import { IngredientsListComponent } from './ingredients-list/ingredients-list.component';
 import { IngredientsCardComponent } from './ingredients-card/ingredients-card.component';
 import { IngredientsSearchComponent } from './ingredients-search/ingredients-search.component';
-import { IngredientsFilterComponent } from './ingredients-filter/ingredients-filter.component';
 import { IngredientsFormComponent } from './ingredients-form/ingredients-form.component';
 import {FormsModule} from "@angular/forms";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { IngredientsSortComponent } from './ingredients-sort/ingredients-sort.component';
 
 
 @NgModule({
@@ -18,8 +18,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     IngredientsListComponent,
     IngredientsCardComponent,
     IngredientsSearchComponent,
-    IngredientsFilterComponent,
     IngredientsFormComponent,
+    IngredientsSortComponent,
 
   ],
     imports: [

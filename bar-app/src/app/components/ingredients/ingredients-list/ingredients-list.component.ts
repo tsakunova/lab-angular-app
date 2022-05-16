@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {IIngredientItem} from "../../shared/ingredients/ingredient-item.model";
+import {sortDirectionType} from "../../shared/enums";
 
 @Component({
   selector: 'app-ingredients-list',
@@ -9,10 +10,17 @@ import {IIngredientItem} from "../../shared/ingredients/ingredient-item.model";
 export class IngredientsListComponent {
   @Input() ingredients: IIngredientItem[];
   @Input() search: string;
+  @Input() sort: string;
+  @Input() sortDirection: sortDirectionType;
+
   @Output()
   deleteCard: EventEmitter<number> = new EventEmitter<number>();
+
+  constructor() { }
+
   deleteCardHandler(id: number) {
     this.deleteCard.emit(id);
   }
-  constructor() { }
+
+
 }

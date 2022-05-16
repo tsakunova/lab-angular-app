@@ -1,6 +1,6 @@
 <div class="ingredients__list">
   <app-ingredients-card
-    *ngFor="let ingredient of ingredients | filter: search"
+    *ngFor="let ingredient of ingredients | sort:sort :sortDirection |filter: search "
     [item]="ingredient"
     (deleteCard)="deleteCardHandler($event)">
     >
