@@ -34,7 +34,7 @@ export const INGREDIENTS_TYPES = [
     name: IngredientType.fruits
   },
   {
-    id: 0,
+    id: 8,
     name: IngredientType.ice
   }
 ];

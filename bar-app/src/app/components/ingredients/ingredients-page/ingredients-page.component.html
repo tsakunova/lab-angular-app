@@ -9,7 +9,18 @@
     [ingredientsType]="ingredientsTypes"
     [ingredientsUnit]="ingredientsUnits"
     *ngIf="isAddNewIngredients"
-    (addCard)="addCardHandler($event)"></app-ingredients-form>
+    (addCard)="addCardHandler($event)">
+  </app-ingredients-form>
+
+  <mat-chip-list class="example-chip">
+    <mat-chip
+      class="example-box"
+      *ngFor="let item of ingredientsTypes"
+      (click)="sortToType(item)">
+      {{item.name}}
+
+    </mat-chip>
+  </mat-chip-list>
   <div *ngIf="!loading;else loadingBlock" >
     <app-ingredients-list
       [ingredients]="ingredientsList"

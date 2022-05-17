@@ -1,11 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IngredientsService} from "../../shared/ingredients/ingredients.service";
-import {
-  IIngredientItem,
-  IngredientType,
-  IngredientUnit
-} from "../../shared/ingredients/ingredient-item.model";
-import {sortDirectionType, sortType} from "../../shared/enums";
+import {IIngredientItem, IngredientType, IngredientUnit} from "../../shared/ingredients/ingredient-item.model";
+import { sortDirectionType, sortType} from "../../shared/enums";
 
 @Component({
   selector: 'app-ingredients-page',
@@ -17,6 +13,7 @@ export class IngredientsPageComponent implements OnInit {
   loading = false;
   search:string = '';
   sort: sortType = sortType.type;
+  sortToTypes:any = [];
   sortDirection:sortDirectionType = sortDirectionType.up;
   ingredientsList: IIngredientItem[] = [];
   isAddNewIngredients = false;
@@ -71,6 +68,23 @@ export class IngredientsPageComponent implements OnInit {
 
   sortDirectionHeandler(value: any) {
     this.sortDirection = value;
+  }
+
+  sortToType(item: { id: string | number; }) {
+    this.loading = true;
+    const newType = this.ingredientsTypes[+item.id].name;
+    if(this.sortToTypes.includes(newType)){
+      this.sortToTypes = this.sortToTypes.filter((item: IngredientType) => item !== newType)
+    }else{
+      this.sortToTypes = [...this.sortToTypes, newType];
+    }
+    this.ingredientsService.getIngredients().subscribe(ingredients =>{
+        this.ingredientsList = ingredients.filter(item=>{
+          return this.sortToTypes.includes(item.type)
+        });
+        this.loading = false;
+      }
+    )
   }
 }
 

@@ -13,6 +13,7 @@ import { IngredientsSortComponent } from './ingredients-sort/ingredients-sort.co
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {MatInputModule} from "@angular/material/input";
+import {MatChipsModule} from "@angular/material/chips";
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {MatInputModule} from "@angular/material/input";
     MatProgressSpinnerModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatChipsModule
   ],
   exports: [
     MatInputModule,
