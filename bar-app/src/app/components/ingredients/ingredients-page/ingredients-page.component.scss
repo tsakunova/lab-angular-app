@@ -1,13 +1,7 @@
-.ingredients{
-  &__menu{
+.ingredients {
+  &__menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  &__btn-new{
-    padding: 10px 20px;
-  }
-  mat-spinner{
-    margin: 100px auto;
   }
 }

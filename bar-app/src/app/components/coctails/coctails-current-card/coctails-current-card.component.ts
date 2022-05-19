@@ -9,14 +9,16 @@ import {CoctailsService} from "../../shared/coctails/coctails.service";
   styleUrls: ['./coctails-current-card.component.scss']
 })
 export class CoctailsCurrentCardComponent{
-  currentItem: ICoctailItem
+  isLoading = false;
+  currentItem: ICoctailItem;
   constructor( private route: ActivatedRoute, private coctailsService: CoctailsService) { }
 
   ngOnInit(): void {
+    this.isLoading= true;
    this.coctailsService.getCoctail(this.route.snapshot.paramMap.get('id'))
      .subscribe(coctail =>{
        this.currentItem = coctail
+       this.isLoading = false;
      })
   }
-
 }

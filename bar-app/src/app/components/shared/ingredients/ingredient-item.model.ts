@@ -1,9 +1,10 @@
 export interface IIngredientItem {
-     id?: number;
-    name: string;
-    type: string;
-    unit: string;
+  id?: number;
+  name: string;
+  type: string;
+  unit: string;
 }
+
 export type IngredientForSave = Omit<IIngredientItem, 'id'>;
 
 export enum IngredientType {
@@ -17,6 +18,7 @@ export enum IngredientType {
   fruits = 'Fruits',
   ice = 'Ice'
 }
+
 export enum IngredientUnit {
   ml = 'ml',
   g = 'g',

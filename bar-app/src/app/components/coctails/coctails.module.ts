@@ -6,6 +6,7 @@ import { CoctailsSearchComponent } from './coctails-search/coctails-search.compo
 import { CoctailsListComponent } from './coctails-list/coctails-list.component';
 import { CoctailsCardComponent } from './coctails-card/coctails-card.component';
 import { CoctailsCurrentCardComponent } from './coctails-current-card/coctails-current-card.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 
@@ -20,9 +21,10 @@ import { CoctailsCurrentCardComponent } from './coctails-current-card/coctails-c
   imports: [
     CommonModule,
     RouterModule.forChild([
-      { path: '', component: CoctailsPageComponent},
+      {path: '', component: CoctailsPageComponent},
       {path: 'item/:id', component: CoctailsCurrentCardComponent},
-    ])
+    ]),
+    MatProgressSpinnerModule
 
   ]
 

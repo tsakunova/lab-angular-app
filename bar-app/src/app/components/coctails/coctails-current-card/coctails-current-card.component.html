@@ -1,29 +1,36 @@
-<div class="coctail-item">
-  <h4 class="coctail-item__title">{{currentItem.name}}</h4>
-  <p class="coctail-item__story">{{currentItem.description}}</p>
-  <p class="coctail-item__type">
-    <span *ngFor="let type of currentItem.type">{{type}} / </span>
-  </p>
-  <h5 class="coctail-item__subtitle">Cocktail ingredients {{currentItem.name}}</h5>
-  <ul class="coctail-item__composition">
-    <li *ngFor="let composition of currentItem.composition">
-      <span>{{composition.name}} </span>
-      <span>{{composition.amount}} {{composition.unit}}</span>
-    </li>
-  </ul>
-  <h5 class="coctail-item__subtitle">Cocktail recipe {{currentItem.name}}</h5>
-  <div class="coctail-item__recipe">
-    <ol>
-      <li *ngFor="let recipeUnit of currentItem.recipe">
-        {{recipeUnit}}
+<div *ngIf="!isLoading || currentItem;else loadBlock" >
+  <div class="coctail-item" >
+    <h4 class="coctail-item__title">{{currentItem.name}}</h4>
+    <p class="coctail-item__story">{{currentItem.description}}</p>
+    <p class="coctail-item__type">
+      <span *ngFor="let type of currentItem.type">{{type}} / </span>
+    </p>
+    <h5 class="coctail-item__subtitle">Cocktail ingredients {{currentItem.name}}</h5>
+    <ul class="coctail-item__composition">
+      <li *ngFor="let composition of currentItem.composition">
+        <span>{{composition.name}} </span>
+        <span>{{composition.amount}} {{composition.unit}}</span>
       </li>
-    </ol>
-    <div class="coctail-item__image">
-      <img src="{{currentItem.imageSrc}}" alt="{{currentItem.name}}">
+    </ul>
+    <h5 class="coctail-item__subtitle">Cocktail recipe {{currentItem.name}}</h5>
+    <div class="coctail-item__recipe">
+      <ol>
+        <li *ngFor="let recipeUnit of currentItem.recipe">
+          {{recipeUnit}}
+        </li>
+      </ol>
+      <div class="coctail-item__image">
+        <img src="{{currentItem.imageSrc}}" alt="{{currentItem.name}}">
+      </div>
     </div>
+
+    <div>
+
+    </div>
+
   </div>
 
-  <div>
-
-  </div>
 </div>
+<ng-template #loadBlock>
+  <mat-spinner color="accent"></mat-spinner>
+</ng-template>

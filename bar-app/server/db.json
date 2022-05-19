@@ -7,6 +7,12 @@
       "unit": "ml"
     },
     {
+      "id": 1,
+      "name": "Gin",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
       "id": 2,
       "name": "White rum",
       "type": "Strong spirits",
@@ -325,6 +331,12 @@
       "unit": "ml"
     },
     {
+      "id": 55,
+      "name": "Pineapple",
+      "type": "Fruits",
+      "unit": "g"
+    },
+    {
       "id": 56,
       "name": "Club soda",
       "type": "Water and drinks",
@@ -337,22 +349,10 @@
       "unit": "g"
     },
     {
-      "name": "Apple",
-      "type": "Fruits",
-      "unit": "g",
-      "id": 58
-    },
-    {
-      "name": "Gin",
-      "type": "Strong spirits",
-      "unit": "ml",
-      "id": 60
-    },
-    {
       "name": "banana",
       "type": "Fruits",
       "unit": "g",
-      "id": 62
+      "id": 58
     }
   ],
   "coctails": [

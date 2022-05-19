@@ -1,6 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import {ICoctailItem} from "../coctails/coctail-item.model";
-import {IIngredientItem} from "../ingredients/ingredient-item.model";
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
   name: 'filter'
@@ -8,11 +6,11 @@ import {IIngredientItem} from "../ingredients/ingredient-item.model";
 export class FilterPipe implements PipeTransform {
 
   transform<T>(items: any, search: string = '') {
-    if (!search.trim()){
+    if (!search.trim()) {
       return items;
     }
 
-    return items.filter( (item: any) => {
+    return items.filter((item: any) => {
       return item.name.toLowerCase().includes(search.toLowerCase())
     })
   }

@@ -1,19 +1,22 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {RouterModule} from "@angular/router";
-import { IngredientsPageComponent } from './ingredients-page/ingredients-page.component';
+import {IngredientsPageComponent} from './ingredients-page/ingredients-page.component';
 import {SharedModule} from "../shared/shared.module";
-import { IngredientsListComponent } from './ingredients-list/ingredients-list.component';
-import { IngredientsCardComponent } from './ingredients-card/ingredients-card.component';
-import { IngredientsSearchComponent } from './ingredients-search/ingredients-search.component';
-import { IngredientsFormComponent } from './ingredients-form/ingredients-form.component';
+import {IngredientsListComponent} from './ingredients-list/ingredients-list.component';
+import {IngredientsCardComponent} from './ingredients-card/ingredients-card.component';
+import {IngredientsSearchComponent} from './ingredients-search/ingredients-search.component';
+import {IngredientsFormComponent} from './ingredients-form/ingredients-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import { IngredientsSortComponent } from './ingredients-sort/ingredients-sort.component';
+import {IngredientsSortComponent} from './ingredients-sort/ingredients-sort.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {MatInputModule} from "@angular/material/input";
 import {MatChipsModule} from "@angular/material/chips";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import {MatChipsModule} from "@angular/material/chips";
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    MatChipsModule
+    MatChipsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   exports: [
     MatInputModule,
@@ -46,4 +52,5 @@ import {MatChipsModule} from "@angular/material/chips";
     MatSelectModule
   ]
 })
-export class IngredientsModule { }
+export class IngredientsModule {
+}

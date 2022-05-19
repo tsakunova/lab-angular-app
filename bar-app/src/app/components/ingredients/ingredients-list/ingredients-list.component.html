@@ -2,7 +2,9 @@
   <app-ingredients-card
     *ngFor="let ingredient of ingredients | sort:sort :sortDirection |filter: search "
     [item]="ingredient"
-    (deleteCard)="deleteCardHandler($event)">
+    (deleteCard)="deleteCardHandler($event)"
+    (editCard)="editCardHandler($event)"
+  >
     >
   </app-ingredients-card>
 </div>

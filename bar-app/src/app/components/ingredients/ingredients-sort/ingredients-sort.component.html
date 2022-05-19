@@ -1,9 +1,16 @@
-<label>Sort:
-  <select ngDefaultControl
-          ngModel (ngModelChange)="onSortChanged($event)"
-          name="ingredientSort"
-  >
-    <option *ngFor="let i of selects" [value]="i">{{i}}</option>
-  </select>
-</label>
-<span (click)="addDirection()">{{direction === 'up' ? '↑' : '↓' }}</span>
+<div class="sort-field">
+  <mat-form-field appearance="fill">
+    <mat-label>Sort by</mat-label>
+    <mat-select ngDefaultControl
+                ngModel (ngModelChange)="onSortChanged($event)"
+                name="ingredientSort">
+      <mat-option *ngFor="let i of selects" [value]="i">{{i | titlecase}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-icon-button aria-label="Sort direction" (click)="addDirection()">
+    <mat-icon class="sort-arrow">sort</mat-icon>
+    <span>{{direction === 'up' ? '↑' : '↓' }}</span>
+  </button>
+</div>
+

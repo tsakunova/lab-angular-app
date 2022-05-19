@@ -11,7 +11,9 @@ export class IngredientsSearchComponent implements OnInit {
   @Output()
   searchValue: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {
+  }
+
   //
   // searchHandler(value: string){
   //   this.searchValue.emit(value);

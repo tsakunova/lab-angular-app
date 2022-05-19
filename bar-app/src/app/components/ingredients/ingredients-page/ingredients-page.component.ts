@@ -1,7 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {IngredientsService} from "../../shared/ingredients/ingredients.service";
 import {IIngredientItem, IngredientType, IngredientUnit} from "../../shared/ingredients/ingredient-item.model";
-import { sortDirectionType, sortType} from "../../shared/enums";
+import {sortDirectionType, sortType} from "../../shared/enums";
+import {MatChip} from "@angular/material/chips";
+import {MatDialog} from "@angular/material/dialog";
+import {IngredientsFormComponent} from "../ingredients-form/ingredients-form.component";
 
 @Component({
   selector: 'app-ingredients-page',
@@ -10,33 +13,41 @@ import { sortDirectionType, sortType} from "../../shared/enums";
 })
 
 export class IngredientsPageComponent implements OnInit {
-  loading = false;
-  search:string = '';
+  isLoading = false;
+  search: string = '';
   sort: sortType = sortType.type;
-  sortToTypes:any = [];
-  sortDirection:sortDirectionType = sortDirectionType.up;
+  sortToTypes: string[] = [];
+  sortDirection: sortDirectionType = sortDirectionType.up;
   ingredientsList: IIngredientItem[] = [];
-  isAddNewIngredients = false;
-  ingredientsTypes: Array<{id: number, name: IngredientType}> = [];
-  ingredientsUnits: Array<{id: number, name: IngredientUnit}> = [];
+  ingredientsTypes: Array<{ id: number, name: IngredientType }> = [];
+  ingredientsUnits: Array<{ id: number, name: IngredientUnit }> = [];
+  config: any = {
+    types: [],
+    units: [],
+    typeForm: ''
+  };
 
-  constructor(private ingredientsService: IngredientsService ) { }
+  constructor(private ingredientsService: IngredientsService, public dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
-    this.fetchIngredients();
     this.ingredientsTypes = this.ingredientsService.getIngredientsTypes();
     this.ingredientsUnits = this.ingredientsService.getIngredientsUnits();
+    this.config.types = this.ingredientsTypes;
+    this.config.units = this.ingredientsUnits;
+    this.config.typeForm = 'add';
+    this.fetchIngredients();
   }
 
   deleteCardHandler(id: number) {
     this.ingredientsService.deleteIngredients(id)
-      .subscribe(()=> {
+      .subscribe(() => {
         this.ingredientsList = this.ingredientsList.filter(item => item.id !== id);
       })
   }
 
-  addCardHandler(item: IIngredientItem){
-    if(!item.name.trim()){
+  addCardHandler(item: IIngredientItem) {
+    if (!item || !item.name.trim()) {
       return
     }
     const newIngredient = {
@@ -49,16 +60,16 @@ export class IngredientsPageComponent implements OnInit {
     })
   }
 
-  fetchIngredients(){
-    this.loading = true;
-    this.ingredientsService.getIngredients()
-      .subscribe(ingredients =>{
+  fetchIngredients() {
+    this.isLoading = true;
+    this.ingredientsService.getIngredients(this.sortToTypes)
+      .subscribe(ingredients => {
         this.ingredientsList = ingredients;
-        this.loading = false;
+        this.isLoading = false;
       })
   }
 
-  searchHeandler(value: any){
+  searchHeandler(value: any) {
     this.search = value;
   }
 
@@ -70,21 +81,61 @@ export class IngredientsPageComponent implements OnInit {
     this.sortDirection = value;
   }
 
-  sortToType(item: { id: string | number; }) {
-    this.loading = true;
-    const newType = this.ingredientsTypes[+item.id].name;
-    if(this.sortToTypes.includes(newType)){
-      this.sortToTypes = this.sortToTypes.filter((item: IngredientType) => item !== newType)
-    }else{
-      this.sortToTypes = [...this.sortToTypes, newType];
+  sortToType(sortItem: string, chip: MatChip) {
+    if (this.sortToTypes.includes(sortItem)) {
+      this.sortToTypes = this.sortToTypes.filter(item => item !== sortItem);
+    } else {
+      this.sortToTypes = [...this.sortToTypes, sortItem];
     }
-    this.ingredientsService.getIngredients().subscribe(ingredients =>{
-        this.ingredientsList = ingredients.filter(item=>{
-          return this.sortToTypes.includes(item.type)
-        });
-        this.loading = false;
+    this.getIngredients();
+    chip.toggleSelected();
+  }
+
+  getIngredients() {
+    let data = [];
+    this.isLoading = true;
+    const allTypes = this.ingredientsTypes.map(item => item.name);
+    if (!this.sortToTypes.length) {
+      data = allTypes
+    } else {
+      data = allTypes.filter(item => this.sortToTypes.includes(item))
+    }
+    this.ingredientsService.getIngredients(data).subscribe(ingredients => {
+      this.ingredientsList = ingredients;
+      this.isLoading = false;
+    })
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(IngredientsFormComponent);
+    let instance = dialogRef.componentInstance;
+    this.config.typeForm = 'add'
+    instance.config = this.config;
+    dialogRef.afterClosed().subscribe(result => {
+      this.addCardHandler(result);
+    });
+  }
+
+  editCardHandler(id: number) {
+    const dialogRef = this.dialog.open(IngredientsFormComponent);
+    let instance = dialogRef.componentInstance;
+    this.config.typeForm = 'edit'
+    instance.config = this.config;
+    dialogRef.afterClosed().subscribe(result => {
+      if (!result || !result.name.trim()) {
+        return
       }
-    )
+      const ingredient = {
+        name: result.name,
+        type: this.ingredientsTypes[+result.type]?.name,
+        unit: this.ingredientsUnits[+result.unit]?.name,
+      }
+      this.ingredientsService.editIngredient(id, ingredient)
+        .subscribe(() => {
+          this.getIngredients()
+        })
+    });
+
   }
 }
 

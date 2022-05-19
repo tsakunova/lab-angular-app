@@ -15,11 +15,18 @@ export class IngredientsListComponent {
 
   @Output()
   deleteCard: EventEmitter<number> = new EventEmitter<number>();
+  @Output()
+  editCard: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() { }
+  constructor() {
+  }
 
   deleteCardHandler(id: number) {
     this.deleteCard.emit(id);
+  }
+
+  editCardHandler(id: number) {
+    this.editCard.emit(id);
   }
 
 

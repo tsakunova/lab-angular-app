@@ -8,14 +8,17 @@ import {CoctailsService} from "../../shared/coctails/coctails.service";
   styleUrls: ['./coctails-page.component.scss']
 })
 export class CoctailsPageComponent implements OnInit {
+  isLoading = false;
   coctailsList: ICoctailItem[];
 
   constructor(private coctailServise: CoctailsService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.coctailServise.getCoctails()
       .subscribe(coctails =>{
       this.coctailsList = coctails
+        this.isLoading = false;
     })
   }
 

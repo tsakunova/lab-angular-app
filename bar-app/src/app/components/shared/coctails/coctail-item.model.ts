@@ -9,6 +9,7 @@ export interface ICoctailItem {
   recipe: string[];
   description: string;
 }
+
 export interface ICoctailComposition extends IIngredientItem {
   amount: number;
 }

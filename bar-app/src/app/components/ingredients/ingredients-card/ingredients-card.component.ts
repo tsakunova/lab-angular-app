@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {IIngredientItem} from "../../shared/ingredients/ingredient-item.model";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-ingredients-card',
@@ -12,7 +13,10 @@ export class IngredientsCardComponent {
   deleteCard: EventEmitter<number> = new EventEmitter<number>();
   @Output()
   editCard: EventEmitter<number> = new EventEmitter<number>();
-  constructor() { }
+
+  constructor(public dialog: MatDialog) {
+  }
+
   deleteCardHandler() {
     this.deleteCard.emit(this.item.id);
   }
