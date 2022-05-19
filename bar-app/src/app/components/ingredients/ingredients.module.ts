@@ -17,6 +17,7 @@ import {MatChipsModule} from "@angular/material/chips";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatChipsModule,
     MatIconModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    ScrollingModule
   ],
   exports: [
     MatInputModule,

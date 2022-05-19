@@ -1,11 +1,12 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {IIngredientItem} from "../../shared/ingredients/ingredient-item.model";
 import {sortDirectionType} from "../../shared/enums";
 
 @Component({
   selector: 'app-ingredients-list',
   templateUrl: './ingredients-list.component.html',
-  styleUrls: ['./ingredients-list.component.scss']
+  styleUrls: ['./ingredients-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IngredientsListComponent {
   @Input() ingredients: IIngredientItem[];
