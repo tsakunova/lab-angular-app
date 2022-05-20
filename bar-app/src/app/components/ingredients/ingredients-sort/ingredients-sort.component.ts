@@ -1,5 +1,7 @@
-import {Component, DoCheck, EventEmitter, Output} from '@angular/core';
-import {sortDirectionType, sortType} from "../../shared/enums";
+import {
+  Component, DoCheck, EventEmitter, Output
+} from '@angular/core';
+import { sortDirectionType, sortType } from '../../shared/enums';
 
 @Component({
   selector: 'app-ingredients-sort',
@@ -8,18 +10,19 @@ import {sortDirectionType, sortType} from "../../shared/enums";
 })
 export class IngredientsSortComponent implements DoCheck {
   selects: string[] = Object.keys(sortType);
+
   sort: string = sortType.type;
+
   direction: string = sortDirectionType.up;
 
   @Output()
-  sortValue: EventEmitter<string> = new EventEmitter<string>();
-  @Output()
-  sortDirection: EventEmitter<string> = new EventEmitter<string>();
+    sortValue: EventEmitter<string> = new EventEmitter<string>();
 
+  @Output()
+    sortDirection: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {
   }
-
 
   ngDoCheck() {
     this.sortValue.emit(this.sort);
@@ -35,7 +38,9 @@ export class IngredientsSortComponent implements DoCheck {
   }
 
   addDirection() {
-    this.direction === sortDirectionType.up ? this.direction = sortDirectionType.down : this.direction = sortDirectionType.up
-    console.log(this.direction)
+    this.direction === sortDirectionType.up
+      ? this.direction = sortDirectionType.down
+      : this.direction = sortDirectionType.up;
+    console.log(this.direction);
   }
 }

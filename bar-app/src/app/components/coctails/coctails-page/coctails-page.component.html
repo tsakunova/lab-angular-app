@@ -2,7 +2,11 @@
   <section class="coctails section">
     <h2 class="section__title">Coctails</h2>
     <div *ngIf="!isLoading;else loadingBlock" >
-    <app-coctails-list [coctails]="coctailsList"></app-coctails-list>
+    <app-coctails-list
+      [coctails]="coctailsList"
+      (addToFavorite)="addFavorite($event)"
+      (addToHistory)="addHistory($event)"
+    ></app-coctails-list>
     </div>
     <ng-template #loadingBlock>
       <mat-spinner color="accent"></mat-spinner>

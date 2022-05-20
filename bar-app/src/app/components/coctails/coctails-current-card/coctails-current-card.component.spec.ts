@@ -8,9 +8,9 @@ describe('CoctailsCurrentCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoctailsCurrentCardComponent ]
+      declarations: [CoctailsCurrentCardComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

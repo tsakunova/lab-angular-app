@@ -24,4 +24,3 @@ export enum IngredientUnit {
   g = 'g',
   piece = 'piece'
 }
-

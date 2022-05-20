@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {MybarPageComponent} from './mybar-page.component';
+import { MybarPageComponent } from './mybar-page.component';
 
 describe('MybarPageComponent', () => {
   let component: MybarPageComponent;

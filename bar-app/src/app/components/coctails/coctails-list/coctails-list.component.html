@@ -2,6 +2,8 @@
   <app-coctails-card
     *ngFor="let coctail of coctails"
     [item]="coctail"
+    (addToFavorite)="addFavoriteHandler($event)"
+    (addToHistory)="addHistoryHandler($event)"
   >
   </app-coctails-card>
 </div>

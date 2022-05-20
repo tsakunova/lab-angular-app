@@ -1,24 +1,6 @@
 {
   "ingredients": [
     {
-      "id": 0,
-      "name": "Vodka",
-      "type": "Strong spirits",
-      "unit": "ml"
-    },
-    {
-      "id": 1,
-      "name": "Gin",
-      "type": "Strong spirits",
-      "unit": "ml"
-    },
-    {
-      "id": 2,
-      "name": "White rum",
-      "type": "Strong spirits",
-      "unit": "ml"
-    },
-    {
       "id": 3,
       "name": "Silver tequila",
       "type": "Strong spirits",
@@ -358,6 +340,7 @@
   "coctails": [
     {
       "id": 0,
+      "favorite": true,
       "imageSrc": "assets/img/coctails/0.jpg",
       "name": "Gin and Tonic",
       "type": [
@@ -377,8 +360,8 @@
         },
         {
           "id": 51,
-          "name": "Тоник",
-          "type": "Вода и напитки",
+          "name": "Tonic",
+          "type": "Water and drinks",
           "unit": "ml",
           "amount": 150
         },
@@ -391,7 +374,7 @@
         },
         {
           "id": 53,
-          "name": "Лед в кубиках",
+          "name": "Ice cubes",
           "type": "Ice",
           "unit": "g",
           "amount": 180
@@ -407,6 +390,7 @@
     },
     {
       "id": 1,
+      "favorite": false,
       "imageSrc": "assets/img/coctails/1.jpg",
       "name": "Blue Lagoon",
       "type": [
@@ -463,6 +447,7 @@
     },
     {
       "id": 2,
+      "favorite": false,
       "imageSrc": "assets/img/coctails/2.jpg",
       "name": "Aperol Spritz",
       "type": [
@@ -516,6 +501,48 @@
         "Garnish with an orange wedge"
       ],
       "description": "Aperol Spritz is a favorite among summer season cocktails. In European resorts, it is difficult to find an institution where it is not served. The Italian (classic) version of Aperol contains 11% alcohol. The drink, made for shipments to Germany, is 4% stronger due to local legislation that requires drinks with an alcohol content of less than 15% to be bottled in refillable bottles."
+    }
+  ],
+  "history": [
+    {
+      "id": 0,
+      "coctailId": 1,
+      "dateAdd": "Monday, June 15, 2021"
+    },
+    {
+      "id": 1,
+      "coctailId": 0,
+      "dateAdd": "Sunday, August 10, 2021"
+    },
+    {
+      "id": 2,
+      "coctailId": 1,
+      "dateAdd": "Monday, June 15, 2021"
+    },
+    {
+      "coctailId": 1,
+      "dateAdd": "2022-05-20T22:06:53.361Z",
+      "id": 3
+    },
+    {
+      "coctailId": 2,
+      "dateAdd": "2022-05-20T22:06:58.564Z",
+      "id": 4
+    },
+    {
+      "coctailId": 1,
+      "dateAdd": "2022-05-20T22:07:00.101Z",
+      "id": 5
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-20T22:07:00.761Z",
+      "id": 6
+    },
+    {
+      "coctailId": 2,
+      "dateAdd": "2022-05-20T22:07:01.706Z",
+      "id": 7
     }
   ]
 }

@@ -1,4 +1,12 @@
 <div class="coctail-card">
+  <div>
+    <button aria-label="Add coctail for a history" mat-mini-fab color="basic" (click)="historyAddHandler()">
+      <mat-icon>plus_one</mat-icon>
+    </button>
+    <button aria-label="Add coctail in favorite list" mat-mini-fab [color]="item.favorite&&'accent'" (click)="favoriteAddHandler()">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
   <div class="coctail-card__text-container">
     <h4 class="coctail-card__title">{{item.name}}</h4>
     <p class="coctail-card__type">

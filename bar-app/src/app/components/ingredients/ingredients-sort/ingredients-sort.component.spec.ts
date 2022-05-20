@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {IngredientsSortComponent} from './ingredients-sort.component';
+import { IngredientsSortComponent } from './ingredients-sort.component';
 
 describe('IngredientsSortComponent', () => {
   let component: IngredientsSortComponent;

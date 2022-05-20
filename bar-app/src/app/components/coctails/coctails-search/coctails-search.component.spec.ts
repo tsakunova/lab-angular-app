@@ -8,9 +8,9 @@ describe('CoctailsSearchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoctailsSearchComponent ]
+      declarations: [CoctailsSearchComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -1,6 +1,8 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {IIngredientItem} from "../../shared/ingredients/ingredient-item.model";
-import {MatDialog} from "@angular/material/dialog";
+import {
+  Component, EventEmitter, Input, Output
+} from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { IIngredientItem } from '../../shared/ingredients/ingredient-item.model';
 
 @Component({
   selector: 'app-ingredients-card',
@@ -9,10 +11,12 @@ import {MatDialog} from "@angular/material/dialog";
 })
 export class IngredientsCardComponent {
   @Input() item: IIngredientItem;
+
   @Output()
-  deleteCard: EventEmitter<number> = new EventEmitter<number>();
+    deleteCard: EventEmitter<number> = new EventEmitter<number>();
+
   @Output()
-  editCard: EventEmitter<number> = new EventEmitter<number>();
+    editCard: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(public dialog: MatDialog) {
   }

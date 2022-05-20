@@ -24,7 +24,7 @@
       <mat-dialog-actions align="center">
         <button mat-button mat-dialog-close>Cancel</button>
         <button mat-button [mat-dialog-close]="form.value" cdkFocusInitial type="submit"
-                [disabled]="form.invalid">{{config.typeForm}} ingredient
+                [disabled]="form.invalid">{{config.typeForm | titlecase}} ingredient
         </button>
       </mat-dialog-actions>
     </div>

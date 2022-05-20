@@ -1,29 +1,22 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {
+  Component, DoCheck, EventEmitter, Output
+} from '@angular/core';
 
 @Component({
   selector: 'app-ingredients-search',
   templateUrl: './ingredients-search.component.html',
   styleUrls: ['./ingredients-search.component.scss']
 })
-export class IngredientsSearchComponent implements OnInit {
-  search: string = '';
+export class IngredientsSearchComponent implements DoCheck {
+  search = '';
 
   @Output()
-  searchValue: EventEmitter<string> = new EventEmitter<string>();
+    searchValue: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {
   }
 
-  //
-  // searchHandler(value: string){
-  //   this.searchValue.emit(value);
-  // }
-
   ngDoCheck() {
-    this.searchValue.emit(this.search)
+    this.searchValue.emit(this.search);
   }
-
-  ngOnInit(): void {
-  }
-
 }

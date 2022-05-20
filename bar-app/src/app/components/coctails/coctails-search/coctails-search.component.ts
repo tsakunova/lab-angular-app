@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-coctails-search',
   templateUrl: './coctails-search.component.html',
   styleUrls: ['./coctails-search.component.scss']
 })
-export class CoctailsSearchComponent implements OnInit {
-
+export class CoctailsSearchComponent {
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

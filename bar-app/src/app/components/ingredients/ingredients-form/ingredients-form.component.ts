@@ -1,6 +1,8 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {IIngredientItem} from "../../shared/ingredients/ingredient-item.model";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {
+  Component, EventEmitter, OnInit, Output
+} from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IIngredientItem } from '../../shared/ingredients/ingredient-item.model';
 
 @Component({
   selector: 'app-ingredients-form',
@@ -9,7 +11,8 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class IngredientsFormComponent implements OnInit {
   form: FormGroup;
-  config: { types: any[]; units: any[], typeForm: string };
+
+  config: { types: any[]; units: any[]; typeForm: string };
 
   @Output() addCard: EventEmitter<IIngredientItem> = new EventEmitter<IIngredientItem>();
 
@@ -26,9 +29,9 @@ export class IngredientsFormComponent implements OnInit {
 
   addIngredient() {
     if (this.form.valid) {
-      const formData: IIngredientItem = {...this.form.value};
+      const formData: IIngredientItem = { ...this.form.value };
       this.addCard.emit(formData);
-      this.form.reset()
+      this.form.reset();
     }
   }
 }
