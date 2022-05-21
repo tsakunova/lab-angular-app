@@ -6,6 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
 import { HistoryPageComponent } from './history-page/history-page.component';
 import { HistoryTableComponent } from './history-table/history-table.component';
 
@@ -23,7 +25,9 @@ import { HistoryTableComponent } from './history-table/history-table.component';
     MatIconModule,
     MatButtonModule,
     MatPaginatorModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatInputModule
   ]
 })
 export class HistoryModule { }

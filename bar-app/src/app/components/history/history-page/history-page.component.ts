@@ -22,7 +22,7 @@ export class HistoryPageComponent implements OnInit {
   fetchHistoryItems() {
     this.historyService.getHistoryItems()
       .subscribe(items => {
-        this.historyList = items;
+        this.historyList = [...items];
         this.isLoading = false;
       });
   }

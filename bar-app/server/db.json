@@ -390,7 +390,7 @@
     },
     {
       "id": 1,
-      "favorite": false,
+      "favorite": true,
       "imageSrc": "assets/img/coctails/1.jpg",
       "name": "Blue Lagoon",
       "type": [
@@ -447,7 +447,7 @@
     },
     {
       "id": 2,
-      "favorite": true,
+      "favorite": false,
       "imageSrc": "assets/img/coctails/2.jpg",
       "name": "Aperol Spritz",
       "type": [
@@ -505,64 +505,49 @@
   ],
   "history": [
     {
-      "coctailId": 0,
-      "dateAdd": "2022-05-21T09:35:38.519Z",
-      "id": 4
-    },
-    {
       "coctailId": 1,
-      "dateAdd": "2022-05-21T09:42:56.526Z",
-      "id": 6
-    },
-    {
-      "coctailId": 0,
-      "dateAdd": "2022-05-21T09:42:57.928Z",
-      "id": 7
-    },
-    {
-      "coctailId": 0,
-      "dateAdd": "2022-05-21T10:05:00.867Z",
-      "id": 8
-    },
-    {
-      "coctailId": 0,
-      "dateAdd": "2022-05-21T10:05:01.084Z",
-      "id": 9
-    },
-    {
-      "coctailId": 0,
-      "dateAdd": "2022-05-21T10:05:01.280Z",
+      "dateAdd": "2022-05-21T16:01:45.122Z",
       "id": 10
     },
     {
       "coctailId": 0,
-      "dateAdd": "2022-05-21T10:05:01.481Z",
+      "dateAdd": "2022-05-21T16:35:36.522Z",
       "id": 11
     },
     {
-      "coctailId": 0,
-      "dateAdd": "2022-05-21T10:05:01.699Z",
-      "id": 12
-    },
-    {
-      "coctailId": 0,
-      "dateAdd": "2022-05-21T10:05:01.900Z",
+      "coctailId": 2,
+      "dateAdd": "2022-05-21T16:35:38.082Z",
       "id": 13
     },
     {
       "coctailId": 0,
-      "dateAdd": "2022-05-21T10:05:02.103Z",
+      "dateAdd": "2022-05-21T16:39:36.406Z",
       "id": 14
     },
     {
-      "coctailId": 0,
-      "dateAdd": "2022-05-21T10:05:02.322Z",
+      "coctailId": 1,
+      "dateAdd": "2022-05-21T16:39:37.036Z",
       "id": 15
     },
     {
-      "coctailId": 0,
-      "dateAdd": "2022-05-21T10:05:02.532Z",
+      "coctailId": 2,
+      "dateAdd": "2022-05-21T16:39:39.038Z",
       "id": 16
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-21T16:40:23.330Z",
+      "id": 17
+    },
+    {
+      "coctailId": 1,
+      "dateAdd": "2022-05-21T16:40:24.739Z",
+      "id": 18
+    },
+    {
+      "coctailId": 2,
+      "dateAdd": "2022-05-21T16:40:25.497Z",
+      "id": 19
     }
   ]
 }
