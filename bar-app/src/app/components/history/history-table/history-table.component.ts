@@ -1,6 +1,7 @@
 import {
+  AfterContentInit,
   AfterViewInit,
-  Component, EventEmitter, Input, Output, ViewChild
+  Component, EventEmitter, Input, OnChanges, Output, ViewChild
 } from '@angular/core';
 import {
   animate, state, style, transition, trigger
@@ -14,7 +15,6 @@ import { IHistoryItem } from '../../shared/history/history-item.model';
   selector: 'app-history-table',
   templateUrl: './history-table.component.html',
   styleUrls: ['./history-table.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({ height: '0px', minHeight: '0' })),
@@ -24,7 +24,15 @@ import { IHistoryItem } from '../../shared/history/history-item.model';
   ],
 })
 
-export class HistoryTableComponent implements AfterViewInit {
+export class HistoryTableComponent implements AfterViewInit, OnChanges, AfterContentInit {
+  searchValue: string;
+
+  dataSource: MatTableDataSource<IHistoryItem>;
+
+  displayedColumns: string[] = ['coctailName', 'dateAdd', 'delete'];
+
+  expandedElement: IHistoryItem | null;
+
   @Input() historyItems: IHistoryItem[];
 
   @Output() deleteItem: EventEmitter<number> = new EventEmitter<number>();
@@ -33,16 +41,16 @@ export class HistoryTableComponent implements AfterViewInit {
 
   @ViewChild(MatSort) sort: MatSort;
 
-  dataSource: MatTableDataSource<IHistoryItem>;
-
-  displayedColumns: string[] = ['id', 'coctail.name', 'dateAdd', 'delete'];
-
-  expandedElement: IHistoryItem | null;
+  constructor() { }
 
   ngOnChanges() {
     if (this.dataSource) {
       this.connectMatTable();
     }
+  }
+
+  ngAfterContentInit() {
+    this.dataSource = new MatTableDataSource<IHistoryItem>(this.historyItems);
   }
 
   ngAfterViewInit() {
@@ -55,10 +63,18 @@ export class HistoryTableComponent implements AfterViewInit {
     this.dataSource.disconnect();
   }
 
+  applyFilter(event: Event) {
+    this.dataSource.disconnect();
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.searchValue = filterValue.toLowerCase();
+    this.connectMatTable();
+  }
+
   private connectMatTable() {
     this.dataSource = new MatTableDataSource<IHistoryItem>(this.historyItems);
+    this.dataSource.filterPredicate = (data, filter: string) => !!data.coctail?.name.toLocaleLowerCase().includes(filter);
     this.dataSource.sortingDataAccessor = (item, property) => {
-      if (property === 'coctail.name') {
+      if (property === 'coctailName') {
         return item.coctail?.name;
       }
 
@@ -67,5 +83,6 @@ export class HistoryTableComponent implements AfterViewInit {
     };
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.dataSource.filter = this.searchValue;
   }
 }
