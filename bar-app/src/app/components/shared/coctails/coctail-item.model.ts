@@ -1,4 +1,4 @@
-import { IIngredientItem } from '../ingredients/ingredient-item.model';
+import { IIngredientItem } from '../ingredients/ingredient.type';
 
 export interface ICoctailComposition extends IIngredientItem {
   amount: number;

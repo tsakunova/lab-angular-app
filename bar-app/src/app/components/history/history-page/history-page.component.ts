@@ -8,11 +8,14 @@ import { HistoryService } from '../../shared/history/history.service';
   styleUrls: ['./history-page.component.scss']
 })
 export class HistoryPageComponent implements OnInit {
+  isLoading = false;
+
   historyList: IHistoryItem[];
 
   constructor(private historyService: HistoryService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.fetchHistoryItems();
   }
 
@@ -20,6 +23,14 @@ export class HistoryPageComponent implements OnInit {
     this.historyService.getHistoryItems()
       .subscribe(items => {
         this.historyList = items;
+        this.isLoading = false;
+      });
+  }
+
+  deleteHistoryItemHandler(id: number) {
+    this.historyService.deleteHistoryItem(id)
+      .subscribe(() => {
+        this.fetchHistoryItems();
       });
   }
 }

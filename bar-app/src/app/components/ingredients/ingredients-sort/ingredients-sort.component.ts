@@ -38,9 +38,9 @@ export class IngredientsSortComponent implements DoCheck {
   }
 
   addDirection() {
-    this.direction === sortDirectionType.up
-      ? this.direction = sortDirectionType.down
-      : this.direction = sortDirectionType.up;
-    console.log(this.direction);
+    const direction = this.direction === sortDirectionType.up
+      ? sortDirectionType.down
+      : sortDirectionType.up;
+    this.direction = direction;
   }
 }

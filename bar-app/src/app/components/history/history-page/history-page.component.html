@@ -1,5 +1,12 @@
 <h2 class="section__title">Drink List</h2>
-<app-history-table
-  [historyItems]="historyList"
->
-</app-history-table>
+<div *ngIf="!isLoading;else loadingBlock">
+  <app-history-table *ngIf="historyList"
+                     [historyItems]="historyList"
+                     (deleteItem)="deleteHistoryItemHandler($event)"
+  ></app-history-table>
+</div>
+<ng-template #loadingBlock>
+  <mat-spinner color="accent"></mat-spinner>
+</ng-template>
+
+

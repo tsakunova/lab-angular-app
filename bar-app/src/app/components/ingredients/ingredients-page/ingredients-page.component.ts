@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatChip } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
 import { IngredientsService } from '../../shared/ingredients/ingredients.service';
-import { IIngredientItem, IngredientType, IngredientUnit } from '../../shared/ingredients/ingredient-item.model';
+import { IIngredientItem, IngredientType, IngredientUnit } from '../../shared/ingredients/ingredient.type';
 import { sortDirectionType, sortType } from '../../shared/enums';
 import { IngredientsFormComponent } from '../ingredients-form/ingredients-form.component';
 

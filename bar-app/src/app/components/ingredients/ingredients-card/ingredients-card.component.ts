@@ -2,7 +2,7 @@ import {
   Component, EventEmitter, Input, Output
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { IIngredientItem } from '../../shared/ingredients/ingredient-item.model';
+import { IIngredientItem } from '../../shared/ingredients/ingredient.type';
 
 @Component({
   selector: 'app-ingredients-card',

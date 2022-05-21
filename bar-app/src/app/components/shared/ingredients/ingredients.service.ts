@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { delay, Observable } from 'rxjs';
 import { INGREDIENTS_TYPES, INGREDIENTS_UNIT } from './ingredients';
-import { IIngredientItem, IngredientType, IngredientUnit } from './ingredient-item.model';
+import { IIngredientItem, IngredientType, IngredientUnit } from './ingredient.type';
 
 @Injectable({
   providedIn: 'root'

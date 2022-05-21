@@ -447,7 +447,7 @@
     },
     {
       "id": 2,
-      "favorite": false,
+      "favorite": true,
       "imageSrc": "assets/img/coctails/2.jpg",
       "name": "Aperol Spritz",
       "type": [
@@ -505,44 +505,64 @@
   ],
   "history": [
     {
-      "id": 0,
-      "coctailId": 1,
-      "dateAdd": "Monday, June 15, 2021"
-    },
-    {
-      "id": 1,
       "coctailId": 0,
-      "dateAdd": "Sunday, August 10, 2021"
-    },
-    {
-      "id": 2,
-      "coctailId": 1,
-      "dateAdd": "Monday, June 15, 2021"
-    },
-    {
-      "coctailId": 1,
-      "dateAdd": "2022-05-20T22:06:53.361Z",
-      "id": 3
-    },
-    {
-      "coctailId": 2,
-      "dateAdd": "2022-05-20T22:06:58.564Z",
+      "dateAdd": "2022-05-21T09:35:38.519Z",
       "id": 4
     },
     {
       "coctailId": 1,
-      "dateAdd": "2022-05-20T22:07:00.101Z",
-      "id": 5
-    },
-    {
-      "coctailId": 0,
-      "dateAdd": "2022-05-20T22:07:00.761Z",
+      "dateAdd": "2022-05-21T09:42:56.526Z",
       "id": 6
     },
     {
-      "coctailId": 2,
-      "dateAdd": "2022-05-20T22:07:01.706Z",
+      "coctailId": 0,
+      "dateAdd": "2022-05-21T09:42:57.928Z",
       "id": 7
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-21T10:05:00.867Z",
+      "id": 8
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-21T10:05:01.084Z",
+      "id": 9
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-21T10:05:01.280Z",
+      "id": 10
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-21T10:05:01.481Z",
+      "id": 11
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-21T10:05:01.699Z",
+      "id": 12
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-21T10:05:01.900Z",
+      "id": 13
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-21T10:05:02.103Z",
+      "id": 14
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-21T10:05:02.322Z",
+      "id": 15
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-21T10:05:02.532Z",
+      "id": 16
     }
   ]
 }

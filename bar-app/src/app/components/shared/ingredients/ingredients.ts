@@ -1,4 +1,4 @@
-import { IngredientType, IngredientUnit } from './ingredient-item.model';
+import { IngredientType, IngredientUnit } from './ingredient.type';
 
 export const INGREDIENTS_TYPES = [
   {
