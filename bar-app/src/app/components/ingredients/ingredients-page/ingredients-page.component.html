@@ -1,16 +1,15 @@
 <section class="ingredients section">
   <h2 class="section__title">ingredients</h2>
-  <div class="ingredients__menu">
+  <nav class="ingredients__menu">
     <app-ingredients-sort
       (sortValue)="sortHeandler($event)"
       (sortDirection)="sortDirectionHeandler($event)">
-
     </app-ingredients-sort>
     <app-ingredients-search (searchValue)="searchHeandler($event)"></app-ingredients-search>
     <button mat-fab aria-label="Add new ingredient" (click)="openDialog()">
       <mat-icon>add</mat-icon>
     </button>
-  </div>
+  </nav>
 
   <mat-chip-list selectable multiple>
     <mat-chip

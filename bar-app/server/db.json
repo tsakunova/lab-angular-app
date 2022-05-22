@@ -335,6 +335,12 @@
       "type": "Fruits",
       "unit": "g",
       "id": 58
+    },
+    {
+      "name": "Crushed ice",
+      "type": "Ice",
+      "unit": "g",
+      "id": 59
     }
   ],
   "coctails": [
@@ -343,12 +349,12 @@
       "favorite": true,
       "imageSrc": "assets/img/coctails/0.jpg",
       "name": "Gin and Tonic",
-      "type": [
-        "low-alcohol",
-        "bitter",
-        "gin based",
-        "mixes",
-        "long drinks"
+      "typeId": [
+        0,
+        1,
+        2,
+        3,
+        4
       ],
       "composition": [
         {
@@ -393,12 +399,12 @@
       "favorite": true,
       "imageSrc": "assets/img/coctails/1.jpg",
       "name": "Blue Lagoon",
-      "type": [
-        "low-alcohol",
-        "citrus",
-        "tropical",
-        "sweet",
-        "vodka based"
+      "typeId": [
+        0,
+        5,
+        6,
+        7,
+        8
       ],
       "composition": [
         {
@@ -450,12 +456,12 @@
       "favorite": true,
       "imageSrc": "assets/img/coctails/2.jpg",
       "name": "Aperol Spritz",
-      "type": [
-        "low-alcohol",
-        "sweet",
-        "sparkling",
-        "simple",
-        "fizz"
+      "typeId": [
+        0,
+        8,
+        9,
+        10,
+        11
       ],
       "composition": [
         {
@@ -505,84 +511,153 @@
   ],
   "history": [
     {
-      "coctailId": 2,
-      "dateAdd": "2022-05-21T17:10:50.618Z",
-      "id": 29
-    },
-    {
-      "coctailId": 2,
-      "dateAdd": "2022-05-21T17:10:50.955Z",
-      "id": 31
-    },
-    {
       "coctailId": 0,
-      "dateAdd": "2022-05-21T18:07:48.199Z",
-      "id": 35
+      "dateAdd": "2022-05-22T16:51:04.832Z",
+      "id": 3
     },
     {
       "coctailId": 2,
-      "dateAdd": "2022-05-21T18:07:50.101Z",
-      "id": 37
-    },
-    {
-      "coctailId": 2,
-      "dateAdd": "2022-05-21T18:07:50.613Z",
-      "id": 38
+      "dateAdd": "2022-05-22T16:51:06.129Z",
+      "id": 4
     },
     {
       "coctailId": 1,
-      "dateAdd": "2022-05-21T18:07:51.345Z",
-      "id": 39
+      "dateAdd": "2022-05-22T16:51:07.218Z",
+      "id": 5
     },
     {
       "coctailId": 0,
-      "dateAdd": "2022-05-21T18:07:51.856Z",
-      "id": 40
+      "dateAdd": "2022-05-22T16:51:07.756Z",
+      "id": 6
     },
     {
       "coctailId": 2,
-      "dateAdd": "2022-05-21T18:07:52.718Z",
-      "id": 41
+      "dateAdd": "2022-05-22T16:51:08.311Z",
+      "id": 7
     },
     {
       "coctailId": 1,
-      "dateAdd": "2022-05-21T18:07:53.394Z",
-      "id": 42
+      "dateAdd": "2022-05-22T16:51:08.882Z",
+      "id": 8
     },
     {
       "coctailId": 0,
-      "dateAdd": "2022-05-21T18:07:54.278Z",
-      "id": 43
+      "dateAdd": "2022-05-22T16:51:12.655Z",
+      "id": 9
     },
     {
       "coctailId": 1,
-      "dateAdd": "2022-05-21T18:08:33.206Z",
-      "id": 44
-    },
-    {
-      "coctailId": 0,
-      "dateAdd": "2022-05-21T18:08:33.955Z",
-      "id": 45
-    },
-    {
-      "coctailId": 1,
-      "dateAdd": "2022-05-21T18:08:34.596Z",
-      "id": 46
+      "dateAdd": "2022-05-22T16:52:46.819Z",
+      "id": 10
     },
     {
       "coctailId": 2,
-      "dateAdd": "2022-05-21T18:08:35.155Z",
-      "id": 47
-    },
-    {
-      "coctailId": 1,
-      "dateAdd": "2022-05-21T18:08:35.891Z",
-      "id": 48
+      "dateAdd": "2022-05-22T16:52:47.971Z",
+      "id": 11
     },
     {
       "coctailId": 0,
-      "dateAdd": "2022-05-21T18:08:36.731Z",
-      "id": 49
+      "dateAdd": "2022-05-22T16:52:49.704Z",
+      "id": 12
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-22T16:53:54.407Z",
+      "id": 13
+    },
+    {
+      "coctailId": 2,
+      "dateAdd": "2022-05-22T16:54:04.277Z",
+      "id": 14
+    }
+  ],
+  "typecoctails": [
+    {
+      "id": 0,
+      "name": "low-alcohol",
+      "coctailsIds": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "name": "bitter",
+      "coctailsIds": [
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "name": "gin based",
+      "coctailsIds": [
+        0
+      ]
+    },
+    {
+      "id": 3,
+      "name": "mixes",
+      "coctailsIds": [
+        0
+      ]
+    },
+    {
+      "id": 4,
+      "name": "long drinks",
+      "coctailsIds": [
+        0
+      ]
+    },
+    {
+      "id": 5,
+      "name": "citrus",
+      "coctailsIds": [
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "name": "tropical",
+      "coctailsIds": [
+        1
+      ]
+    },
+    {
+      "id": 7,
+      "name": "vodka based",
+      "coctailsIds": [
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "name": "sweet",
+      "coctailsIds": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 9,
+      "name": "sparkling",
+      "coctailsIds": [
+        2
+      ]
+    },
+    {
+      "id": 10,
+      "name": "simple",
+      "coctailsIds": [
+        2
+      ]
+    },
+    {
+      "id": 11,
+      "name": "fizz",
+      "coctailsIds": [
+        2
+      ]
     }
   ]
 }

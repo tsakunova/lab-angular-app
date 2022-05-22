@@ -1,7 +1,8 @@
 <div class="coctails__list">
   <app-coctails-card
-    *ngFor="let coctail of coctails"
+    *ngFor="let coctail of coctails| filter: search;"
     [item]="coctail"
+    [types]="coctailTypesArr"
     (addToFavorite)="addFavoriteHandler($event)"
     (addToHistory)="addHistoryHandler($event)"
   >

@@ -12,6 +12,8 @@ export class HistoryPageComponent implements OnInit {
 
   historyList: IHistoryItem[];
 
+  searchValue: string;
+
   constructor(private historyService: HistoryService) { }
 
   ngOnInit(): void {
@@ -32,5 +34,10 @@ export class HistoryPageComponent implements OnInit {
       .subscribe(() => {
         this.fetchHistoryItems();
       });
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.searchValue = filterValue.toLowerCase();
   }
 }

@@ -1,3 +1,56 @@
+import { CoctailTypeModel } from './coctail-item.model';
+
+export const COCTAILS_TYPES = [
+  {
+    id: 0,
+    name: CoctailTypeModel.ginBased
+  },
+  {
+    id: 1,
+    name: CoctailTypeModel.citrus
+  },
+  {
+    id: 2,
+    name: CoctailTypeModel.bitter
+  },
+  {
+    id: 3,
+    name: CoctailTypeModel.fizz
+  },
+  {
+    id: 4,
+    name: CoctailTypeModel.long
+  },
+  {
+    id: 5,
+    name: CoctailTypeModel.lowAlcohol
+  },
+  {
+    id: 6,
+    name: CoctailTypeModel.mixes
+  },
+  {
+    id: 7,
+    name: CoctailTypeModel.simple
+  },
+  {
+    id: 8,
+    name: CoctailTypeModel.sparkling
+  },
+  {
+    id: 9,
+    name: CoctailTypeModel.tropical
+  },
+  {
+    id: 10,
+    name: CoctailTypeModel.vodka
+  },
+  {
+    id: 11,
+    name: CoctailTypeModel.sweet
+  }
+];
+
 export const COCTAILS = [
   {
     id: 0,

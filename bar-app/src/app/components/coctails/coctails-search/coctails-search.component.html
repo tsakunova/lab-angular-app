@@ -1,1 +1,7 @@
-<p>coctails-search works!</p>
+<mat-form-field class="search-field" appearance="fill" color="accent">
+  <mat-label>Search coctail</mat-label>
+  <input matInput type="text" [(ngModel)]="search">
+  <button *ngIf="search" matSuffix mat-icon-button aria-label="Clear" (click)="search=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>

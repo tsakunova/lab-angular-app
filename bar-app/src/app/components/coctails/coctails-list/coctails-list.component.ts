@@ -1,7 +1,7 @@
 import {
   Component, EventEmitter, Input, Output
 } from '@angular/core';
-import { ICoctailItem } from '../../shared/coctails/coctail-item.model';
+import {ICoctailItem, ICoctailTypes} from '../../shared/coctails/coctail-item.model';
 
 @Component({
   selector: 'app-coctails-list',
@@ -11,13 +11,18 @@ import { ICoctailItem } from '../../shared/coctails/coctail-item.model';
 export class CoctailsListComponent {
   @Input() coctails: ICoctailItem[];
 
+  @Input() coctailTypesArr: ICoctailTypes[];
+
+  @Input() search: string;
+
   @Output()
     addToHistory: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
     addToFavorite: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() { }
+  constructor() {
+  }
 
   addHistoryHandler(id: number) {
     this.addToHistory.emit(id);

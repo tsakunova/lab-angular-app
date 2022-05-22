@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { delay, Observable } from 'rxjs';
-import { ICoctailItem } from './coctail-item.model';
+import { ICoctailItem, ICoctailTypes } from './coctail-item.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,14 @@ export class CoctailsService {
   constructor(private http: HttpClient) {
   }
 
-  getCoctails(): Observable<ICoctailItem[]> {
-    return this.http.get<ICoctailItem[]>('http://localhost:3000/coctails')
+  getCoctailsTypes(): Observable<ICoctailTypes[]> {
+    return this.http.get<ICoctailTypes[]>('http://localhost:3000/typecoctails');
+  }
+
+  getCoctails(types: any): Observable<ICoctailItem[]> {
+    let params = new HttpParams();
+    types.forEach((item:any) => params = params.append('id', item));
+    return this.http.get<ICoctailItem[]>('http://localhost:3000/coctails', { params })
       .pipe(delay(500));
   }
 

@@ -10,7 +10,7 @@
   <div class="coctail-card__text-container">
     <h4 class="coctail-card__title">{{item.name}}</h4>
     <p class="coctail-card__type">
-      <span *ngFor="let type of item.type">{{type}} / </span>
+      <span *ngFor="let type of item.typeId">{{getName(type)}} / </span>
     </p>
     <div class="coctail-card__description">
       <div class="coctail-card__image">
@@ -24,6 +24,8 @@
       </ul>
     </div>
   </div>
-  <button class="coctail-card__btn" [routerLink]="['item', item.id]">recipe</button>
+  <button class="coctail-card__btn"
+          [routerLink]="['item', item.id]"
+  >recipe</button>
 </div>
 

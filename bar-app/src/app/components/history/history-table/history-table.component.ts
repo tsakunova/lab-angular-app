@@ -25,7 +25,6 @@ import { IHistoryItem } from '../../shared/history/history-item.model';
 })
 
 export class HistoryTableComponent implements AfterViewInit, OnChanges, AfterContentInit {
-  searchValue: string;
 
   dataSource: MatTableDataSource<IHistoryItem>;
 
@@ -34,6 +33,7 @@ export class HistoryTableComponent implements AfterViewInit, OnChanges, AfterCon
   expandedElement: IHistoryItem | null;
 
   @Input() historyItems: IHistoryItem[];
+  @Input() search: string;
 
   @Output() deleteItem: EventEmitter<number> = new EventEmitter<number>();
 
@@ -50,7 +50,7 @@ export class HistoryTableComponent implements AfterViewInit, OnChanges, AfterCon
   }
 
   ngAfterContentInit() {
-    this.dataSource = new MatTableDataSource<IHistoryItem>(this.historyItems);
+    this.connectMatTable();
   }
 
   ngAfterViewInit() {
@@ -61,13 +61,6 @@ export class HistoryTableComponent implements AfterViewInit, OnChanges, AfterCon
     event.stopPropagation();
     this.deleteItem.emit(id);
     this.dataSource.disconnect();
-  }
-
-  applyFilter(event: Event) {
-    this.dataSource.disconnect();
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.searchValue = filterValue.toLowerCase();
-    this.connectMatTable();
   }
 
   private connectMatTable() {
@@ -83,6 +76,6 @@ export class HistoryTableComponent implements AfterViewInit, OnChanges, AfterCon
     };
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    this.dataSource.filter = this.searchValue;
+    this.dataSource.filter = this.search;
   }
 }

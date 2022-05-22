@@ -3,7 +3,7 @@
     <h4 class="coctail-item__title">{{currentItem.name}}</h4>
     <p class="coctail-item__story">{{currentItem.description}}</p>
     <p class="coctail-item__type">
-      <span *ngFor="let type of currentItem.type">{{type}} / </span>
+      <span *ngFor="let typeN of currentItem.typeId">{{types[typeN].name}} / </span>
     </p>
     <h5 class="coctail-item__subtitle">Cocktail ingredients {{currentItem.name}}</h5>
     <ul class="coctail-item__composition">

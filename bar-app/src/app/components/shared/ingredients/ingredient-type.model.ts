@@ -5,9 +5,7 @@ export interface IIngredientItem {
   unit: string;
 }
 
-export type IngredientForSave = Omit<IIngredientItem, 'id'>;
-
-export enum IngredientType {
+export enum IngredientTypeModel {
   alco = 'Strong spirits',
   vermut = 'Vermouth',
   bitter = 'Liqueurs and Bitters',
@@ -19,7 +17,7 @@ export enum IngredientType {
   ice = 'Ice'
 }
 
-export enum IngredientUnit {
+export enum IngredientUnitModel {
   ml = 'ml',
   g = 'g',
   piece = 'piece'

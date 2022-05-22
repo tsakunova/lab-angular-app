@@ -1,56 +1,56 @@
-import { IngredientType, IngredientUnit } from './ingredient.type';
+import { IngredientTypeModel, IngredientUnitModel } from './ingredient-type.model';
 
 export const INGREDIENTS_TYPES = [
   {
     id: 0,
-    name: IngredientType.alco
+    name: IngredientTypeModel.alco
   },
   {
     id: 1,
-    name: IngredientType.vermut
+    name: IngredientTypeModel.vermut
   },
   {
     id: 2,
-    name: IngredientType.bitter
+    name: IngredientTypeModel.bitter
   },
   {
     id: 3,
-    name: IngredientType.vine
+    name: IngredientTypeModel.vine
   },
   {
     id: 4,
-    name: IngredientType.beer
+    name: IngredientTypeModel.beer
   },
   {
     id: 5,
-    name: IngredientType.syrop
+    name: IngredientTypeModel.syrop
   },
   {
     id: 6,
-    name: IngredientType.water
+    name: IngredientTypeModel.water
   },
   {
     id: 7,
-    name: IngredientType.fruits
+    name: IngredientTypeModel.fruits
   },
   {
     id: 8,
-    name: IngredientType.ice
+    name: IngredientTypeModel.ice
   }
 ];
 
 export const INGREDIENTS_UNIT = [
   {
     id: 0,
-    name: IngredientUnit.ml
+    name: IngredientUnitModel.ml
   },
   {
     id: 1,
-    name: IngredientUnit.g
+    name: IngredientUnitModel.g
   },
   {
     id: 2,
-    name: IngredientUnit.piece
+    name: IngredientUnitModel.piece
   },
 ];
 export const INGREDIENTS = [

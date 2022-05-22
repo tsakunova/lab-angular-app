@@ -1,7 +1,7 @@
 import {
   Component, EventEmitter, Input, Output
 } from '@angular/core';
-import { ICoctailItem } from '../../shared/coctails/coctail-item.model';
+import { ICoctailItem, ICoctailTypes } from '../../shared/coctails/coctail-item.model';
 
 @Component({
   selector: 'app-coctails-card',
@@ -17,7 +17,13 @@ export class CoctailsCardComponent {
 
   @Input() item: ICoctailItem;
 
+  @Input() types: ICoctailTypes[];
+
   constructor() { }
+
+  getName(typeId: number) {
+    return this.types.find(item => item.id === typeId)?.name;
+  }
 
   historyAddHandler() {
     this.addToHistory.emit(this.item.id);

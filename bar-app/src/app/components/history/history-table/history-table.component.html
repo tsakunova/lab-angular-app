@@ -1,8 +1,4 @@
 <div class="mat-elevation-z8" >
-  <mat-form-field appearance="standard">
-    <mat-label>Filter by name</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Search by name" #input>
-  </mat-form-field>
 
 <table mat-table
        matSort
@@ -51,7 +47,7 @@
   </tr>
   <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
   <tr class="mat-row" *matNoDataRow>
-    <td class="mat-cell" colspan="3">No data matching the filter "{{input.value}}"</td>
+    <td class="mat-cell" colspan="3">No data matching the filter "{{search}}"</td>
   </tr>
 </table>
 <mat-paginator [pageSizeOptions]="[5, 10, 20]"

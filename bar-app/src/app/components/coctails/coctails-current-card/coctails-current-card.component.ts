@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ICoctailItem } from '../../shared/coctails/coctail-item.model';
+import { ICoctailItem, ICoctailTypes } from '../../shared/coctails/coctail-item.model';
 import { CoctailsService } from '../../shared/coctails/coctails.service';
 
 @Component({
@@ -13,10 +13,16 @@ export class CoctailsCurrentCardComponent implements OnInit {
 
   currentItem: ICoctailItem;
 
+  types: ICoctailTypes[];
+
   constructor(private route: ActivatedRoute, private coctailsService: CoctailsService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
+    this.coctailsService.getCoctailsTypes()
+      .subscribe(types => {
+        this.types = types;
+      });
     this.coctailsService.getCoctail(this.route.snapshot.paramMap.get('id'))
       .subscribe(coctail => {
         this.currentItem = coctail;
