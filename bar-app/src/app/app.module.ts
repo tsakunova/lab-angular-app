@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { MatInputModule } from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -22,8 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

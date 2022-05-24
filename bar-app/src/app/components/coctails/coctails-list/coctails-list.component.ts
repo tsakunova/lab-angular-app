@@ -1,7 +1,8 @@
 import {
   Component, EventEmitter, Input, Output
 } from '@angular/core';
-import {ICoctailItem, ICoctailTypes} from '../../shared/coctails/coctail-item.model';
+import { ICoctailItem, ICoctailTypes } from '../../shared/coctails/coctail-item.model';
+import { IIngredientItem } from '../../shared/ingredients/ingredient-type.model';
 
 @Component({
   selector: 'app-coctails-list',
@@ -12,6 +13,8 @@ export class CoctailsListComponent {
   @Input() coctails: ICoctailItem[];
 
   @Input() coctailTypesArr: ICoctailTypes[];
+
+  @Input() ingredients: IIngredientItem[] = [];
 
   @Input() search: string;
 

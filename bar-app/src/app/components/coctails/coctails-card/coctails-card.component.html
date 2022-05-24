@@ -10,16 +10,16 @@
   <div class="coctail-card__text-container">
     <h4 class="coctail-card__title">{{item.name}}</h4>
     <p class="coctail-card__type">
-      <span *ngFor="let type of item.typeId">{{getName(type)}} / </span>
+      <span *ngFor="let type of item.typeId">{{getNameType(type)}} / </span>
     </p>
     <div class="coctail-card__description">
       <div class="coctail-card__image">
-        <img src="{{item.imageSrc}}">
+        <img src="{{item.imageSrc}}" alt="{{item.name}}">
       </div>
       <ul class="coctail-card__composition">
         <li *ngFor="let composition of item.composition">
-          <span>{{composition.name}} </span>
-          <span>{{composition.amount}} {{composition.unit}}</span>
+          <span>{{getNameIngredient(composition.id)}} </span>
+          <span>{{composition.amount}} {{getNameUnit(composition.id)}}</span>
         </li>
       </ul>
     </div>

@@ -2,6 +2,7 @@ import {
   Component, EventEmitter, Input, Output
 } from '@angular/core';
 import { ICoctailItem, ICoctailTypes } from '../../shared/coctails/coctail-item.model';
+import { IIngredientItem } from '../../shared/ingredients/ingredient-type.model';
 
 @Component({
   selector: 'app-coctails-card',
@@ -17,11 +18,21 @@ export class CoctailsCardComponent {
 
   @Input() item: ICoctailItem;
 
+  @Input() ingredients: IIngredientItem[];
+
   @Input() types: ICoctailTypes[];
 
   constructor() { }
 
-  getName(typeId: number) {
+  getNameIngredient(ingredId: number) {
+    return this.ingredients.find(item => item.id === ingredId)?.name;
+  }
+
+  getNameUnit(ingredId: number) {
+    return this.ingredients.find(item => item.id === ingredId)?.unit;
+  }
+
+  getNameType(typeId: number) {
     return this.types.find(item => item.id === typeId)?.name;
   }
 

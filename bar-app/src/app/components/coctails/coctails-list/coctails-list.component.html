@@ -3,6 +3,7 @@
     *ngFor="let coctail of coctails| filter: search;"
     [item]="coctail"
     [types]="coctailTypesArr"
+    [ingredients]="ingredients"
     (addToFavorite)="addFavoriteHandler($event)"
     (addToHistory)="addHistoryHandler($event)"
   >

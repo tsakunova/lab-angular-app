@@ -8,8 +8,8 @@
     <h5 class="coctail-item__subtitle">Cocktail ingredients {{currentItem.name}}</h5>
     <ul class="coctail-item__composition">
       <li *ngFor="let composition of currentItem.composition">
-        <span>{{composition.name}} </span>
-        <span>{{composition.amount}} {{composition.unit}}</span>
+        <span>{{getNameIngredient(composition.id)}} </span>
+        <span>{{composition.amount}} {{getNameUnit(composition.id)}}</span>
       </li>
     </ul>
     <h5 class="coctail-item__subtitle">Cocktail recipe {{currentItem.name}}</h5>

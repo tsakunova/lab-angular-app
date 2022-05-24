@@ -4,12 +4,12 @@
     <nav>
       <app-coctails-search (searchValue)="searchHeandler($event)"></app-coctails-search>
 
-      <button mat-fab aria-label="Add new ingredient" (click)="openDialog()">
+      <button mat-fab aria-label="Add new coctail" (click)="openDialog()">
         <mat-icon>add</mat-icon>
       </button>
     </nav>
 
-    <mat-chip-list selectable multiple>
+    <mat-chip-list selectable multiple class="chips">
       <mat-chip
         *ngFor="let item of coctailTypes"
         #c="matChip"
@@ -26,6 +26,7 @@
     <app-coctails-list
       [coctails]="coctailsList"
       [coctailTypesArr] = "coctailTypes"
+      [ingredients]="ingredientList"
       [search]="search"
       (addToFavorite)="addFavorite($event)"
       (addToHistory)="addHistory($event)"

@@ -21,13 +21,19 @@ html, body { height: 100%; }
 mat-spinner{
   margin: 100px auto;
 }
+.mat-chip-list-wrapper{
+  justify-content: center !important;
+}
 mat-chip-list{
   margin: 20px auto;
   display: flex;
   justify-content: center;
+  .material-icons{
+    font-size: 15px !important;
+  }
   mat-icon {
-    height: 15px;
-    width: 15px;
+    height: 15px !important;
+    width: 15px !important;
     font-size: 15px;
     margin-right: 5px;
   }

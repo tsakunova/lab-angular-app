@@ -1,0 +1,19 @@
+<div class="last-coctail-card">
+  <h3>The last cocktail added to history</h3>
+  <div>
+    <button aria-label="Coctail in favorite list" mat-mini-fab [color]="coctail.favorite && 'accent'">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
+  <div class="last-coctail-card__text-container">
+    <h4 class="last-coctail-card__title">{{coctail.name}}</h4>
+    <div class="last-coctail-card__description">
+      <div class="last-coctail-card__image">
+        <img src="{{coctail.imageSrc}}" alt="{{coctail.name}}">
+      </div>
+      <div>
+        {{coctail.description}}
+      </div>
+    </div>
+  </div>
+</div>

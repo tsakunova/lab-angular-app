@@ -1,7 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ICoctailItem, ICoctailTypes } from '../../shared/coctails/coctail-item.model';
 import { CoctailsService } from '../../shared/coctails/coctails.service';
+import { IIngredientItem, IngredientTypeModel } from '../../shared/ingredients/ingredient-type.model';
+import { IngredientsService } from '../../shared/ingredients/ingredients.service';
 
 @Component({
   selector: 'app-coctails-current-card',
@@ -11,11 +13,17 @@ import { CoctailsService } from '../../shared/coctails/coctails.service';
 export class CoctailsCurrentCardComponent implements OnInit {
   isLoading = false;
 
+  ingredients: IIngredientItem[];
+
   currentItem: ICoctailItem;
+
+  ingredientTypes: IngredientTypeModel[];
 
   types: ICoctailTypes[];
 
-  constructor(private route: ActivatedRoute, private coctailsService: CoctailsService) { }
+  constructor(private route: ActivatedRoute,
+              private coctailsService: CoctailsService,
+              private ingredientService: IngredientsService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -23,10 +31,24 @@ export class CoctailsCurrentCardComponent implements OnInit {
       .subscribe(types => {
         this.types = types;
       });
+    this.ingredientTypes = this.ingredientService.getIngredientsTypes().map(item => item.name);
+    this.ingredientService.getIngredients(this.ingredientTypes).subscribe(list => this.ingredients = list);
     this.coctailsService.getCoctail(this.route.snapshot.paramMap.get('id'))
       .subscribe(coctail => {
         this.currentItem = coctail;
         this.isLoading = false;
       });
+  }
+
+  getNameIngredient(ingredId: number) {
+    return this.ingredients.find(item => item.id === ingredId)?.name;
+  }
+
+  getNameUnit(ingredId: number) {
+    return this.ingredients.find(item => item.id === ingredId)?.unit;
+  }
+
+  getNameType(typeId: number) {
+    return this.types.find(item => item.id === typeId)?.name;
   }
 }

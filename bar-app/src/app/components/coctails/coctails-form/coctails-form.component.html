@@ -1,1 +1,81 @@
-<p>coctails-form works!</p>
+<mat-dialog-content>
+  <h2 mat-dialog-title>{{config.typeForm}} coctail</h2>
+  <form [formGroup]="formGroup">
+    <mat-stepper #stepper formArrayName="formArray" linear>
+      <mat-step [stepControl]="formArray.get([0])" formGroupName="0">
+        <ng-template matStepLabel>Add name, type and image</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Coctail name:</mat-label>
+          <input formControlName="name" matInput maxlength="50" name="coctailName"
+                 placeholder="Enter the name of the coctail" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Type:</mat-label>
+          <mat-select formControlName="type" multiple>
+            <mat-option *ngFor="let i of config.types" [value]="i.id">{{i.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Coctail image:</mat-label>
+          <input formControlName="imageSrc" matInput name="imageSrc"
+                 placeholder="Add image adress...">
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext type="button">Next</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="formArray.get([1])" formGroupName="1" label="Add composition">
+          <mat-label>Composition</mat-label>
+         <ng-container formArrayName="composition"  *ngFor="let compos of composition?.controls; index as i">
+
+            <div>
+              <ng-container [formGroupName]="i">
+                <mat-form-field appearance="fill">
+                    <mat-label>Ingredient name</mat-label>
+                    <mat-select formControlName="id"
+                    >
+                      <mat-option *ngFor="let i of config.ingredients" [value]="i.id">{{i.name}} ({{i.unit}})</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Amount:</mat-label>
+                  <input type="number" formControlName="amount" matInput min="1" maxlength="6" name="amount"
+                         placeholder="Amount" required>
+                </mat-form-field>
+              </ng-container>
+            </div>
+          </ng-container>
+            <button class="btn-add" type="button" (click)="addIngredientField()">+</button>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="formArray.get([2])" formGroupName="2" label="Add favorite">
+        <ng-template matStepLabel>Last step</ng-template>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Recipe</mat-label>
+          <textarea matInput formControlName="recipe"></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+        <mat-slide-toggle formControlName="favorite">Add to favorite coctails</mat-slide-toggle>
+        <div>
+          <div class="btn-container">
+            <mat-dialog-actions align="center">
+              <button mat-button mat-dialog-close>Cancel</button>
+              <button (click)="stepper.reset()" mat-button> Reset</button>
+              <button [disabled]="formGroup.invalid" [mat-dialog-close]="formGroup.value" cdkFocusInitial mat-button
+                      type="submit">{{config.typeForm | titlecase}} coctail
+              </button>
+            </mat-dialog-actions>
+          </div>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </form>
+</mat-dialog-content>
+

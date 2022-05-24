@@ -9,6 +9,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { CoctailsPageComponent } from './coctails-page/coctails-page.component';
 import { CoctailsSearchComponent } from './coctails-search/coctails-search.component';
 import { CoctailsListComponent } from './coctails-list/coctails-list.component';
@@ -41,7 +46,12 @@ import { CoctailsFormComponent } from './coctails-form/coctails-form.component';
     ReactiveFormsModule,
     MatSelectModule,
     MatInputModule,
-    SharedModule
+    SharedModule,
+    MatDialogModule,
+    NgxMatSelectSearchModule,
+    MatSlideToggleModule,
+    MatStepperModule,
+    MatAutocompleteModule
 
   ]
 

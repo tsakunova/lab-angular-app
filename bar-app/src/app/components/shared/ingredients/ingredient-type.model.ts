@@ -14,7 +14,9 @@ export enum IngredientTypeModel {
   syrop = 'Syrups',
   water = 'Water and drinks',
   fruits = 'Fruits',
-  ice = 'Ice'
+  ice = 'Ice',
+  sweets = 'Sweet treats',
+  plants = 'Plants'
 }
 
 export enum IngredientUnitModel {

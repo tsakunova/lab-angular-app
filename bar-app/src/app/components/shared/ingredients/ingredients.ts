@@ -36,6 +36,14 @@ export const INGREDIENTS_TYPES = [
   {
     id: 8,
     name: IngredientTypeModel.ice
+  },
+  {
+    id: 9,
+    name: IngredientTypeModel.sweets
+  },
+  {
+    id: 10,
+    name: IngredientTypeModel.plants
   }
 ];
 

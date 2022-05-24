@@ -1,10 +1,9 @@
-import { IIngredientItem } from '../ingredients/ingredient-type.model';
-
-export interface ICoctailComposition extends IIngredientItem {
+export interface ICoctailComposition {
+  id: number;
   amount: number;
 }
 export interface ICoctailItem {
-  id: number;
+  id?: number;
   favorite: boolean;
   imageSrc?: string;
   name: string;

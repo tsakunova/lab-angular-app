@@ -1,6 +1,12 @@
 {
   "ingredients": [
     {
+      "name": "London dry gin",
+      "type": "Strong spirits",
+      "unit": "ml",
+      "id": 0
+    },
+    {
       "id": 3,
       "name": "Silver tequila",
       "type": "Strong spirits",
@@ -341,6 +347,60 @@
       "type": "Ice",
       "unit": "g",
       "id": 59
+    },
+    {
+      "name": "Aged rum",
+      "type": "Strong spirits",
+      "unit": "ml",
+      "id": 60
+    },
+    {
+      "name": "Amaro",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml",
+      "id": 61
+    },
+    {
+      "name": "Lavender bitters",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml",
+      "id": 62
+    },
+    {
+      "name": "Fig syrup",
+      "type": "Syrups",
+      "unit": "ml",
+      "id": 63
+    },
+    {
+      "name": "Fig",
+      "type": "Fruits",
+      "unit": "g",
+      "id": 64
+    },
+    {
+      "name": "Ice ball",
+      "type": "Ice",
+      "unit": "piece",
+      "id": 65
+    },
+    {
+      "name": "Chocolate scented wood chips",
+      "type": "Sweet treats",
+      "unit": "g",
+      "id": 66
+    },
+    {
+      "name": "Lavender",
+      "type": "Plants",
+      "unit": "g",
+      "id": 67
+    },
+    {
+      "name": "Mint",
+      "type": "Plants",
+      "unit": "g",
+      "id": 68
     }
   ],
   "coctails": [
@@ -358,31 +418,19 @@
       ],
       "composition": [
         {
-          "id": 1,
-          "name": "Gin",
-          "type": "Spirits",
-          "unit": "ml",
+          "id": 0,
           "amount": 50
         },
         {
           "id": 51,
-          "name": "Tonic",
-          "type": "Water and drinks",
-          "unit": "ml",
           "amount": 150
         },
         {
           "id": 52,
-          "name": "Lime",
-          "type": "Fruits",
-          "unit": "g",
           "amount": 20
         },
         {
           "id": 53,
-          "name": "Ice cubes",
-          "type": "Ice",
-          "unit": "g",
           "amount": 180
         }
       ],
@@ -409,37 +457,22 @@
       "composition": [
         {
           "id": 0,
-          "name": "Vodka",
-          "type": "Strong spirits",
-          "unit": "ml",
           "amount": 50
         },
         {
           "id": 28,
-          "name": "Blue curacao liqueur",
-          "type": "Liqueurs and Bitters",
-          "unit": "ml",
           "amount": 20
         },
         {
           "id": 54,
-          "name": "Sprite",
-          "type": "Water and drinks",
-          "unit": "ml",
           "amount": 150
         },
         {
           "id": 55,
-          "name": "Pineapple",
-          "type": "Fruits",
-          "unit": "g",
           "amount": 30
         },
         {
           "id": 53,
-          "name": "Ice cubes",
-          "type": "Ice",
-          "unit": "g",
           "amount": 200
         }
       ],
@@ -466,37 +499,22 @@
       "composition": [
         {
           "id": 34,
-          "name": "Aperol",
-          "type": "Liqueurs and Bitters",
-          "unit": "ml",
           "amount": 100
         },
         {
           "id": 38,
-          "name": "Prosecco",
-          "type": "Wines",
-          "unit": "ml",
           "amount": 100
         },
         {
           "id": 56,
-          "name": "Club soda",
-          "type": "Water and drinks",
-          "unit": "ml",
           "amount": 20
         },
         {
           "id": 57,
-          "name": "Orange",
-          "type": "Fruits",
-          "unit": "g",
           "amount": 40
         },
         {
           "id": 53,
-          "name": "Ice cubes",
-          "type": "Ice",
-          "unit": "g",
           "amount": 60
         }
       ],
@@ -507,14 +525,72 @@
         "Garnish with an orange wedge"
       ],
       "description": "Aperol Spritz is a favorite among summer season cocktails. In European resorts, it is difficult to find an institution where it is not served. The Italian (classic) version of Aperol contains 11% alcohol. The drink, made for shipments to Germany, is 4% stronger due to local legislation that requires drinks with an alcohol content of less than 15% to be bottled in refillable bottles."
+    },
+    {
+      "favorite": false,
+      "imageSrc": "https://uk.inshaker.com/uploads/cocktail/hires/12/1556296325-Above-the-clouds-w800px.jpg",
+      "name": "Above the clouds",
+      "typeId": [
+        8,
+        12,
+        13,
+        14,
+        15
+      ],
+      "composition": [
+        {
+          "id": 60,
+          "amount": 50
+        },
+        {
+          "id": 61,
+          "amount": 10
+        },
+        {
+          "id": 62,
+          "amount": 3
+        },
+        {
+          "id": 63,
+          "amount": 10
+        },
+        {
+          "id": 64,
+          "amount": 10
+        },
+        {
+          "id": 67,
+          "amount": 5
+        },
+        {
+          "id": 66,
+          "amount": 5
+        },
+        {
+          "id": 65,
+          "amount": 1
+        },
+        {
+          "id": 53,
+          "amount": 300
+        }
+      ],
+      "recipe": [
+        "Place an ice sphere into a rocks glass",
+        "\nPour 10 ml of fig syrup, 10 ml of amaro and 50 ml of aged rum into a mixing glass",
+        "\nAdd 3 dashes of lavender bitters",
+        "\nFill the glass with ice cubes and stir gently",
+        "\nStrain into the rocks glass",
+        "\nPlace wood chips with chocolate into a smoking gun",
+        "\nPlace the rocks glass under a bell jar and fill it with smoke",
+        "\nGarnish with fig wedges on a cocktail skewer and a lavender sprig",
+        ""
+      ],
+      "description": "Do you like cocktails with a non-standard serving? Then try this herbal, chocolate and sweet rum-based cocktail, alcoholic and strong.",
+      "id": 3
     }
   ],
   "history": [
-    {
-      "coctailId": 0,
-      "dateAdd": "2022-05-22T16:51:04.832Z",
-      "id": 3
-    },
     {
       "coctailId": 2,
       "dateAdd": "2022-05-22T16:51:06.129Z",
@@ -522,53 +598,58 @@
     },
     {
       "coctailId": 1,
-      "dateAdd": "2022-05-22T16:51:07.218Z",
-      "id": 5
-    },
-    {
-      "coctailId": 0,
-      "dateAdd": "2022-05-22T16:51:07.756Z",
-      "id": 6
-    },
-    {
-      "coctailId": 2,
-      "dateAdd": "2022-05-22T16:51:08.311Z",
-      "id": 7
-    },
-    {
-      "coctailId": 1,
-      "dateAdd": "2022-05-22T16:51:08.882Z",
-      "id": 8
-    },
-    {
-      "coctailId": 0,
-      "dateAdd": "2022-05-22T16:51:12.655Z",
-      "id": 9
-    },
-    {
-      "coctailId": 1,
       "dateAdd": "2022-05-22T16:52:46.819Z",
       "id": 10
     },
     {
-      "coctailId": 2,
-      "dateAdd": "2022-05-22T16:52:47.971Z",
-      "id": 11
+      "coctailId": 0,
+      "dateAdd": "2022-05-23T20:14:11.373Z",
+      "id": 16
     },
     {
-      "coctailId": 0,
-      "dateAdd": "2022-05-22T16:52:49.704Z",
-      "id": 12
-    },
-    {
-      "coctailId": 0,
-      "dateAdd": "2022-05-22T16:53:54.407Z",
-      "id": 13
+      "coctailId": 1,
+      "dateAdd": "2022-05-23T20:14:12.222Z",
+      "id": 17
     },
     {
       "coctailId": 2,
-      "dateAdd": "2022-05-22T16:54:04.277Z",
-      "id": 14
+      "dateAdd": "2022-05-23T20:14:13.172Z",
+      "id": 18
+    },
+    {
+      "coctailId": 2,
+      "dateAdd": "2022-05-23T20:15:44.852Z",
+      "id": 20
+    },
+    {
+      "coctailId": 1,
+      "dateAdd": "2022-05-23T22:53:27.418Z",
+      "id": 21
+    },
+    {
+      "coctailId": 1,
+      "dateAdd": "2022-05-23T22:53:28.243Z",
+      "id": 22
+    },
+    {
+      "coctailId": 1,
+      "dateAdd": "2022-05-23T22:53:28.408Z",
+      "id": 23
+    },
+    {
+      "coctailId": 1,
+      "dateAdd": "2022-05-23T22:53:28.566Z",
+      "id": 24
+    },
+    {
+      "coctailId": 1,
+      "dateAdd": "2022-05-23T22:53:28.911Z",
+      "id": 26
+    },
+    {
+      "coctailId": 3,
+      "dateAdd": "2022-05-24T00:26:07.774Z",
+      "id": 27
     }
   ],
   "typecoctails": [
@@ -658,6 +739,50 @@
       "coctailsIds": [
         2
       ]
+    },
+    {
+      "id": 12,
+      "name": "rum based",
+      "coctailsIds": []
+    },
+    {
+      "id": 13,
+      "name": "herbal",
+      "coctailsIds": []
+    },
+    {
+      "id": 14,
+      "name": "chocolately",
+      "coctailsIds": [
+        2
+      ]
+    },
+    {
+      "id": 15,
+      "name": "strong",
+      "coctailsIds": []
+    },
+    {
+      "id": 16,
+      "name": "dry",
+      "coctailsIds": []
+    },
+    {
+      "id": 17,
+      "name": "vermouth based",
+      "coctailsIds": [
+        2
+      ]
+    },
+    {
+      "id": 18,
+      "name": "twists",
+      "coctailsIds": []
+    },
+    {
+      "id": 19,
+      "name": "whiskey based",
+      "coctailsIds": []
     }
   ]
 }

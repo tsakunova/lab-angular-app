@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MatChip } from '@angular/material/chips';
+import { MatDialog } from '@angular/material/dialog';
 import { ICoctailItem, ICoctailTypes } from '../../shared/coctails/coctail-item.model';
 import { CoctailsService } from '../../shared/coctails/coctails.service';
 import { HistoryService } from '../../shared/history/history.service';
 import { IHistoryItem } from '../../shared/history/history-item.model';
+import { CoctailsFormComponent } from '../coctails-form/coctails-form.component';
+import { IngredientsService } from '../../shared/ingredients/ingredients.service';
+import { IIngredientItem } from '../../shared/ingredients/ingredient-type.model';
 
 @Component({
   selector: 'app-coctails-page',
@@ -19,20 +23,45 @@ export class CoctailsPageComponent implements OnInit {
 
   coctailsList: ICoctailItem[];
 
+  ingredientTypeList: string[];
+
+  ingredientList: IIngredientItem[] = [];
+
   coctailTypes: ICoctailTypes[] = [];
 
-  constructor(private coctailServise: CoctailsService, private historyService: HistoryService) { }
+  config: any = {
+    ingredients: [],
+    types: [],
+    typeForm: '',
+  };
+
+  constructor(private coctailServise: CoctailsService,
+              private historyService: HistoryService,
+              private ingredientService: IngredientsService,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.isLoading = true;
     this.fetchTypes();
     this.fetchCoctails();
+    this.fetchIngredients();
+    this.config.typeForm = 'add';
   }
 
   fetchTypes() {
     this.coctailServise.getCoctailsTypes()
       .subscribe(types => {
         this.coctailTypes = types;
+        this.config.types = this.coctailTypes;
+      });
+  }
+
+  fetchIngredients() {
+    this.ingredientTypeList = this.ingredientService.getIngredientsTypes().map(item => item.name);
+    this.ingredientService.getIngredients(this.ingredientTypeList)
+      .subscribe(list => {
+        this.ingredientList = list;
+        this.config.ingredients = this.ingredientList;
       });
   }
 
@@ -74,8 +103,41 @@ export class CoctailsPageComponent implements OnInit {
     this.historyService.addHistoryItem(historyItem).subscribe();
   }
 
-  openDialog() {
+  addCardHandler(item: any) {
+    if (!item) {
+      return;
+    }
+    const newCoctail = {
+      favorite: item.formArray[2].favorite,
+      imageSrc: item.formArray[0].imageSrc ? item.formArray[0].imageSrc : 'assets/img/coctails/no-image.jpg',
+      name: item.formArray[0].name,
+      typeId: item.formArray[0].type,
+      composition: item.formArray[1].composition,
+      recipe: item.formArray[2].recipe.split('\n'),
+      description: item.formArray[2].description
+    };
+    this.coctailServise.addCoctail(newCoctail)
+      .subscribe(httpCoctail => {
+        this.coctailsList = [...this.coctailsList, httpCoctail];
+        const allTypesForPush = item.formArray[0].type;
+        allTypesForPush.forEach((type: number) => {
+          const data: ICoctailTypes = this.coctailTypes.find(i => type === i.id) as ICoctailTypes;
+          if (httpCoctail.id != null) {
+            data.coctailsIds.push(httpCoctail.id);
+          }
+          this.coctailServise.editCoctailsTypes(type, data);
+        });
+      });
+  }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(CoctailsFormComponent);
+    const instance = dialogRef.componentInstance;
+    this.config.typeForm = 'add';
+    instance.config = this.config;
+    dialogRef.afterClosed().subscribe(result => {
+      this.addCardHandler(result);
+    });
   }
 
   sortToType(coctailT: ICoctailTypes, chip: MatChip) {
@@ -88,7 +150,7 @@ export class CoctailsPageComponent implements OnInit {
     chip.toggleSelected();
   }
 
-  searchHeandler(value: any) {
+  searchHeandler(value: string) {
     this.search = value;
   }
 }

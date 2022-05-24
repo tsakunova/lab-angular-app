@@ -1,1 +1,12 @@
-<p>home-page works!</p>
+<div *ngIf="!isLoading;else loadingBlock" >
+<app-home-last-coctail
+  [coctail]="lastHistoryItem"
+></app-home-last-coctail>
+  </div>
+<ng-template #loadingBlock>
+  <mat-spinner color="accent"></mat-spinner>
+</ng-template>
+
+<app-home-top-five>
+
+</app-home-top-five>

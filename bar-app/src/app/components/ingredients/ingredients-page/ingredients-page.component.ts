@@ -77,7 +77,7 @@ export class IngredientsPageComponent implements OnInit {
       });
   }
 
-  searchHeandler(value: any) {
+  searchHeandler(value: string) {
     this.search = value;
   }
 
