@@ -5,7 +5,7 @@ export interface IIngredientItem {
   unit: string;
 }
 
-export enum IngredientTypeModel {
+export enum IngredientsModel {
   alco = 'Strong spirits',
   vermut = 'Vermouth',
   bitter = 'Liqueurs and Bitters',
@@ -16,7 +16,8 @@ export enum IngredientTypeModel {
   fruits = 'Fruits',
   ice = 'Ice',
   sweets = 'Sweet treats',
-  plants = 'Plants'
+  plants = 'Plants',
+  juice = 'Juice'
 }
 
 export enum IngredientUnitModel {

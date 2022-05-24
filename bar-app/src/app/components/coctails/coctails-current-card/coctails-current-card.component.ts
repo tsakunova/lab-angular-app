@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ICoctailItem, ICoctailTypes } from '../../shared/coctails/coctail-item.model';
 import { CoctailsService } from '../../shared/coctails/coctails.service';
-import { IIngredientItem, IngredientTypeModel } from '../../shared/ingredients/ingredient-type.model';
+import { IIngredientItem, IngredientsModel } from '../../shared/ingredients/ingredients.model';
 import { IngredientsService } from '../../shared/ingredients/ingredients.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class CoctailsCurrentCardComponent implements OnInit {
 
   currentItem: ICoctailItem;
 
-  ingredientTypes: IngredientTypeModel[];
+  ingredientTypes: IngredientsModel[];
 
   types: ICoctailTypes[];
 

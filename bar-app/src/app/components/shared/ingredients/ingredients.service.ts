@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { delay, Observable } from 'rxjs';
 import { INGREDIENTS_TYPES, INGREDIENTS_UNIT } from './ingredients';
-import { IIngredientItem, IngredientTypeModel, IngredientUnitModel } from './ingredient-type.model';
+import { IIngredientItem, IngredientsModel, IngredientUnitModel } from './ingredients.model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +32,7 @@ export class IngredientsService {
     return this.http.post<IIngredientItem>('http://localhost:3000/ingredients', newItem);
   }
 
-  getIngredientsTypes(): Array<{ id: number; name: IngredientTypeModel }> {
+  getIngredientsTypes(): Array<{ id: number; name: IngredientsModel }> {
     return this.ingredientTypes;
   }
 

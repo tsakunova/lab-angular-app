@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MatChip } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ICoctailItem, ICoctailTypes } from '../../shared/coctails/coctail-item.model';
 import { CoctailsService } from '../../shared/coctails/coctails.service';
 import { HistoryService } from '../../shared/history/history.service';
 import { IHistoryItem } from '../../shared/history/history-item.model';
 import { CoctailsFormComponent } from '../coctails-form/coctails-form.component';
 import { IngredientsService } from '../../shared/ingredients/ingredients.service';
-import { IIngredientItem } from '../../shared/ingredients/ingredient-type.model';
+import { IIngredientItem } from '../../shared/ingredients/ingredients.model';
 
 @Component({
   selector: 'app-coctails-page',
@@ -38,7 +39,8 @@ export class CoctailsPageComponent implements OnInit {
   constructor(private coctailServise: CoctailsService,
               private historyService: HistoryService,
               private ingredientService: IngredientsService,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -78,11 +80,16 @@ export class CoctailsPageComponent implements OnInit {
     const idsArr = this.sortToTypes.map(item => item.coctailsIds); // [[1,2],[3], [4]]
     const ids = Array.from(new Set(idsArr.flat())); // [1,2,3,4]
     const data = ids.filter(id => idsArr.every(item => item.includes(id)));
+    (data.length === 0 && ids.length !== 0) && this.openSnackBar();
     this.coctailServise.getCoctails(data)
       .subscribe(coctails => {
         this.coctailsList = coctails;
         this.isLoading = false;
       });
+  }
+
+  openSnackBar() {
+    this.snackBar.open('No matches found', 'Ok');
   }
 
   addFavorite(id: number) {
@@ -125,7 +132,7 @@ export class CoctailsPageComponent implements OnInit {
           if (httpCoctail.id != null) {
             data.coctailsIds.push(httpCoctail.id);
           }
-          this.coctailServise.editCoctailsTypes(type, data);
+          this.coctailServise.editCoctailsTypes(type, data).subscribe();
         });
       });
   }

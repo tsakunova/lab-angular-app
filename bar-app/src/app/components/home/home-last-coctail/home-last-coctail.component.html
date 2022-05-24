@@ -12,7 +12,9 @@
         <img src="{{coctail.imageSrc}}" alt="{{coctail.name}}">
       </div>
       <div>
-        {{coctail.description}}
+        <ul>
+          <li *ngFor="let recipe of coctail.recipe" >{{recipe}}</li>
+        </ul>
       </div>
     </div>
   </div>

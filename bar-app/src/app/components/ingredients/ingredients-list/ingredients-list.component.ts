@@ -1,7 +1,7 @@
 import {
   ChangeDetectionStrategy, Component, EventEmitter, Input, Output
 } from '@angular/core';
-import { IIngredientItem } from '../../shared/ingredients/ingredient-type.model';
+import { IIngredientItem } from '../../shared/ingredients/ingredients.model';
 import { sortDirectionType } from '../../shared/enums';
 
 @Component({

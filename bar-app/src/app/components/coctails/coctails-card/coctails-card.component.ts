@@ -2,7 +2,7 @@ import {
   Component, EventEmitter, Input, Output
 } from '@angular/core';
 import { ICoctailItem, ICoctailTypes } from '../../shared/coctails/coctail-item.model';
-import { IIngredientItem } from '../../shared/ingredients/ingredient-type.model';
+import { IIngredientItem } from '../../shared/ingredients/ingredients.model';
 
 @Component({
   selector: 'app-coctails-card',

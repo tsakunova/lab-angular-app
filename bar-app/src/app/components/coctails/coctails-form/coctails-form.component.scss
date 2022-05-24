@@ -14,12 +14,31 @@ mat-dialog-content {
     align-items: center;
     padding: 30px;
     background-color: white;
+    .coctail-info{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
 
     .btn-container {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 20px;
+    }
+    .composition{
+      &__title{
+        display: flex;
+        justify-content: center;
+        font-family: 'Oswald', sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      &__item-name{
+        margin-right: 20px;
+      }
     }
 
   }

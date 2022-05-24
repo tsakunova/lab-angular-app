@@ -2,7 +2,7 @@ import {
   Component, EventEmitter, OnInit, Output
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { IIngredientItem } from '../../shared/ingredients/ingredient-type.model';
+import { IIngredientItem } from '../../shared/ingredients/ingredients.model';
 
 @Component({
   selector: 'app-ingredients-form',

@@ -401,6 +401,42 @@
       "type": "Plants",
       "unit": "g",
       "id": 68
+    },
+    {
+      "name": "Maraschino liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml",
+      "id": 69
+    },
+    {
+      "name": "Orange bitters",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml",
+      "id": 70
+    },
+    {
+      "name": "Grenadine syrup",
+      "type": "Syrups",
+      "unit": "ml",
+      "id": 71
+    },
+    {
+      "name": "Orange juice",
+      "type": "Juice",
+      "unit": "ml",
+      "id": 72
+    },
+    {
+      "name": "Orange flower water",
+      "type": "Water and drinks",
+      "unit": "ml",
+      "id": 73
+    },
+    {
+      "name": "Red maraschino cherry",
+      "type": "Fruits",
+      "unit": "g",
+      "id": 74
     }
   ],
   "coctails": [
@@ -588,6 +624,70 @@
       ],
       "description": "Do you like cocktails with a non-standard serving? Then try this herbal, chocolate and sweet rum-based cocktail, alcoholic and strong.",
       "id": 3
+    },
+    {
+      "favorite": false,
+      "imageSrc": "https://uk.inshaker.com/uploads/cocktail/hires/597/1556120892-Matador__highres.jpg",
+      "name": "Matador",
+      "typeId": [
+        5,
+        8,
+        15,
+        19,
+        20
+      ],
+      "composition": [
+        {
+          "id": 6,
+          "amount": 40
+        },
+        {
+          "id": 19,
+          "amount": 10
+        },
+        {
+          "id": 69,
+          "amount": 10
+        },
+        {
+          "id": 70,
+          "amount": 1
+        },
+        {
+          "id": 71,
+          "amount": 5
+        },
+        {
+          "id": 72,
+          "amount": 20
+        },
+        {
+          "id": 73,
+          "amount": 5
+        },
+        {
+          "id": 57,
+          "amount": 30
+        },
+        {
+          "id": 74,
+          "amount": 5
+        },
+        {
+          "id": 53,
+          "amount": 320
+        }
+      ],
+      "recipe": [
+        "Fill a rocks glass to the top with ice cubes",
+        "Pour 20 ml of orange juice, 5 ml of grenadine syrup, 10 ml of maraschino liqueur, 10 ml of white vermouth and 40 ml of scotch whisky into a shaker",
+        "Add 5 ml of orange flower water and 1 dash of orange bitters",
+        "Fill the shaker with ice cubes and shake",
+        "Strain into the rocks glass",
+        "Garnish with an orange wheel and a maraschino cherry"
+      ],
+      "description": "Do you like short drinks? Then try this strong citrus and sweet whiskey-based cocktail.",
+      "id": 4
     }
   ],
   "history": [
@@ -650,6 +750,26 @@
       "coctailId": 3,
       "dateAdd": "2022-05-24T00:26:07.774Z",
       "id": 27
+    },
+    {
+      "coctailId": 3,
+      "dateAdd": "2022-05-24T11:00:19.142Z",
+      "id": 28
+    },
+    {
+      "coctailId": 4,
+      "dateAdd": "2022-05-24T11:00:20.867Z",
+      "id": 29
+    },
+    {
+      "coctailId": 1,
+      "dateAdd": "2022-05-24T11:51:59.393Z",
+      "id": 30
+    },
+    {
+      "coctailId": 3,
+      "dateAdd": "2022-05-24T11:52:00.744Z",
+      "id": 31
     }
   ],
   "typecoctails": [
@@ -694,7 +814,8 @@
       "id": 5,
       "name": "citrus",
       "coctailsIds": [
-        1
+        1,
+        4
       ]
     },
     {
@@ -716,7 +837,9 @@
       "name": "sweet",
       "coctailsIds": [
         1,
-        2
+        2,
+        3,
+        4
       ]
     },
     {
@@ -743,24 +866,31 @@
     {
       "id": 12,
       "name": "rum based",
-      "coctailsIds": []
+      "coctailsIds": [
+        3
+      ]
     },
     {
       "id": 13,
       "name": "herbal",
-      "coctailsIds": []
+      "coctailsIds": [
+        3
+      ]
     },
     {
       "id": 14,
       "name": "chocolately",
       "coctailsIds": [
-        2
+        3
       ]
     },
     {
       "id": 15,
       "name": "strong",
-      "coctailsIds": []
+      "coctailsIds": [
+        3,
+        4
+      ]
     },
     {
       "id": 16,
@@ -770,9 +900,7 @@
     {
       "id": 17,
       "name": "vermouth based",
-      "coctailsIds": [
-        2
-      ]
+      "coctailsIds": []
     },
     {
       "id": 18,
@@ -782,7 +910,16 @@
     {
       "id": 19,
       "name": "whiskey based",
-      "coctailsIds": []
+      "coctailsIds": [
+        4
+      ]
+    },
+    {
+      "id": 20,
+      "name": "shorts",
+      "coctailsIds": [
+        4
+      ]
     }
   ]
 }

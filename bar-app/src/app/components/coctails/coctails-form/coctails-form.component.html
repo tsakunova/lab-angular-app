@@ -3,37 +3,40 @@
   <form [formGroup]="formGroup">
     <mat-stepper #stepper formArrayName="formArray" linear>
       <mat-step [stepControl]="formArray.get([0])" formGroupName="0">
-        <ng-template matStepLabel>Add name, type and image</ng-template>
-        <mat-form-field appearance="fill">
-          <mat-label>Coctail name:</mat-label>
-          <input formControlName="name" matInput maxlength="50" name="coctailName"
-                 placeholder="Enter the name of the coctail" required>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Type:</mat-label>
-          <mat-select formControlName="type" multiple>
-            <mat-option *ngFor="let i of config.types" [value]="i.id">{{i.name}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Coctail image:</mat-label>
-          <input formControlName="imageSrc" matInput name="imageSrc"
-                 placeholder="Add image adress...">
-        </mat-form-field>
+        <ng-template  matStepLabel>Add name, type and image</ng-template>
+        <div class="coctail-info">
+          <mat-form-field appearance="fill">
+            <mat-label>Coctail name:</mat-label>
+            <input formControlName="name" matInput maxlength="50" name="coctailName"
+                   placeholder="Enter the name of the coctail" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Type:</mat-label>
+            <mat-select formControlName="type" multiple>
+              <mat-option *ngFor="let i of config.types" [value]="i.id">{{i.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Coctail image:</mat-label>
+            <input formControlName="imageSrc" matInput name="imageSrc"
+                   placeholder="Add image adress...">
+          </mat-form-field>
+        </div>
+
         <div>
-          <button mat-button matStepperNext type="button">Next</button>
+          <button mat-raised-button matStepperNext type="button" color="primary">Next</button>
         </div>
       </mat-step>
 
       <mat-step [stepControl]="formArray.get([1])" formGroupName="1" label="Add composition">
-          <mat-label>Composition</mat-label>
-         <ng-container formArrayName="composition"  *ngFor="let compos of composition?.controls; index as i">
+          <mat-label class="composition__title">Composition</mat-label>
+         <ng-container class="composition" formArrayName="composition"  *ngFor="let compos of composition?.controls; index as i">
 
             <div>
               <ng-container [formGroupName]="i">
-                <mat-form-field appearance="fill">
+                <mat-form-field class="composition__item-name" appearance="fill">
                     <mat-label>Ingredient name</mat-label>
-                    <mat-select formControlName="id"
+                    <mat-select formControlName="id" required
                     >
                       <mat-option *ngFor="let i of config.ingredients" [value]="i.id">{{i.name}} ({{i.unit}})</mat-option>
                     </mat-select>
@@ -43,13 +46,18 @@
                   <input type="number" formControlName="amount" matInput min="1" maxlength="6" name="amount"
                          placeholder="Amount" required>
                 </mat-form-field>
+                <button mat-fab color="primary" aria-label="Delete ingredient" (click)="removeIngredientField(i)">
+                  <mat-icon>add</mat-icon>
+                </button>
               </ng-container>
             </div>
           </ng-container>
-            <button class="btn-add" type="button" (click)="addIngredientField()">+</button>
+          <button mat-fab color="primary" aria-label="Add ingredient" (click)="addIngredientField()">
+            <mat-icon>add</mat-icon>
+          </button>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-raised-button matStepperPrevious color="primary">Back</button>
+          <button mat-raised-button matStepperNext color="primary">Next</button>
         </div>
       </mat-step>
       <mat-step [stepControl]="formArray.get([2])" formGroupName="2" label="Add favorite">
@@ -66,9 +74,9 @@
         <div>
           <div class="btn-container">
             <mat-dialog-actions align="center">
-              <button mat-button mat-dialog-close>Cancel</button>
-              <button (click)="stepper.reset()" mat-button> Reset</button>
-              <button [disabled]="formGroup.invalid" [mat-dialog-close]="formGroup.value" cdkFocusInitial mat-button
+              <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+              <button (click)="stepper.reset()" mat-raised-button color="warn"> Reset</button>
+              <button [disabled]="formGroup.invalid" [mat-dialog-close]="formGroup.value" cdkFocusInitial color="accent" mat-raised-button
                       type="submit">{{config.typeForm | titlecase}} coctail
               </button>
             </mat-dialog-actions>

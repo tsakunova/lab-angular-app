@@ -38,3 +38,9 @@ mat-chip-list{
     margin-right: 5px;
   }
 }
+.mat-snack-bar-container{
+  background: #ff4081b8;
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}

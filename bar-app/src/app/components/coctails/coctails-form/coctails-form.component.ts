@@ -79,4 +79,8 @@ export class CoctailsFormComponent implements OnInit, AfterContentInit {
       this.formGroup.reset();
     }
   } */
+  removeIngredientField(i: number) {
+    if (this.comp.length > 1) this.comp.removeAt(i);
+    else this.comp.patchValue([{ id: null, amount: null }]);
+  }
 }

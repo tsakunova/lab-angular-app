@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatChip } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
 import { IngredientsService } from '../../shared/ingredients/ingredients.service';
-import { IIngredientItem, IngredientTypeModel, IngredientUnitModel } from '../../shared/ingredients/ingredient-type.model';
+import { IIngredientItem, IngredientsModel, IngredientUnitModel } from '../../shared/ingredients/ingredients.model';
 import { sortDirectionType, sortType } from '../../shared/enums';
 import { IngredientsFormComponent } from '../ingredients-form/ingredients-form.component';
 
@@ -25,7 +25,7 @@ export class IngredientsPageComponent implements OnInit {
 
   ingredientsList: IIngredientItem[] = [];
 
-  ingredientsTypes: Array<{ id: number; name: IngredientTypeModel }> = [];
+  ingredientsTypes: Array<{ id: number; name: IngredientsModel }> = [];
 
   ingredientsUnits: Array<{ id: number; name: IngredientUnitModel }> = [];
 
