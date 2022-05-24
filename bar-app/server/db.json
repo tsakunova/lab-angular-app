@@ -692,36 +692,6 @@
   ],
   "history": [
     {
-      "coctailId": 2,
-      "dateAdd": "2022-05-22T16:51:06.129Z",
-      "id": 4
-    },
-    {
-      "coctailId": 1,
-      "dateAdd": "2022-05-22T16:52:46.819Z",
-      "id": 10
-    },
-    {
-      "coctailId": 0,
-      "dateAdd": "2022-05-23T20:14:11.373Z",
-      "id": 16
-    },
-    {
-      "coctailId": 1,
-      "dateAdd": "2022-05-23T20:14:12.222Z",
-      "id": 17
-    },
-    {
-      "coctailId": 2,
-      "dateAdd": "2022-05-23T20:14:13.172Z",
-      "id": 18
-    },
-    {
-      "coctailId": 2,
-      "dateAdd": "2022-05-23T20:15:44.852Z",
-      "id": 20
-    },
-    {
       "coctailId": 1,
       "dateAdd": "2022-05-23T22:53:27.418Z",
       "id": 21
@@ -748,11 +718,6 @@
     },
     {
       "coctailId": 3,
-      "dateAdd": "2022-05-24T00:26:07.774Z",
-      "id": 27
-    },
-    {
-      "coctailId": 3,
       "dateAdd": "2022-05-24T11:00:19.142Z",
       "id": 28
     },
@@ -770,6 +735,11 @@
       "coctailId": 3,
       "dateAdd": "2022-05-24T11:52:00.744Z",
       "id": 31
+    },
+    {
+      "coctailId": 1,
+      "dateAdd": "2022-05-24T19:54:14.181Z",
+      "id": 32
     }
   ],
   "typecoctails": [

@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { IngredientsSortComponent } from './ingredients-sort/ingredients-sort.component';
 import { IngredientsFormComponent } from './ingredients-form/ingredients-form.component';
 import { IngredientsSearchComponent } from './ingredients-search/ingredients-search.component';
@@ -47,7 +48,8 @@ import { IngredientsPageComponent } from './ingredients-page/ingredients-page.co
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
-    ScrollingModule
+    ScrollingModule,
+    MatTooltipModule
   ],
   exports: [
     MatInputModule,

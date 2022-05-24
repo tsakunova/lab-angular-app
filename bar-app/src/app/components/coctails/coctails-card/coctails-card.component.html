@@ -1,9 +1,9 @@
 <div class="coctail-card">
   <div>
-    <button aria-label="Add coctail for a history" mat-mini-fab color="basic" (click)="historyAddHandler()">
+    <button aria-label="Add coctail for a history" mat-mini-fab color="basic" (click)="historyAddHandler()" matTooltip="Add coctail to history table">
       <mat-icon>plus_one</mat-icon>
     </button>
-    <button aria-label="Add coctail in favorite list" mat-mini-fab [color]="item.favorite&&'accent'" (click)="favoriteAddHandler()">
+    <button aria-label="Add coctail in favorite list" mat-mini-fab [color]="item.favorite&&'accent'" (click)="favoriteAddHandler()" matTooltip="Add coctail to favorites">
       <mat-icon>favorite</mat-icon>
     </button>
   </div>

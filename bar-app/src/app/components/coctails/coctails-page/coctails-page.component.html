@@ -1,10 +1,9 @@
 
   <section class="coctails section">
     <h2 class="section__title">Coctails</h2>
-    <nav>
+    <nav class="coctails__nav-list">
       <app-coctails-search (searchValue)="searchHeandler($event)"></app-coctails-search>
-
-      <button mat-fab aria-label="Add new coctail" (click)="openDialog()">
+      <button mat-fab aria-label="Add new coctail" (click)="openDialog()" matTooltip="Add new coctail">
         <mat-icon>add</mat-icon>
       </button>
     </nav>

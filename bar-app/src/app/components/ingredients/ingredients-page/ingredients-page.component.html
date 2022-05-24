@@ -6,7 +6,7 @@
       (sortDirection)="sortDirectionHeandler($event)">
     </app-ingredients-sort>
     <app-ingredients-search (searchValue)="searchHeandler($event)"></app-ingredients-search>
-    <button mat-fab aria-label="Add new ingredient" (click)="openDialog()">
+    <button mat-fab aria-label="Add new ingredient" (click)="openDialog()" matTooltip="Add new ingredient">
       <mat-icon>add</mat-icon>
     </button>
   </nav>
