@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatChip } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Subscription } from 'rxjs';
 import { ICoctailItem, ICoctailTypes } from '../../shared/coctails/coctail-item.model';
 import { CoctailsService } from '../../shared/coctails/coctails.service';
 import { HistoryService } from '../../shared/history/history.service';
@@ -15,7 +16,9 @@ import { IIngredientItem } from '../../shared/ingredients/ingredients.model';
   templateUrl: './coctails-page.component.html',
   styleUrls: ['./coctails-page.component.scss']
 })
-export class CoctailsPageComponent implements OnInit {
+export class CoctailsPageComponent implements OnInit, OnDestroy {
+  readonly subscription = new Subscription();
+
   isLoading = false;
 
   search = '';
@@ -51,29 +54,29 @@ export class CoctailsPageComponent implements OnInit {
   }
 
   fetchTypes() {
-    this.coctailServise.getCoctailsTypes()
-      .subscribe(types => {
-        this.coctailTypes = types;
-        this.config.types = this.coctailTypes;
-      });
+    const subscriptionTypes = this.coctailServise.getCoctailsTypes().subscribe(types => {
+      this.coctailTypes = types;
+      this.config.types = this.coctailTypes;
+    });
+    this.subscription.add(subscriptionTypes);
   }
 
   fetchIngredients() {
     this.ingredientTypeList = this.ingredientService.getIngredientsTypes().map(item => item.name);
-    this.ingredientService.getIngredients(this.ingredientTypeList)
-      .subscribe(list => {
-        this.ingredientList = list;
-        this.config.ingredients = this.ingredientList;
-      });
+    const subscriptionIngredients = this.ingredientService.getIngredients(this.ingredientTypeList).subscribe(list => {
+      this.ingredientList = list;
+      this.config.ingredients = this.ingredientList;
+    });
+    this.subscription.add(subscriptionIngredients);
   }
 
   fetchCoctails() {
     this.isLoading = true;
-    this.coctailServise.getCoctails(this.sortToTypes)
-      .subscribe(coctails => {
-        this.coctailsList = coctails;
-        this.isLoading = false;
-      });
+    const subscriptionCoctails = this.coctailServise.getCoctails(this.sortToTypes).subscribe(coctails => {
+      this.coctailsList = coctails;
+      this.isLoading = false;
+    });
+    this.subscription.add(subscriptionCoctails);
   }
 
   getData() {
@@ -81,11 +84,12 @@ export class CoctailsPageComponent implements OnInit {
     const ids = Array.from(new Set(idsArr.flat())); // [1,2,3,4]
     const data = ids.filter(id => idsArr.every(item => item.includes(id)));
     (data.length === 0 && ids.length !== 0) && this.openSnackBar();
-    this.coctailServise.getCoctails(data)
+    const subscriptionData = this.coctailServise.getCoctails(data)
       .subscribe(coctails => {
         this.coctailsList = coctails;
         this.isLoading = false;
       });
+    this.subscription.add(subscriptionData);
   }
 
   openSnackBar() {
@@ -95,10 +99,11 @@ export class CoctailsPageComponent implements OnInit {
   addFavorite(id: number) {
     const coctail = this.coctailsList[id];
     coctail.favorite = !coctail.favorite;
-    this.coctailServise.editFavoriteField(id, coctail)
+    const subscriptionFavorite = this.coctailServise.editFavoriteField(id, coctail)
       .subscribe(() => {
         this.getData();
       });
+    this.subscription.add(subscriptionFavorite);
   }
 
   addHistory(id: number) {
@@ -107,7 +112,8 @@ export class CoctailsPageComponent implements OnInit {
       coctailId: id,
       dateAdd: date
     };
-    this.historyService.addHistoryItem(historyItem).subscribe();
+    const subscriptionHistory = this.historyService.addHistoryItem(historyItem).subscribe();
+    this.subscription.add(subscriptionHistory);
   }
 
   addCardHandler(item: any) {
@@ -123,7 +129,7 @@ export class CoctailsPageComponent implements OnInit {
       recipe: item.formArray[2].recipe.split('\n'),
       description: item.formArray[2].description
     };
-    this.coctailServise.addCoctail(newCoctail)
+    const subscriptionAdd = this.coctailServise.addCoctail(newCoctail)
       .subscribe(httpCoctail => {
         this.coctailsList = [...this.coctailsList, httpCoctail];
         const allTypesForPush = item.formArray[0].type;
@@ -132,9 +138,11 @@ export class CoctailsPageComponent implements OnInit {
           if (httpCoctail.id != null) {
             data.coctailsIds.push(httpCoctail.id);
           }
-          this.coctailServise.editCoctailsTypes(type, data).subscribe();
+          const subscriptionEdit = this.coctailServise.editCoctailsTypes(type, data).subscribe();
+          this.subscription.add(subscriptionEdit);
         });
       });
+    this.subscription.add(subscriptionAdd);
   }
 
   openDialog() {
@@ -159,5 +167,10 @@ export class CoctailsPageComponent implements OnInit {
 
   searchHeandler(value: string) {
     this.search = value;
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+    console.log('OnDestroy this.subscription.closed = ', this.subscription.closed);
   }
 }

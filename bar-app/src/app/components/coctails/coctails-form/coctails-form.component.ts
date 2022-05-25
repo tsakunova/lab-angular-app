@@ -24,11 +24,9 @@ export class CoctailsFormComponent implements OnInit, AfterContentInit {
 
   formGroup: FormGroup;
 
-  formArray: any;
+  formArray: FormArray;
 
-  filteredIngredients: any;
-
-  config: { ingredients: any[]; types: any[]; typeForm: string };
+  config: { ingredients: any; types: any[]; typeForm: string };
 
   @Output() addCard: EventEmitter<ICoctailItem> = new EventEmitter<ICoctailItem>();
 
@@ -72,13 +70,6 @@ export class CoctailsFormComponent implements OnInit, AfterContentInit {
     this.comp.push(this.formBuilder.group({ id: null, amount: null }));
   }
 
-  /* addCoctail() {
-    if (this.formGroup.valid) {
-      const formData: any = { ...this.formGroup.value };
-      this.addCard.emit(formData);
-      this.formGroup.reset();
-    }
-  } */
   removeIngredientField(i: number) {
     if (this.comp.length > 1) this.comp.removeAt(i);
     else this.comp.patchValue([{ id: null, amount: null }]);

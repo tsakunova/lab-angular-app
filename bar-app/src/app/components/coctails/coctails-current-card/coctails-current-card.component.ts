@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ICoctailItem, ICoctailTypes } from '../../shared/coctails/coctail-item.model';
 import { CoctailsService } from '../../shared/coctails/coctails.service';
 import { IIngredientItem, IngredientsModel } from '../../shared/ingredients/ingredients.model';
@@ -10,7 +11,9 @@ import { IngredientsService } from '../../shared/ingredients/ingredients.service
   templateUrl: './coctails-current-card.component.html',
   styleUrls: ['./coctails-current-card.component.scss']
 })
-export class CoctailsCurrentCardComponent implements OnInit {
+export class CoctailsCurrentCardComponent implements OnInit, OnDestroy {
+  readonly subscription = new Subscription();
+
   isLoading = false;
 
   ingredients: IIngredientItem[];
@@ -27,17 +30,21 @@ export class CoctailsCurrentCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading = true;
-    this.coctailsService.getCoctailsTypes()
+    const subscriptionCoctTypes = this.coctailsService.getCoctailsTypes()
       .subscribe(types => {
         this.types = types;
       });
+    this.subscription.add(subscriptionCoctTypes);
     this.ingredientTypes = this.ingredientService.getIngredientsTypes().map(item => item.name);
-    this.ingredientService.getIngredients(this.ingredientTypes).subscribe(list => this.ingredients = list);
-    this.coctailsService.getCoctail(this.route.snapshot.paramMap.get('id'))
+    const subscriptionIngred = this.ingredientService.getIngredients(this.ingredientTypes)
+      .subscribe(list => this.ingredients = list);
+    this.subscription.add(subscriptionIngred);
+    const subscriptionCoctail = this.coctailsService.getCoctail(this.route.snapshot.paramMap.get('id'))
       .subscribe(coctail => {
         this.currentItem = coctail;
         this.isLoading = false;
       });
+    this.subscription.add(subscriptionCoctail);
   }
 
   getNameIngredient(ingredId: number) {
@@ -50,5 +57,10 @@ export class CoctailsCurrentCardComponent implements OnInit {
 
   getNameType(typeId: number) {
     return this.types.find(item => item.id === typeId)?.name;
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+    console.log('OnDestroy this.subscription.closed = ', this.subscription.closed);
   }
 }

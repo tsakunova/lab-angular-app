@@ -2,7 +2,7 @@
   <h2 mat-dialog-title>{{config.typeForm}} coctail</h2>
   <form [formGroup]="formGroup">
     <mat-stepper #stepper formArrayName="formArray" linear>
-      <mat-step [stepControl]="formArray.get([0])" formGroupName="0">
+      <mat-step [stepControl]="formArray.get([0])!" formGroupName="0">
         <ng-template  matStepLabel>Add name, type and image</ng-template>
         <div class="coctail-info">
           <mat-form-field appearance="fill">
@@ -28,7 +28,7 @@
         </div>
       </mat-step>
 
-      <mat-step [stepControl]="formArray.get([1])" formGroupName="1" label="Add composition">
+      <mat-step [stepControl]="formArray.get([1])!" formGroupName="1" label="Add composition">
           <mat-label class="composition__title">Composition</mat-label>
          <ng-container class="composition" formArrayName="composition"  *ngFor="let compos of composition?.controls; index as i">
 
@@ -60,7 +60,7 @@
           <button mat-raised-button matStepperNext color="primary">Next</button>
         </div>
       </mat-step>
-      <mat-step [stepControl]="formArray.get([2])" formGroupName="2" label="Add favorite">
+      <mat-step [stepControl]="formArray.get([2])!" formGroupName="2" label="Add favorite">
         <ng-template matStepLabel>Last step</ng-template>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Recipe</mat-label>

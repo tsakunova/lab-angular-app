@@ -626,7 +626,7 @@
       "id": 3
     },
     {
-      "favorite": false,
+      "favorite": true,
       "imageSrc": "https://uk.inshaker.com/uploads/cocktail/hires/597/1556120892-Matador__highres.jpg",
       "name": "Matador",
       "typeId": [
@@ -740,6 +740,31 @@
       "coctailId": 1,
       "dateAdd": "2022-05-24T19:54:14.181Z",
       "id": 32
+    },
+    {
+      "coctailId": 1,
+      "dateAdd": "2022-05-25T22:59:26.142Z",
+      "id": 33
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-25T23:00:16.210Z",
+      "id": 34
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-25T23:00:22.331Z",
+      "id": 35
+    },
+    {
+      "coctailId": 1,
+      "dateAdd": "2022-05-25T23:01:26.798Z",
+      "id": 36
+    },
+    {
+      "coctailId": 0,
+      "dateAdd": "2022-05-25T23:01:40.252Z",
+      "id": 37
     }
   ],
   "typecoctails": [

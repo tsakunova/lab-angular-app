@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatChip } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
 import { IngredientsService } from '../../shared/ingredients/ingredients.service';
 import { IIngredientItem, IngredientsModel, IngredientUnitModel } from '../../shared/ingredients/ingredients.model';
 import { sortDirectionType, sortType } from '../../shared/enums';
@@ -12,12 +13,14 @@ import { IngredientsFormComponent } from '../ingredients-form/ingredients-form.c
   styleUrls: ['./ingredients-page.component.scss']
 })
 
-export class IngredientsPageComponent implements OnInit {
+export class IngredientsPageComponent implements OnInit, OnDestroy {
+  readonly subscription = new Subscription();
+
   isLoading = false;
 
   search = '';
 
-  sort: sortType = sortType.type;
+  sort: string = sortType.type;
 
   sortToTypes: string[] = [];
 
@@ -48,10 +51,11 @@ export class IngredientsPageComponent implements OnInit {
   }
 
   deleteCardHandler(id: number) {
-    this.ingredientsService.deleteIngredients(id)
+    const subscriptionDel = this.ingredientsService.deleteIngredients(id)
       .subscribe(() => {
         this.ingredientsList = this.ingredientsList.filter(item => item.id !== id);
       });
+    this.subscription.add(subscriptionDel);
   }
 
   addCardHandler(item: IIngredientItem) {
@@ -63,25 +67,27 @@ export class IngredientsPageComponent implements OnInit {
       type: this.ingredientsTypes[+item.type]?.name,
       unit: this.ingredientsUnits[+item.unit]?.name,
     };
-    this.ingredientsService.addIngredient(newIngredient).subscribe(ingredient => {
+    const subscriptionAdd = this.ingredientsService.addIngredient(newIngredient).subscribe(ingredient => {
       this.ingredientsList = [...this.ingredientsList, ingredient];
     });
+    this.subscription.add(subscriptionAdd);
   }
 
   fetchIngredients() {
     this.isLoading = true;
-    this.ingredientsService.getIngredients(this.sortToTypes)
+    const subscriptionIngred = this.ingredientsService.getIngredients(this.sortToTypes)
       .subscribe(ingredients => {
         this.ingredientsList = ingredients;
         this.isLoading = false;
       });
+    this.subscription.add(subscriptionIngred);
   }
 
   searchHeandler(value: string) {
     this.search = value;
   }
 
-  sortHeandler(value: any) {
+  sortHeandler(value: string) {
     this.sort = value;
   }
 
@@ -108,10 +114,11 @@ export class IngredientsPageComponent implements OnInit {
     } else {
       data = allTypes.filter(item => this.sortToTypes.includes(item));
     }
-    this.ingredientsService.getIngredients(data).subscribe(ingredients => {
+    const subscriptionIngredients = this.ingredientsService.getIngredients(data).subscribe(ingredients => {
       this.ingredientsList = ingredients;
       this.isLoading = false;
     });
+    this.subscription.add(subscriptionIngredients);
   }
 
   openDialog() {
@@ -138,10 +145,16 @@ export class IngredientsPageComponent implements OnInit {
         type: this.ingredientsTypes[+result.type]?.name,
         unit: this.ingredientsUnits[+result.unit]?.name,
       };
-      this.ingredientsService.editIngredient(id, ingredient)
+      const subscriptionEdit = this.ingredientsService.editIngredient(id, ingredient)
         .subscribe(() => {
           this.getIngredients();
         });
+      this.subscription.add(subscriptionEdit);
     });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+    console.log('OnDestroy this.subscription.closed = ', this.subscription.closed);
   }
 }

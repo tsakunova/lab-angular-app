@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { IHistoryItem } from '../../shared/history/history-item.model';
 import { HistoryService } from '../../shared/history/history.service';
 
@@ -7,7 +8,9 @@ import { HistoryService } from '../../shared/history/history.service';
   templateUrl: './history-page.component.html',
   styleUrls: ['./history-page.component.scss']
 })
-export class HistoryPageComponent implements OnInit {
+export class HistoryPageComponent implements OnInit, OnDestroy {
+  readonly subscription = new Subscription();
+
   isLoading = false;
 
   historyList: IHistoryItem[];
@@ -22,22 +25,29 @@ export class HistoryPageComponent implements OnInit {
   }
 
   fetchHistoryItems() {
-    this.historyService.getHistoryItems()
+    const subscriptionHistory = this.historyService.getHistoryItems()
       .subscribe(items => {
         this.historyList = [...items];
         this.isLoading = false;
       });
+    this.subscription.add(subscriptionHistory);
   }
 
   deleteHistoryItemHandler(id: number) {
-    this.historyService.deleteHistoryItem(id)
+    const subscriptionHistoryDel = this.historyService.deleteHistoryItem(id)
       .subscribe(() => {
         this.fetchHistoryItems();
       });
+    this.subscription.add(subscriptionHistoryDel);
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.searchValue = filterValue.toLowerCase();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+    console.log('OnDestroy this.subscription.closed = ', this.subscription.closed);
   }
 }

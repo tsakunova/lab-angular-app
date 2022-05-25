@@ -18,7 +18,7 @@ export class CoctailsService {
     return this.http.put<void>(`http://localhost:3000/typecoctails/${id}`, data);
   }
 
-  getCoctails(types: any): Observable<ICoctailItem[]> {
+  getCoctails(types: ICoctailTypes[] | number []): Observable<ICoctailItem[]> {
     let params = new HttpParams();
     types.forEach((item: any) => params = params.append('id', item));
     return this.http.get<ICoctailItem[]>('http://localhost:3000/coctails', { params })
