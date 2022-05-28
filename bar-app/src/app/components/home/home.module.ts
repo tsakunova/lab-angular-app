@@ -7,6 +7,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HomeTopFiveComponent } from './home-top-five/home-top-five.component';
 import { HomeLastCoctailComponent } from './home-last-coctail/home-last-coctail.component';
+import {CdkTableModule} from "@angular/cdk/table";
 
 @NgModule({
   declarations: [
@@ -14,14 +15,15 @@ import { HomeLastCoctailComponent } from './home-last-coctail/home-last-coctail.
     HomeTopFiveComponent,
     HomeLastCoctailComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild([{
-      path: '', component: HomePageComponent,
-    }]),
-    MatIconModule,
-    MatButtonModule,
-    MatProgressSpinnerModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild([{
+            path: '', component: HomePageComponent,
+        }]),
+        MatIconModule,
+        MatButtonModule,
+        MatProgressSpinnerModule,
+        CdkTableModule
+    ]
 })
 export class HomeModule { }

@@ -11,6 +11,12 @@ import { CoctailsFormComponent } from '../coctails-form/coctails-form.component'
 import { IngredientsService } from '../../shared/ingredients/ingredients.service';
 import { IIngredientItem } from '../../shared/ingredients/ingredients.model';
 
+interface IConfig {
+  typeForm: string;
+  types: ICoctailTypes[];
+  ingredients: IIngredientItem[];
+}
+
 @Component({
   selector: 'app-coctails-page',
   templateUrl: './coctails-page.component.html',
@@ -33,7 +39,9 @@ export class CoctailsPageComponent implements OnInit, OnDestroy {
 
   coctailTypes: ICoctailTypes[] = [];
 
-  config: any = {
+
+
+  config: IConfig = {
     ingredients: [],
     types: [],
     typeForm: '',
