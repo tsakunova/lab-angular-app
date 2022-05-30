@@ -1,0 +1,89 @@
+<mat-dialog-content>
+  <h2 mat-dialog-title>{{config.typeForm}} cocktail</h2>
+  <form [formGroup]="formGroup">
+    <mat-stepper #stepper formArrayName="formArray" linear>
+      <mat-step [stepControl]="formArray.get([0])!" formGroupName="0">
+        <ng-template  matStepLabel>Add name, type and image</ng-template>
+        <div class="cocktail-info">
+          <mat-form-field appearance="fill">
+            <mat-label>Cocktail name:</mat-label>
+            <input formControlName="name" matInput maxlength="50" name="cocktailName"
+                   placeholder="Enter the name of the cocktail" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Type:</mat-label>
+            <mat-select formControlName="typeId" multiple>
+              <mat-option *ngFor="let i of config.types" [value]="i.id">{{i.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Cocktail image:</mat-label>
+            <input formControlName="imageSrc" matInput name="imageSrc"
+                   placeholder="Add image adress...">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button mat-raised-button matStepperNext type="button" color="primary">Next</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="formArray.get([1])!" formGroupName="1" label="Add composition">
+          <mat-label class="composition__title">Composition</mat-label>
+         <ng-container class="composition" formArrayName="composition"  *ngFor="let compos of composition?.controls; index as i">
+
+            <div>
+              <ng-container [formGroupName]="i">
+                <mat-form-field class="composition__item-name" appearance="fill">
+                    <mat-label>Ingredient name</mat-label>
+                    <mat-select formControlName="id" required
+                    >
+                      <mat-option *ngFor="let i of config.ingredients" [value]="i.id">{{i.name}} ({{i.unit}})</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Amount:</mat-label>
+                  <input type="number" formControlName="amount" matInput min="1" maxlength="6" name="amount"
+                         placeholder="Amount" required>
+                </mat-form-field>
+                <button mat-fab color="primary" aria-label="Delete ingredient" (click)="removeIngredientField(i)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </ng-container>
+            </div>
+          </ng-container>
+          <button mat-fab color="primary" aria-label="Add ingredient" (click)="addIngredientField()">
+            <mat-icon>add</mat-icon>
+          </button>
+        <div>
+          <button mat-raised-button matStepperPrevious color="primary">Back</button>
+          <button mat-raised-button matStepperNext color="primary">Next</button>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="formArray.get([2])!" formGroupName="2" label="Add favorite">
+        <ng-template matStepLabel>Last step</ng-template>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Recipe</mat-label>
+          <textarea matInput formControlName="recipe"></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+        <mat-slide-toggle formControlName="favorite">Add to favorite cocktails</mat-slide-toggle>
+        <div>
+          <div class="btn-container">
+            <mat-dialog-actions align="center">
+              <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+              <button (click)="stepper.reset()" mat-raised-button color="warn"> Reset</button>
+              <button [disabled]="formGroup.invalid" [mat-dialog-close]="formGroup.value" cdkFocusInitial color="accent" mat-raised-button
+                      type="submit">{{config.typeForm | titlecase}} cocktail
+              </button>
+            </mat-dialog-actions>
+          </div>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </form>
+</mat-dialog-content>
+

@@ -1,0 +1,31 @@
+<div class="cocktail-card">
+  <div>
+    <button aria-label="Add cocktail for a history" mat-mini-fab color="basic" (click)="historyAddHandler()" matTooltip="Add cocktail to history table">
+      <mat-icon>plus_one</mat-icon>
+    </button>
+    <button aria-label="Add cocktail in favorite list" mat-mini-fab [color]="item.favorite&&'accent'" (click)="favoriteAddHandler()" matTooltip="Add cocktail to favorites">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
+  <div class="cocktail-card__text-container">
+    <h4 class="cocktail-card__title">{{item.name}}</h4>
+    <p class="cocktail-card__type">
+      <span *ngFor="let type of item.typeId">{{getNameType(type)}} / </span>
+    </p>
+    <div class="cocktail-card__description">
+      <div class="cocktail-card__image">
+        <img src="{{item.imageSrc}}" alt="{{item.name}}">
+      </div>
+      <ul class="cocktail-card__composition">
+        <li *ngFor="let composition of item.composition">
+          <span>{{getNameIngredient(composition.id)}} </span>
+          <span>{{composition.amount}} {{getNameUnit(composition.id)}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button class="cocktail-card__btn"
+          [routerLink]="['item', item.id]"
+  >recipe</button>
+</div>
+

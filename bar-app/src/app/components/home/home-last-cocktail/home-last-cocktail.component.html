@@ -1,0 +1,21 @@
+<div class="last-cocktail-card">
+  <h3>The last cocktail added to history</h3>
+  <div>
+    <button aria-label="Cocktail in favorite list" mat-mini-fab [color]="cocktail.favorite && 'accent'">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
+  <div class="last-cocktail-card__text-container">
+    <h4 class="last-cocktail-card__title">{{cocktail.name}}</h4>
+    <div class="last-cocktail-card__description">
+      <div class="last-cocktail-card__image">
+        <img src="{{cocktail.imageSrc}}" alt="{{cocktail.name}}">
+      </div>
+      <div>
+        <ul>
+          <li *ngFor="let recipe of cocktail.recipe" >{{recipe}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

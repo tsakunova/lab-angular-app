@@ -2,6 +2,7 @@ import {
   Component, EventEmitter, OnInit, Output
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IIngredientsConfig } from '../../shared/cocktails/cocktail-item.model';
 import { IIngredientItem } from '../../shared/ingredients/ingredients.model';
 
 @Component({
@@ -12,7 +13,7 @@ import { IIngredientItem } from '../../shared/ingredients/ingredients.model';
 export class IngredientsFormComponent implements OnInit {
   form: FormGroup;
 
-  config: { types: any[]; units: any[]; typeForm: string };
+  config: IIngredientsConfig;
 
   @Output() addCard: EventEmitter<IIngredientItem> = new EventEmitter<IIngredientItem>();
 

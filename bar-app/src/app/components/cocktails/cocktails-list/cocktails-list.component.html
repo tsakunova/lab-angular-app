@@ -1,0 +1,11 @@
+<div class="cocktails__list">
+  <app-cocktails-card
+    *ngFor="let cocktail of cocktails| filter: search;"
+    [item]="cocktail"
+    [types]="cocktailTypesArr"
+    [ingredients]="ingredients"
+    (addToFavorite)="addFavoriteHandler($event)"
+    (addToHistory)="addHistoryHandler($event)"
+  >
+  </app-cocktails-card>
+</div>

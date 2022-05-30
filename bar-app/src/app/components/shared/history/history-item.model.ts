@@ -1,8 +1,8 @@
-import { ICoctailItem } from '../coctails/coctail-item.model';
+import { ICocktailItem } from '../cocktails/cocktail-item.model';
 
 export interface IHistoryItem {
   id?: number;
-  coctailId: number;
+  cocktailId: number;
   dateAdd: Date;
-  coctail?: ICoctailItem;
+  cocktail?: ICocktailItem;
 }

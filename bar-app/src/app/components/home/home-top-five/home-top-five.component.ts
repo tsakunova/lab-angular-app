@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ICoctailItem } from '../../shared/coctails/coctail-item.model';
+import { ICocktailItem } from '../../shared/cocktails/cocktail-item.model';
 
 @Component({
   selector: 'app-home-top-five',
@@ -7,10 +7,9 @@ import { ICoctailItem } from '../../shared/coctails/coctail-item.model';
   styleUrls: ['./home-top-five.component.scss']
 })
 export class HomeTopFiveComponent {
-  @Input()topFive: ICoctailItem[];
+  @Input()topFive: ICocktailItem[];
 
   @Input()topFiveCount: number[];
 
   displayedColumns: string[] = ['number', 'name', 'count'];
-
 }

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { CoctailsService } from '../../shared/coctails/coctails.service';
-import { ICoctailItem } from '../../shared/coctails/coctail-item.model';
+import { CocktailsService } from '../../shared/cocktails/cocktails.service';
+import { ICocktailItem } from '../../shared/cocktails/cocktail-item.model';
 import { HistoryService } from '../../shared/history/history.service';
 import { IHistoryItem } from '../../shared/history/history-item.model';
 
@@ -11,9 +11,9 @@ import { IHistoryItem } from '../../shared/history/history-item.model';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit, OnDestroy {
-  lastHistoryItem: ICoctailItem;
+  lastHistoryItem: ICocktailItem;
 
-  topFive: ICoctailItem[];
+  topFive: ICocktailItem[];
 
   topFiveCount: number[];
 
@@ -21,48 +21,53 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   readonly subscription = new Subscription();
 
-  constructor(private coctailService: CoctailsService, private historyService: HistoryService) { }
+  constructor(private cocktailService: CocktailsService, private historyService: HistoryService) { }
 
   ngOnInit() {
-    this.renderTopFiveCoctails();
-    this.getLastCoctails();
+    this.renderTopFiveCocktails();
+    this.getLastCocktails();
   }
 
-  getLastCoctails() {
+  getLastCocktails() {
     this.isLoading = true;
     const subscriptionHistory = this.historyService.getHistoryItems()
       .subscribe(historyItems => {
-        this.lastHistoryItem = historyItems[historyItems.length - 1].coctail as ICoctailItem;
+        this.lastHistoryItem = historyItems[historyItems.length - 1].cocktail as ICocktailItem;
         this.isLoading = false;
       });
     this.subscription.add(subscriptionHistory);
   }
 
-  getNumberTopCoctails(items: IHistoryItem[]) {
-    const numCoctails: number[] = items.map(item => item.coctailId);
-    const result: {[char: string]: number} = {};
-    for (const elem of numCoctails) {
-      if (result[elem] !== undefined) {
-        result[elem] += 1;
-      } else {
-        result[elem] = 1;
+  getNumberTopCocktails(items: IHistoryItem[]) {
+    const numCocktails: number[] = items.map(item => item.cocktailId);
+    const initial: Record<string, number> = {};
+    const result = numCocktails.reduce((acc, curr) => {
+      if (acc[curr]) {
+        return {
+          ...acc,
+          [curr]: acc[curr] + 1
+        };
       }
-    }
+      return {
+        ...acc,
+        [curr]: 1
+      };
+    }, initial);
     const entries = Object.entries(result);
-    const idCoctails = entries.sort((a, b) => b[1] - a[1]).slice(0, 5).map(item => +item[0]);
-    const coctailsCount = entries.sort((a, b) => b[1] - a[1]).slice(0, 5).map(item => +item[1]);
-    const subscriptionCoctails = this.coctailService.getCoctails(idCoctails)
+    const idCocktails = entries.sort((a, b) => b[1] - a[1]).slice(0, 5).map(item => +item[0]);
+    const cocktailsCount = entries.sort((a, b) => b[1] - a[1]).slice(0, 5).map(item => +item[1]);
+    const subscriptionCocktails = this.cocktailService.getCocktails(idCocktails)
       .subscribe(items => {
         this.topFive = items;
-        this.topFiveCount = coctailsCount;
+        this.topFiveCount = cocktailsCount;
       });
-    this.subscription.add(subscriptionCoctails);
+    this.subscription.add(subscriptionCocktails);
   }
 
-  renderTopFiveCoctails() {
+  renderTopFiveCocktails() {
     const subscriptionHistoryTop = this.historyService.getHistoryItems()
       .subscribe(items => {
-        this.getNumberTopCoctails(items);
+        this.getNumberTopCocktails(items);
       });
     this.subscription.add(subscriptionHistoryTop);
   }

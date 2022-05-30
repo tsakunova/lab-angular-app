@@ -13,13 +13,13 @@ export class IngredientsSortComponent implements DoCheck {
 
   sort: string = sortType.type;
 
-  direction: string = sortDirectionType.up;
+  direction: sortDirectionType = sortDirectionType.up;
 
   @Output()
     sortValue: EventEmitter<string> = new EventEmitter<string>();
 
   @Output()
-    sortDirection: EventEmitter<string> = new EventEmitter<string>();
+    sortDirection: EventEmitter<sortDirectionType> = new EventEmitter<sortDirectionType>();
 
   constructor() {
   }

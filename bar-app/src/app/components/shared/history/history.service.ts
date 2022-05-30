@@ -10,7 +10,7 @@ export class HistoryService {
   constructor(private http: HttpClient) { }
 
   getHistoryItems(): Observable<IHistoryItem[]> {
-    return this.http.get<IHistoryItem[]>('http://localhost:3000/history?_expand=coctail')
+    return this.http.get<IHistoryItem[]>('http://localhost:3000/history?_expand=cocktail')
       .pipe(delay(500));
   }
 

@@ -1,0 +1,53 @@
+.cocktail-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 280px;
+  min-height: 350px;
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  &__title{
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__type{
+    font-size: 14px;
+    text-align: center;
+  }
+  &__description{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  &__composition{
+    list-style-type: none;
+    width: 70%;
+    li{
+      display: flex;
+      justify-content: space-between;
+      span{
+        display: block;
+      }
+    }
+  }
+  &__image{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 80%;
+    }
+  }
+  &__btn{
+    justify-items: flex-end;
+    justify-self: flex-end;
+    padding: 20px 50px;
+    text-transform: uppercase;
+    border: none;
+    background-color: aliceblue;
+  }
+}

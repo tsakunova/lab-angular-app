@@ -27,7 +27,7 @@ import { IHistoryItem } from '../../shared/history/history-item.model';
 export class HistoryTableComponent implements AfterViewInit, OnChanges, AfterContentInit {
   dataSource: MatTableDataSource<IHistoryItem>;
 
-  displayedColumns: string[] = ['coctailName', 'dateAdd', 'delete'];
+  displayedColumns: string[] = ['cocktailName', 'dateAdd', 'delete'];
 
   expandedElement: IHistoryItem | null;
 
@@ -65,14 +65,14 @@ export class HistoryTableComponent implements AfterViewInit, OnChanges, AfterCon
 
   private connectMatTable() {
     this.dataSource = new MatTableDataSource<IHistoryItem>(this.historyItems);
-    this.dataSource.filterPredicate = (data, filter: string) => !!data.coctail?.name
+    this.dataSource.filterPredicate = (data, filter: string) => !!data.cocktail?.name
       .toLocaleLowerCase().includes(filter);
     this.dataSource.sortingDataAccessor = (item, property) => {
       if (this.dataSource.paginator) {
         this.dataSource.paginator.firstPage();
       }
-      if (property === 'coctailName') {
-        return item.coctail?.name;
+      if (property === 'cocktailName') {
+        return item.cocktail?.name;
       }
       // @ts-ignore
       return item[property];

@@ -6,6 +6,7 @@ import { IngredientsService } from '../../shared/ingredients/ingredients.service
 import { IIngredientItem, IngredientsModel, IngredientUnitModel } from '../../shared/ingredients/ingredients.model';
 import { sortDirectionType, sortType } from '../../shared/enums';
 import { IngredientsFormComponent } from '../ingredients-form/ingredients-form.component';
+import { IIngredientsConfig } from '../../shared/cocktails/cocktail-item.model';
 
 @Component({
   selector: 'app-ingredients-page',
@@ -32,7 +33,7 @@ export class IngredientsPageComponent implements OnInit, OnDestroy {
 
   ingredientsUnits: Array<{ id: number; name: IngredientUnitModel }> = [];
 
-  config: any = {
+  config: IIngredientsConfig = {
     types: [],
     units: [],
     typeForm: ''
@@ -91,7 +92,7 @@ export class IngredientsPageComponent implements OnInit, OnDestroy {
     this.sort = value;
   }
 
-  sortDirectionHeandler(value: any) {
+  sortDirectionHeandler(value: sortDirectionType) {
     this.sortDirection = value;
   }
 

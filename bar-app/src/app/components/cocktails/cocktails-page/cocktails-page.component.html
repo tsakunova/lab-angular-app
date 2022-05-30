@@ -1,0 +1,39 @@
+
+  <section class="cocktails section">
+    <h2 class="section__title">Cocktails</h2>
+    <nav class="cocktails__nav-list">
+      <app-cocktails-search (searchValue)="searchHeandler($event)"></app-cocktails-search>
+      <button mat-fab aria-label="Add new cocktail" (click)="openDialog()" matTooltip="Add new cocktail">
+        <mat-icon>add</mat-icon>
+      </button>
+    </nav>
+
+    <mat-chip-list selectable multiple class="chips">
+      <mat-chip
+        *ngFor="let item of cocktailTypes"
+        #c="matChip"
+        (click)="sortToType(item, c)"
+        [value]="item"
+        color="accent"
+      >
+        <mat-icon *ngIf="c.selected">check</mat-icon>
+        {{item.name}}
+
+      </mat-chip>
+    </mat-chip-list>
+    <div *ngIf="!isLoading;else loadingBlock" >
+    <app-cocktails-list
+      [cocktails]="cocktailsList"
+      [cocktailTypesArr] = "cocktailTypes"
+      [ingredients]="ingredientList"
+      [search]="search"
+      (addToFavorite)="addFavorite($event)"
+      (addToHistory)="addHistory($event)"
+    ></app-cocktails-list>
+    </div>
+    <ng-template #loadingBlock>
+      <mat-spinner color="accent"></mat-spinner>
+    </ng-template>
+  </section>
+
+
