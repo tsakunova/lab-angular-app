@@ -1,4 +1,5 @@
 import {
+  ChangeDetectorRef,
   Component, DoCheck, EventEmitter, Output
 } from '@angular/core';
 
@@ -13,10 +14,11 @@ export class IngredientsSearchComponent implements DoCheck {
   @Output()
     searchValue: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() {
+  constructor(private cdr: ChangeDetectorRef) {
   }
 
   ngDoCheck() {
+    this.cdr.markForCheck();
     this.searchValue.emit(this.search);
   }
 }

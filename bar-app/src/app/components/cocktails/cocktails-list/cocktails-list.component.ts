@@ -1,6 +1,7 @@
 import {
   Component, EventEmitter, Input, Output
 } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { ICocktailItem, ICocktailTypes } from '../../shared/cocktails/cocktail-item.model';
 import { IIngredientItem } from '../../shared/ingredients/ingredients.model';
 
@@ -33,5 +34,9 @@ export class CocktailsListComponent {
 
   addFavoriteHandler(id: number) {
     this.addToFavorite.emit(id);
+  }
+
+  drop(event: CdkDragDrop<ICocktailItem[]>) {
+    moveItemInArray(this.cocktails, event.previousIndex, event.currentIndex);
   }
 }

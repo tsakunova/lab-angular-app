@@ -692,66 +692,6 @@
   ],
   "history": [
     {
-      "cocktailId": 1,
-      "dateAdd": "2022-05-23T22:53:27.418Z",
-      "id": 21
-    },
-    {
-      "cocktailId": 1,
-      "dateAdd": "2022-05-23T22:53:28.243Z",
-      "id": 22
-    },
-    {
-      "cocktailId": 1,
-      "dateAdd": "2022-05-23T22:53:28.408Z",
-      "id": 23
-    },
-    {
-      "cocktailId": 1,
-      "dateAdd": "2022-05-23T22:53:28.566Z",
-      "id": 24
-    },
-    {
-      "cocktailId": 1,
-      "dateAdd": "2022-05-23T22:53:28.911Z",
-      "id": 26
-    },
-    {
-      "cocktailId": 3,
-      "dateAdd": "2022-05-24T11:00:19.142Z",
-      "id": 28
-    },
-    {
-      "cocktailId": 4,
-      "dateAdd": "2022-05-24T11:00:20.867Z",
-      "id": 29
-    },
-    {
-      "cocktailId": 1,
-      "dateAdd": "2022-05-24T11:51:59.393Z",
-      "id": 30
-    },
-    {
-      "cocktailId": 3,
-      "dateAdd": "2022-05-24T11:52:00.744Z",
-      "id": 31
-    },
-    {
-      "cocktailId": 1,
-      "dateAdd": "2022-05-24T19:54:14.181Z",
-      "id": 32
-    },
-    {
-      "cocktailId": 1,
-      "dateAdd": "2022-05-25T22:59:26.142Z",
-      "id": 33
-    },
-    {
-      "cocktailId": 0,
-      "dateAdd": "2022-05-25T23:00:16.210Z",
-      "id": 34
-    },
-    {
       "cocktailId": 0,
       "dateAdd": "2022-05-25T23:00:22.331Z",
       "id": 35
@@ -787,14 +727,54 @@
       "id": 41
     },
     {
-      "cocktailId": 4,
-      "dateAdd": "2022-05-28T20:14:04.174Z",
-      "id": 42
-    },
-    {
       "cocktailId": 2,
       "dateAdd": "2022-05-28T20:14:05.298Z",
       "id": 43
+    },
+    {
+      "cocktailId": 2,
+      "dateAdd": "2022-05-30T23:45:30.366Z",
+      "id": 44
+    },
+    {
+      "cocktailId": 1,
+      "dateAdd": "2022-05-30T23:45:31.080Z",
+      "id": 45
+    },
+    {
+      "cocktailId": 0,
+      "dateAdd": "2022-05-30T23:45:32.468Z",
+      "id": 46
+    },
+    {
+      "cocktailId": 3,
+      "dateAdd": "2022-05-30T23:45:33.315Z",
+      "id": 47
+    },
+    {
+      "cocktailId": 4,
+      "dateAdd": "2022-05-30T23:45:34.515Z",
+      "id": 48
+    },
+    {
+      "cocktailId": 4,
+      "dateAdd": "2022-05-30T23:45:35.033Z",
+      "id": 49
+    },
+    {
+      "cocktailId": 1,
+      "dateAdd": "2022-05-30T23:45:35.693Z",
+      "id": 50
+    },
+    {
+      "cocktailId": 2,
+      "dateAdd": "2022-05-30T23:45:36.481Z",
+      "id": 51
+    },
+    {
+      "cocktailId": 2,
+      "dateAdd": "2022-05-30T23:45:36.668Z",
+      "id": 52
     }
   ],
   "typecocktails": [

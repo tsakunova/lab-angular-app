@@ -1,4 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit
+} from '@angular/core';
 import { MatChip } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
@@ -11,7 +13,8 @@ import { IIngredientsConfig } from '../../shared/cocktails/cocktail-item.model';
 @Component({
   selector: 'app-ingredients-page',
   templateUrl: './ingredients-page.component.html',
-  styleUrls: ['./ingredients-page.component.scss']
+  styleUrls: ['./ingredients-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class IngredientsPageComponent implements OnInit, OnDestroy {
@@ -39,7 +42,9 @@ export class IngredientsPageComponent implements OnInit, OnDestroy {
     typeForm: ''
   };
 
-  constructor(private ingredientsService: IngredientsService, public dialog: MatDialog) {
+  constructor(private ingredientsService: IngredientsService,
+              public dialog: MatDialog,
+              private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
@@ -55,6 +60,7 @@ export class IngredientsPageComponent implements OnInit, OnDestroy {
     const subscriptionDel = this.ingredientsService.deleteIngredients(id)
       .subscribe(() => {
         this.ingredientsList = this.ingredientsList.filter(item => item.id !== id);
+        this.cdr.markForCheck();
       });
     this.subscription.add(subscriptionDel);
   }
@@ -69,6 +75,7 @@ export class IngredientsPageComponent implements OnInit, OnDestroy {
       unit: this.ingredientsUnits[+item.unit]?.name,
     };
     const subscriptionAdd = this.ingredientsService.addIngredient(newIngredient).subscribe(ingredient => {
+      this.cdr.markForCheck();
       this.ingredientsList = [...this.ingredientsList, ingredient];
     });
     this.subscription.add(subscriptionAdd);
@@ -78,6 +85,7 @@ export class IngredientsPageComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     const subscriptionIngred = this.ingredientsService.getIngredients(this.sortToTypes)
       .subscribe(ingredients => {
+        this.cdr.markForCheck();
         this.ingredientsList = ingredients;
         this.isLoading = false;
       });
@@ -116,6 +124,7 @@ export class IngredientsPageComponent implements OnInit, OnDestroy {
       data = allTypes.filter(item => this.sortToTypes.includes(item));
     }
     const subscriptionIngredients = this.ingredientsService.getIngredients(data).subscribe(ingredients => {
+      this.cdr.markForCheck();
       this.ingredientsList = ingredients;
       this.isLoading = false;
     });

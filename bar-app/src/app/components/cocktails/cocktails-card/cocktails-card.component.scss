@@ -8,6 +8,8 @@
   padding: 20px;
   border: 1px solid gray;
   border-radius: 5px;
+  cursor: move;
+  background: white;
   &__title{
     text-transform: uppercase;
     text-align: center;
@@ -50,4 +52,5 @@
     border: none;
     background-color: aliceblue;
   }
+
 }

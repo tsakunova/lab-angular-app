@@ -57,8 +57,8 @@ export class HomePageComponent implements OnInit, OnDestroy {
     const idCocktails = entries.sort((a, b) => b[1] - a[1]).slice(0, 5).map(item => +item[0]);
     const cocktailsCount = entries.sort((a, b) => b[1] - a[1]).slice(0, 5).map(item => +item[1]);
     const subscriptionCocktails = this.cocktailService.getCocktails(idCocktails)
-      .subscribe(items => {
-        this.topFive = items;
+      .subscribe(cockt => {
+        this.topFive = cockt;
         this.topFiveCount = cocktailsCount;
       });
     this.subscription.add(subscriptionCocktails);

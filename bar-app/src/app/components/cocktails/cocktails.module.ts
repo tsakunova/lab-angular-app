@@ -16,6 +16,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CocktailsPageComponent } from './cocktails-page/cocktails-page.component';
 import { CocktailsSearchComponent } from './cocktails-search/cocktails-search.component';
 import { CocktailsListComponent } from './cocktails-list/cocktails-list.component';
@@ -55,7 +56,8 @@ import { CocktailsFormComponent } from './cocktails-form/cocktails-form.componen
     MatStepperModule,
     MatAutocompleteModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    DragDropModule
   ]
 
 })
