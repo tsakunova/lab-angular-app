@@ -27,7 +27,8 @@
   <div *ngIf="!isLoading;else loadingBlock">
     <app-ingredients-list
       [ingredients]="ingredientsList"
-      (deleteCard)="deleteCardHandler($event)"
+      (addToBuyCard)="addToBuyHandler($event)"
+      (addMyBarCard)="addMyBarHandler($event)"
       (editCard)="editCardHandler($event)"
       [search]="search"
       [sort]="sort"

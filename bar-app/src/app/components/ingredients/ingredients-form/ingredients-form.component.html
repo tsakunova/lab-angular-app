@@ -10,7 +10,9 @@
     <mat-form-field appearance="fill">
       <mat-label>Type:</mat-label>
       <mat-select formControlName="type">
-        <mat-option *ngFor="let i of config.types" [value]="i.id">{{i.name}}</mat-option>
+        <mat-option *ngFor="let i of config.types"
+                    [value]="i.id"
+        >{{i.name}}</mat-option>
       </mat-select>
     </mat-form-field>
 

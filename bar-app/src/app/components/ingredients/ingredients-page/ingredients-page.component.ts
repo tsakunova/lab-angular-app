@@ -9,6 +9,7 @@ import { IIngredientItem, IngredientsModel, IngredientUnitModel } from '../../sh
 import { sortDirectionType, sortType } from '../../shared/enums';
 import { IngredientsFormComponent } from '../ingredients-form/ingredients-form.component';
 import { IIngredientsConfig } from '../../shared/cocktails/cocktail-item.model';
+import { MybarService } from '../../shared/mybar/mybar.service';
 
 @Component({
   selector: 'app-ingredients-page',
@@ -44,7 +45,8 @@ export class IngredientsPageComponent implements OnInit, OnDestroy {
 
   constructor(private ingredientsService: IngredientsService,
               public dialog: MatDialog,
-              private cdr: ChangeDetectorRef) {
+              private cdr: ChangeDetectorRef,
+              private mybarService: MybarService) {
   }
 
   ngOnInit(): void {
@@ -161,6 +163,26 @@ export class IngredientsPageComponent implements OnInit, OnDestroy {
         });
       this.subscription.add(subscriptionEdit);
     });
+  }
+
+  addToBuyHandler(buyId: number) {
+    const subscriptionBuyBar = this.mybarService.getMyBarItems().subscribe(items => {
+      const data = items;
+      data.tobuy = [...items.tobuy, buyId];
+      const subscriptionReloadBuyBar = this.mybarService.reloadToBuyItems(data).subscribe();
+      this.subscription.add(subscriptionReloadBuyBar);
+    });
+    this.subscription.add(subscriptionBuyBar);
+  }
+
+  addMyBarHandler(barId: number) {
+    const subscriptionInBar = this.mybarService.getMyBarItems().subscribe(items => {
+      const data = items;
+      data.inbar = [...items.inbar, barId];
+      const subscriptionReloadInBar = this.mybarService.reloadInBarItems(data).subscribe();
+      this.subscription.add(subscriptionReloadInBar);
+    });
+    this.subscription.add(subscriptionInBar);
   }
 
   ngOnDestroy() {

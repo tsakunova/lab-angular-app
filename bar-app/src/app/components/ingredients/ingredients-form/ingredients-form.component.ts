@@ -23,8 +23,8 @@ export class IngredientsFormComponent implements OnInit {
   ngOnInit() {
     this.form = new FormGroup({
       name: new FormControl('', [Validators.minLength(2), Validators.required]),
-      type: new FormControl('', Validators.required),
-      unit: new FormControl('', Validators.required)
+      type: new FormControl(this.config.types[0].id, Validators.required),
+      unit: new FormControl(this.config.units[0].id, Validators.required)
     });
   }
 

@@ -1,0 +1,36 @@
+<div class="board">
+  <div class="board-wrapper">
+    <div class="board-columns" cdkDropListGroup>
+      <div class="board-column"
+           id="bar"
+           cdkDropList
+           [cdkDropListData]="bar"
+           (cdkDropListDropped)="drop($event)"
+      >
+        <div class="column-title">
+          In bar
+        </div>
+        <div class="tasks-container" *ngFor="let item of bar">
+          <div class="task" cdkDrag >
+            {{item.name|titlecase}}
+          </div>
+        </div>
+      </div>
+      <div class="board-column"
+           id="buy"
+           cdkDropList
+           [cdkDropListData]="buy"
+           (cdkDropListDropped)="drop($event)"
+      >
+        <div class="column-title">
+          To buy
+        </div>
+        <div class="tasks-container" *ngFor="let item of buy">
+          <div class="task" cdkDrag >
+            {{item.name|titlecase }}
+          </div>
+        </div>
+      </div>
+  </div>
+
+</div>

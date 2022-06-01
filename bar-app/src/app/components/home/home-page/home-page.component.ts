@@ -24,16 +24,16 @@ export class HomePageComponent implements OnInit, OnDestroy {
   constructor(private cocktailService: CocktailsService, private historyService: HistoryService) { }
 
   ngOnInit() {
-    this.renderTopFiveCocktails();
+    this.isLoading = true;
     this.getLastCocktails();
+    this.renderTopFiveCocktails();
   }
 
   getLastCocktails() {
-    this.isLoading = true;
     const subscriptionHistory = this.historyService.getHistoryItems()
       .subscribe(historyItems => {
         this.lastHistoryItem = historyItems[historyItems.length - 1].cocktail as ICocktailItem;
-        this.isLoading = false;
+        console.log(this.lastHistoryItem);
       });
     this.subscription.add(subscriptionHistory);
   }
@@ -68,6 +68,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     const subscriptionHistoryTop = this.historyService.getHistoryItems()
       .subscribe(items => {
         this.getNumberTopCocktails(items);
+        this.isLoading = false;
       });
     this.subscription.add(subscriptionHistoryTop);
   }

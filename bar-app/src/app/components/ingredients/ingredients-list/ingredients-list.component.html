@@ -1,9 +1,10 @@
   <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport">
-    <div class="ingredients__list">
+    <div class="ingredients__list" >
       <app-ingredients-card
         *cdkVirtualFor="let ingredient of ingredients | sort:sort :sortDirection |filter: search ; templateCacheSize: 0"
         [item]="ingredient"
-        (deleteCard)="deleteCardHandler($event)"
+        (addMyBarCard)="addMyBarCardHandler($event)"
+        (addToBuyCard)="addToBuyCardHandler($event)"
         (editCard)="editCardHandler($event)"
       >
       </app-ingredients-card>

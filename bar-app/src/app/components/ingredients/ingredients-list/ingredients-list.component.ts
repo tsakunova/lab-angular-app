@@ -20,7 +20,10 @@ export class IngredientsListComponent {
   @Input() sortDirection: sortDirectionType;
 
   @Output()
-    deleteCard: EventEmitter<number> = new EventEmitter<number>();
+    addMyBarCard: EventEmitter<number> = new EventEmitter<number>();
+
+  @Output()
+    addToBuyCard: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
     editCard: EventEmitter<number> = new EventEmitter<number>();
@@ -28,8 +31,12 @@ export class IngredientsListComponent {
   constructor() {
   }
 
-  deleteCardHandler(id: number) {
-    this.deleteCard.emit(id);
+  addMyBarCardHandler(id: number) {
+    this.addMyBarCard.emit(id);
+  }
+
+  addToBuyCardHandler(id: number) {
+    this.addToBuyCard.emit(id);
   }
 
   editCardHandler(id: number) {

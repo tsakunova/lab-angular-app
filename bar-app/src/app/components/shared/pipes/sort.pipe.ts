@@ -1,11 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { sortDirectionCoeff, sortDirectionType, sortType } from '../enums';
+import { IIngredientItem } from '../ingredients/ingredients.model';
 
 @Pipe({
   name: 'sort'
 })
 export class SortPipe implements PipeTransform {
-  transform(values: any, type: string, direction: sortDirectionType) {
+  transform(values: IIngredientItem[], type: string, direction: sortDirectionType) {
     if (type === sortType.name) {
       return [...values]
         .sort(

@@ -1,13 +1,12 @@
 <div *ngIf="!isLoading;else loadingBlock" >
-  <app-home-top-five
-    [topFive]="topFive"
-    [topFiveCount]="topFiveCount">
-  </app-home-top-five>
-
   <app-home-last-cocktail
   [cocktail]="lastHistoryItem">
-
   </app-home-last-cocktail>
+
+  <app-home-top-five
+  [topFive]="topFive"
+  [topFiveCount]="topFiveCount">
+  </app-home-top-five>
 </div>
 
 <ng-template #loadingBlock>

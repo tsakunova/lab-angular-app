@@ -1,5 +1,5 @@
 import {
-  AfterContentInit,
+  AfterContentInit, ChangeDetectorRef,
   Component, EventEmitter, OnInit, Output
 } from '@angular/core';
 import {
@@ -30,7 +30,8 @@ export class CocktailsFormComponent implements OnInit, AfterContentInit {
 
   @Output() addCard: EventEmitter<ICocktailItem> = new EventEmitter<ICocktailItem>();
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private cd: ChangeDetectorRef) {
+
   }
 
   ngOnInit(): void {
@@ -38,7 +39,7 @@ export class CocktailsFormComponent implements OnInit, AfterContentInit {
     this.formArray = this.formBuilder.array(
       [this.formBuilder.group({
         name: ['', [Validators.minLength(2), Validators.required]],
-        type: [[''], Validators.required],
+        typeId: [[''], Validators.required],
         imageSrc: [''],
       }),
       this.formBuilder.group({

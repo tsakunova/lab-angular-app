@@ -1,1 +1,10 @@
-<p>mybar-page works!</p>
+
+<app-mybar-board *ngIf="!isLoading;else loadingBlock"
+                 [bar]="inBar"
+                 [buy]="toBuy"
+                 (reloadData)="reloadMybar($event)"
+>
+</app-mybar-board>
+<ng-template #loadingBlock>
+  <mat-spinner color="accent"></mat-spinner>
+</ng-template>

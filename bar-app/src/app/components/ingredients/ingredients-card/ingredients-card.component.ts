@@ -13,7 +13,10 @@ export class IngredientsCardComponent {
   @Input() item: IIngredientItem;
 
   @Output()
-    deleteCard: EventEmitter<number> = new EventEmitter<number>();
+    addMyBarCard: EventEmitter<number> = new EventEmitter<number>();
+
+  @Output()
+    addToBuyCard: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
     editCard: EventEmitter<number> = new EventEmitter<number>();
@@ -21,11 +24,15 @@ export class IngredientsCardComponent {
   constructor(public dialog: MatDialog) {
   }
 
-  deleteCardHandler() {
-    this.deleteCard.emit(this.item.id);
-  }
-
   editCardHandler() {
     this.editCard.emit(this.item.id);
+  }
+
+  addMyBarCardHandler() {
+    this.addMyBarCard.emit(this.item.id);
+  }
+
+  addToBuyCardHandler() {
+    this.addToBuyCard.emit(this.item.id);
   }
 }

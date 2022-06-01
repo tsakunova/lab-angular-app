@@ -1,4 +1,4 @@
-<div cdkDropList class="cocktails__list"  (cdkDropListDropped)="drop($event)">
+<div class="cocktails__list">
   <app-cocktails-card
     *ngFor="let cocktail of cocktails| filter: search;"
     [item]="cocktail"
@@ -6,7 +6,6 @@
     [ingredients]="ingredients"
     (addToFavorite)="addFavoriteHandler($event)"
     (addToHistory)="addHistoryHandler($event)"
-cdkDrag
   >
   </app-cocktails-card>
 </div>

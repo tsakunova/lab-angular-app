@@ -1,14 +1,24 @@
 <div class="ingredient-card">
-  <!--<div (click)="deleteCardHandler()" class="ingredient-card__delete-btn">
-    <button aria-label="Delete card" color="accent" mat-icon-button>
-      <mat-icon>delete</mat-icon>
-    </button>
-  </div>-->
-  <div (click)="editCardHandler()" class="ingredient-card__edit-btn">
-    <button aria-label="Edit card" color="primary" mat-icon-button matTooltip="Edit ingredient">
-      <mat-icon>edit</mat-icon>
-    </button>
+  <div class="btn-container">
+    <div class="btn-mybar">
+      <div (click)="addMyBarCardHandler()" class="ingredient-card__add-btn">
+        <button aria-label="Add card" color="accent" mat-icon-button matTooltip="My home bar">
+          <mat-icon>house</mat-icon>
+        </button>
+      </div>
+      <div (click)="addToBuyCardHandler()" class="ingredient-card__add-btn">
+        <button aria-label="Add card" color="accent" mat-icon-button matTooltip="Shop list">
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div (click)="editCardHandler()" class="ingredient-card__edit-btn">
+      <button aria-label="Edit card" color="primary" mat-icon-button matTooltip="Edit ingredient">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
   </div>
+
   <h4 class="ingredient-card__title">{{item.name}}</h4>
   <p>{{item.type}}</p>
 </div>
