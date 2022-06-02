@@ -5,6 +5,7 @@ import { IngredientsModule } from './components/ingredients/ingredients.module';
 import { MyBarModule } from './components/my-bar/my-bar.module';
 import { HistoryModule } from './components/history/history.module';
 import { HomeModule } from './components/home/home.module';
+import { AdminModule } from './components/admin/admin.module';
 
 const routes: Routes = [
   { path: '', loadChildren: () => HomeModule },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'ingredients', loadChildren: () => IngredientsModule },
   { path: 'history', loadChildren: () => HistoryModule },
   { path: 'my-bar', loadChildren: () => MyBarModule },
-  { path: '**', redirectTo: '/' }
+  { path: 'admin', loadChildren: () => AdminModule },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({

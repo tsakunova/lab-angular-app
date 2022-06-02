@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { IngredientsService } from './ingredients/ingredients.service';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
@@ -10,11 +11,13 @@ import { SortPipe } from './pipes/sort.pipe';
     SortPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     FilterPipe,
-    SortPipe
+    SortPipe,
+    HttpClientModule
   ],
   providers: [
     IngredientsService

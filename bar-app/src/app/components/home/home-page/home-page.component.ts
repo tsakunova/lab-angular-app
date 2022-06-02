@@ -33,7 +33,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
     const subscriptionHistory = this.historyService.getHistoryItems()
       .subscribe(historyItems => {
         this.lastHistoryItem = historyItems[historyItems.length - 1].cocktail as ICocktailItem;
-        console.log(this.lastHistoryItem);
       });
     this.subscription.add(subscriptionHistory);
   }
