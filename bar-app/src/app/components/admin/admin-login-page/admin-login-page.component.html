@@ -1,18 +1,22 @@
-<form [formGroup]="form" (ngSubmit)="this.autService.SignIn(this.form.value.email,this.form.value.password)">
-  <h2>Login to admin panel</h2>
-  <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
-    <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
-    <mat-error *ngIf="form.get('email')!.touched && form.get('email')!.invalid ">
-      Please enter a correct password
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Password</mat-label>
-    <input type="password" matInput formControlName="password" placeholder="Enter password">
-    <mat-error *ngIf="form.get('password')!.touched && form.get('password')!.invalid">
-      Please enter a correct password(min length 6 chars)
-    </mat-error>
-  </mat-form-field>
-  <button type="submit" [disabled]="form.invalid">Login</button>
-</form>
+ <div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="submit()" >
+      <h2>Login to admin panel</h2>
+      <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="admin@bar.com">
+          <mat-error *ngIf="form.get('email')!.touched && form.get('email')!.invalid ">
+            Please enter correct email
+          </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" placeholder="123456">
+          <mat-error *ngIf="form.get('password')!.touched && form.get('password')!.invalid">
+            Please enter correct password
+            (min length 6 chars)
+          </mat-error>
+      </mat-form-field>
+      <button type="submit" [disabled]="form.invalid">Login</button>
+    </form>
+  </div>

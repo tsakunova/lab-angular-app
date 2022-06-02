@@ -14,6 +14,8 @@ import { AuthService } from '../../shared/admin/auth.service';
 export class AdminLoginPageComponent implements OnInit {
   form: FormGroup;
 
+  isOpen = false;
+
   constructor(public autService: AuthService) { }
 
   ngOnInit(): void {
@@ -26,10 +28,12 @@ export class AdminLoginPageComponent implements OnInit {
   }
 
   submit() {
-    this.form.reset();
-    if (this.form.invalid) {
-      return;
-    }
-    this.autService.SignIn(this.form.value.email, this.form.value.password);
+    this.autService.SignIn(this.form.value.email, this.form.value.password).then(()=>{
+      this.form.reset();
+      }
+
+    );
+
+
   }
 }

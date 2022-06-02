@@ -1,0 +1,16 @@
+.admin-menu{
+  ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    gap: 30px;
+    a{
+      color: black;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover{
+        color: gray;
+      }
+    }
+  }
+}

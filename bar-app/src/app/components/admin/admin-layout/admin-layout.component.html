@@ -1,10 +1,14 @@
-<nav>
-  <h2>Admin panel</h2>
-  <ul *ngIf="getLoggedValue()">
-    <li ><a [routerLink]="['/admin', 'setting']">Setting</a></li>
-    <li><a href="#" (click)="logout($event)">Log out</a></li>
-  </ul>
-</nav>
-<div>
-  <router-outlet></router-outlet>
-</div>
+<section class="section">
+  <nav class="admin-menu">
+    <h2 class="section__title">Admin panel</h2>
+    <ul *ngIf="getLoggedValue()">
+      <li ><a [routerLink]="['/admin', 'edit']">Edit data</a></li>
+      <li ><a [routerLink]="['/admin', 'setting']">Setting</a></li>
+      <li><a href="#" (click)="logout($event)">Log out</a></li>
+    </ul>
+  </nav>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</section>
+
