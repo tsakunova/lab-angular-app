@@ -1,5 +1,5 @@
 import {
-  Component, ChangeDetectionStrategy, Input, Output, EventEmitter
+  Component, Input, Output, EventEmitter
 } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { IIngredientItem } from '../../shared/ingredients/ingredients.model';
@@ -8,8 +8,7 @@ import { IMyBar } from '../../shared/mybar/mybar-item.model';
 @Component({
   selector: 'app-mybar-board',
   templateUrl: './mybar-board.component.html',
-  styleUrls: ['./mybar-board.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./mybar-board.component.scss']
 })
 export class MybarBoardComponent {
   myBar: IMyBar;
@@ -20,7 +19,8 @@ export class MybarBoardComponent {
 
   @Output() reloadData: EventEmitter<IMyBar> = new EventEmitter<IMyBar>();
 
-  constructor() { }
+  constructor() {
+  }
 
   drop(event: CdkDragDrop<IIngredientItem[]>) {
     if (event.previousContainer === event.container) {
@@ -35,7 +35,7 @@ export class MybarBoardComponent {
       if (event.container.element.nativeElement.id === 'bar') {
         this.myBar = {
           inbar: event.container.data.map(item => item.id) as number[],
-          tobuy: event.previousContainer.data.map(item => item.id) as number[],
+          tobuy: event.previousContainer.data.map(item => item.id) as number[]
         };
       } else if (event.container.element.nativeElement.id === 'buy') {
         this.myBar = {

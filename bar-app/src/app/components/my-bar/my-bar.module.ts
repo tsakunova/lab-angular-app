@@ -3,8 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MybarPageComponent } from './mybar-page/mybar-page.component';
+import { ClipboardModule } from '@angular/cdk/clipboard';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { MybarBoardComponent } from './mybar-board/mybar-board.component';
+import { MybarPageComponent } from './mybar-page/mybar-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { MybarBoardComponent } from './mybar-board/mybar-board.component';
       path: '', component: MybarPageComponent,
     }]),
     DragDropModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ClipboardModule,
+    MatIconModule,
+    MatButtonModule
   ]
 })
 export class MyBarModule {

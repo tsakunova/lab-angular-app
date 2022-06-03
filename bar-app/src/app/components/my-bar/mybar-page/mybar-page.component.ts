@@ -23,6 +23,8 @@ export class MybarPageComponent implements OnInit, OnDestroy {
 
   toBuy: IIngredientItem[];
 
+  toBuyShopList: string;
+
   constructor(private mybarService: MybarService,
               private ingredientService: IngredientsService) {}
 
@@ -42,11 +44,13 @@ export class MybarPageComponent implements OnInit, OnDestroy {
       this.ingredientList = list;
       this.inBar = this.ingredientList.filter((item) => ((this.myBar.inbar).includes(Number(item.id))));
       this.toBuy = this.ingredientList.filter((item) => ((this.myBar.tobuy).includes(Number(item.id))));
+      this.toBuyShopList = this.toBuy.map(item => item.name).join(', ');
     });
     this.subscription.add(subscriptionIngredients);
   }
 
   reloadMybar(data: IMyBar) {
+    this.toBuyShopList = this.ingredientList.filter((item) => ((data.tobuy).includes(Number(item.id)))).map(item => item.name).join(', ');
     const subscriptionReload = this.mybarService.reloadInBarItems(data).subscribe();
     this.subscription.add(subscriptionReload);
   }

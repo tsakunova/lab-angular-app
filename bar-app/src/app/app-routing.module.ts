@@ -6,6 +6,7 @@ import { MyBarModule } from './components/my-bar/my-bar.module';
 import { HistoryModule } from './components/history/history.module';
 import { HomeModule } from './components/home/home.module';
 import { AdminModule } from './components/admin/admin.module';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   { path: '', loadChildren: () => HomeModule },
@@ -14,7 +15,11 @@ const routes: Routes = [
   { path: 'history', loadChildren: () => HistoryModule },
   { path: 'my-bar', loadChildren: () => MyBarModule },
   { path: 'admin', loadChildren: () => AdminModule },
-  { path: '**', redirectTo: '/' },
+  {
+    path: '**',
+    pathMatch: 'full',
+    component: PagenotfoundComponent
+  },
 ];
 
 @NgModule({

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { delay, Observable } from 'rxjs';
+import {
+  catchError, delay, Observable, throwError
+} from 'rxjs';
 import { ICocktailItem, ICocktailTypes } from './cocktail-item.model';
 
 @Injectable({
@@ -27,7 +29,13 @@ export class CocktailsService {
 
   getCocktail(id: string|null|number): Observable<ICocktailItem> {
     return this.http.get<ICocktailItem>(`http://localhost:3000/cocktails/${id}`)
-      .pipe(delay(500));
+      .pipe(
+        delay(500),
+        catchError(err => {
+          console.log('Error:', err.message);
+          return throwError(err);
+        })
+      );
   }
 
   editFavoriteField(id: number, data: ICocktailItem) {

@@ -13,10 +13,12 @@ import { SharedModule } from './components/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from './components/shared/admin/auth.service';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PagenotfoundComponent,
   ],
   imports: [
     AngularFireModule.initializeApp((environment.firebase)),
