@@ -61,6 +61,5 @@ export class CocktailsCurrentCardComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
-    console.log('OnDestroy this.subscription.closed = ', this.subscription.closed);
   }
 }

@@ -1,7 +1,7 @@
 import {
   AfterContentInit,
   AfterViewInit,
-  Component, EventEmitter, Input, OnChanges, Output, ViewChild
+  Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild
 } from '@angular/core';
 import {
   animate, state, style, transition, trigger
@@ -43,7 +43,8 @@ export class HistoryTableComponent implements AfterViewInit, OnChanges, AfterCon
 
   constructor() { }
 
-  ngOnChanges() {
+  ngOnChanges(value: SimpleChanges) {
+    console.log('NgOnChanges', value);
     if (this.dataSource) {
       this.connectMatTable();
     }

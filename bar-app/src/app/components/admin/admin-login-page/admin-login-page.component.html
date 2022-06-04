@@ -1,6 +1,7 @@
  <div class="form-container">
     <form [formGroup]="form" (ngSubmit)="submit()" >
-      <h2>Login to admin panel</h2>
+      <h2>Login to admin panel </h2>
+      <small>(email: admin@bar.com , password: 123456)</small>
       <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>
           <input type="email" matInput formControlName="email" placeholder="admin@bar.com">

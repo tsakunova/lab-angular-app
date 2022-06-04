@@ -14,6 +14,12 @@ mat-dialog-content {
     align-items: center;
     padding: 30px;
     background-color: white;
+    .mat-form-field{
+      width: 80%;
+    }
+    .add-ingredient{
+      display: flex;
+    }
     .cocktail-info{
       display: flex;
       justify-content: center;
@@ -41,5 +47,11 @@ mat-dialog-content {
       }
     }
 
+  }
+  .textarea-container{
+    & div{
+      display: flex;
+      justify-content: center;
+    }
   }
 }

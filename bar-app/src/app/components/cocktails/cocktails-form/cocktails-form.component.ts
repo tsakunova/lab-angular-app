@@ -1,9 +1,14 @@
 import {
-  AfterContentInit, ChangeDetectorRef,
-  Component, EventEmitter, OnInit, Output
+  AfterContentInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  OnInit,
+  Output
 } from '@angular/core';
 import {
-  FormBuilder, FormGroup, Validators, FormArray
+  FormArray, FormBuilder, FormGroup, Validators
 } from '@angular/forms';
 
 import { ICocktailItem, IConfig } from '../../shared/cocktails/cocktail-item.model';
@@ -11,7 +16,8 @@ import { ICocktailItem, IConfig } from '../../shared/cocktails/cocktail-item.mod
 @Component({
   selector: 'app-cocktails-form',
   templateUrl: './cocktails-form.component.html',
-  styleUrls: ['./cocktails-form.component.scss']
+  styleUrls: ['./cocktails-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CocktailsFormComponent implements OnInit, AfterContentInit {
   isLinear = false;
@@ -31,7 +37,7 @@ export class CocktailsFormComponent implements OnInit, AfterContentInit {
   @Output() addCard: EventEmitter<ICocktailItem> = new EventEmitter<ICocktailItem>();
 
   constructor(private formBuilder: FormBuilder, private cd: ChangeDetectorRef) {
-
+    this.cd.detach();
   }
 
   ngOnInit(): void {
@@ -61,6 +67,7 @@ export class CocktailsFormComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit() {
     this.addIngredientField();
+    this.cd.reattach();
   }
 
   buildCompositionItem(ingredients: { id: number; amount: string }[]) {

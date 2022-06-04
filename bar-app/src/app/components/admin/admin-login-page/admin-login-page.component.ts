@@ -28,12 +28,6 @@ export class AdminLoginPageComponent implements OnInit {
   }
 
   submit() {
-    this.autService.SignIn(this.form.value.email, this.form.value.password).then(()=>{
-      this.form.reset();
-      }
-
-    );
-
-
+    this.autService.SignIn(this.form.value.email, this.form.value.password).then(() => this.form.reset());
   }
 }

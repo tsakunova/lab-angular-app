@@ -18,7 +18,7 @@ interface Idata {
 @Component({
   selector: 'app-cocktails-page',
   templateUrl: './cocktails-page.component.html',
-  styleUrls: ['./cocktails-page.component.scss']
+  styleUrls: ['./cocktails-page.component.scss'],
 })
 export class CocktailsPageComponent implements OnInit, OnDestroy {
   readonly subscription = new Subscription();
@@ -47,7 +47,8 @@ export class CocktailsPageComponent implements OnInit, OnDestroy {
               private historyService: HistoryService,
               private ingredientService: IngredientsService,
               public dialog: MatDialog,
-              private snackBar: MatSnackBar) { }
+              private snackBar: MatSnackBar) {
+  }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -89,7 +90,7 @@ export class CocktailsPageComponent implements OnInit, OnDestroy {
     const idsArr = this.sortToTypes.map(item => item.cocktailsIds); // [[1,2],[3], [4]]
     const ids = Array.from(new Set(idsArr.flat())); // [1,2,3,4]
     const data = ids.filter(id => idsArr.every(item => item.includes(id)));
-    if (data.length === 0 && ids.length !== 0) {
+    if ((data.length === 0 && idsArr.length !== 0) || (data.length === 0 && ids.length !== 0)) {
       this.openSnackBar();
     }
     const subscriptionData = this.cocktailServise.getCocktails(data)
@@ -159,7 +160,6 @@ export class CocktailsPageComponent implements OnInit, OnDestroy {
     this.config.typeForm = 'add';
     instance.config = this.config;
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       this.addCardHandler(result);
     });
   }
@@ -180,6 +180,5 @@ export class CocktailsPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
-    console.log('OnDestroy this.subscription.closed = ', this.subscription.closed);
   }
 }

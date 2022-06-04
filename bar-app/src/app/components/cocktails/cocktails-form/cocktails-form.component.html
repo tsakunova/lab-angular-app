@@ -34,21 +34,24 @@
 
             <div>
               <ng-container [formGroupName]="i">
-                <mat-form-field class="composition__item-name" appearance="fill">
+                <div class="add-ingredient">
+                  <mat-form-field class="composition__item-name" appearance="fill">
                     <mat-label>Ingredient name</mat-label>
                     <mat-select formControlName="id" required
                     >
                       <mat-option *ngFor="let i of config.ingredients" [value]="i.id">{{i.name}} ({{i.unit}})</mat-option>
                     </mat-select>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>Amount:</mat-label>
-                  <input type="number" formControlName="amount" matInput min="1" maxlength="6" name="amount"
-                         placeholder="Amount" required>
-                </mat-form-field>
-                <button mat-fab color="primary" aria-label="Delete ingredient" (click)="removeIngredientField(i)">
-                  <mat-icon>remove</mat-icon>
-                </button>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Amount:</mat-label>
+                    <input type="number" formControlName="amount" matInput min="1" maxlength="6" name="amount"
+                           placeholder="Amount" required>
+                  </mat-form-field>
+                  <button mat-fab color="primary" aria-label="Delete ingredient" (click)="removeIngredientField(i)">
+                    <mat-icon>remove</mat-icon>
+                  </button>
+                </div>
+
               </ng-container>
             </div>
           </ng-container>
@@ -62,18 +65,25 @@
       </mat-step>
       <mat-step [stepControl]="formArray.get([2])!" formGroupName="2" label="Add favorite">
         <ng-template matStepLabel>Last step</ng-template>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Recipe</mat-label>
-          <textarea matInput formControlName="recipe"></textarea>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Description</mat-label>
-          <textarea matInput formControlName="description"></textarea>
-        </mat-form-field>
-        <mat-slide-toggle formControlName="favorite">Add to favorite cocktails</mat-slide-toggle>
+        <div class="textarea-container">
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label>Recipe</mat-label>
+              <textarea matInput formControlName="recipe"></textarea>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label>Description</mat-label>
+              <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+          </div>
+          <mat-slide-toggle formControlName="favorite">Add to favorite cocktails</mat-slide-toggle>
+        </div>
+
         <div>
           <div class="btn-container">
-            <mat-dialog-actions align="center">
+            <mat-dialog-actions>
               <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
               <button (click)="stepper.reset()" mat-raised-button color="warn"> Reset</button>
               <button [disabled]="formGroup.invalid" [mat-dialog-close]="formGroup.value" cdkFocusInitial color="accent" mat-raised-button

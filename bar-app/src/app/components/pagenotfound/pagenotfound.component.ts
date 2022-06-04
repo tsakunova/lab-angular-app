@@ -1,16 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-pagenotfound',
   templateUrl: './pagenotfound.component.html',
   styleUrls: ['./pagenotfound.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PagenotfoundComponent implements OnInit {
-
+export class PagenotfoundComponent {
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

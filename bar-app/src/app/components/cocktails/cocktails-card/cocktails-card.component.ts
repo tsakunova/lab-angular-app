@@ -1,5 +1,11 @@
 import {
-  Component, EventEmitter, Input, Output
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output
 } from '@angular/core';
 import { ICocktailItem, ICocktailTypes } from '../../shared/cocktails/cocktail-item.model';
 import { IIngredientItem } from '../../shared/ingredients/ingredients.model';
@@ -7,9 +13,10 @@ import { IIngredientItem } from '../../shared/ingredients/ingredients.model';
 @Component({
   selector: 'app-cocktails-card',
   templateUrl: './cocktails-card.component.html',
-  styleUrls: ['./cocktails-card.component.scss']
+  styleUrls: ['./cocktails-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CocktailsCardComponent {
+export class CocktailsCardComponent implements OnChanges {
   @Output()
     addToHistory: EventEmitter<number> = new EventEmitter<number>();
 
@@ -22,7 +29,13 @@ export class CocktailsCardComponent {
 
   @Input() types: ICocktailTypes[];
 
-  constructor() { }
+  constructor(private cd: ChangeDetectorRef) {
+    this.cd.detach();
+  }
+
+  ngOnChanges() {
+    this.cd.reattach();
+  }
 
   getNameIngredient(ingredId: number) {
     return this.ingredients.find(item => item.id === ingredId)?.name;

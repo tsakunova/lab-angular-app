@@ -24,7 +24,6 @@ export class AdminLayoutComponent implements OnInit {
 
   logout(event: Event) {
     event.preventDefault();
-    this.authService.SignOut();
-    this.getLoggedValue();
+    this.authService.SignOut().then(() => this.getLoggedValue());
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-admin-edit',
@@ -6,11 +6,6 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./admin-edit.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdminEditComponent implements OnInit {
-
+export class AdminEditComponent {
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

@@ -61,6 +61,5 @@ export class MybarPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
-    console.log('OnDestroy this.subscription.closed = ', this.subscription.closed);
   }
 }

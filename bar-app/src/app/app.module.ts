@@ -32,7 +32,7 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
     ReactiveFormsModule,
     SharedModule,
     MatIconModule,
-    MatButtonModule,
+    MatButtonModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
