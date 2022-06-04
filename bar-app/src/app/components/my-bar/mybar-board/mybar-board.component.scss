@@ -65,7 +65,10 @@
 }
 
 .task {
+  position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 15px 20px;
   background: white;
   border-bottom: solid 1px #ddd;
@@ -79,10 +82,19 @@
     width: 0;
   }
 
-}
 
+}
+.btn{
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  justify-content: flex-end;
+}
 .cdk-drag-preview {
-  box-sizing: border-box;
+ //box-sizing: border-box;
+ padding: 15px 20px;
+  background: white;
   border-radius: 4px;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
   0 8px 10px 1px rgba(0, 0, 0, 0.14),

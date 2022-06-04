@@ -24,6 +24,7 @@ import { CocktailsCardComponent } from './cocktails-card/cocktails-card.componen
 import { CocktailsCurrentCardComponent } from './cocktails-current-card/cocktails-current-card.component';
 import { SharedModule } from '../shared/shared.module';
 import { CocktailsFormComponent } from './cocktails-form/cocktails-form.component';
+import {A11yModule} from "@angular/cdk/a11y";
 
 @NgModule({
   declarations: [
@@ -34,31 +35,32 @@ import { CocktailsFormComponent } from './cocktails-form/cocktails-form.componen
     CocktailsCurrentCardComponent,
     CocktailsFormComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild([
-      { path: '', component: CocktailsPageComponent },
-      { path: 'item/:id', component: CocktailsCurrentCardComponent },
-    ]),
-    MatProgressSpinnerModule,
-    MatIconModule,
-    MatButtonModule,
-    MatChipsModule,
-    MatFormFieldModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatSelectModule,
-    MatInputModule,
-    SharedModule,
-    MatDialogModule,
-    NgxMatSelectSearchModule,
-    MatSlideToggleModule,
-    MatStepperModule,
-    MatAutocompleteModule,
-    MatSnackBarModule,
-    MatTooltipModule,
-    DragDropModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild([
+            {path: '', component: CocktailsPageComponent},
+            {path: 'item/:id', component: CocktailsCurrentCardComponent},
+        ]),
+        MatProgressSpinnerModule,
+        MatIconModule,
+        MatButtonModule,
+        MatChipsModule,
+        MatFormFieldModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatSelectModule,
+        MatInputModule,
+        SharedModule,
+        MatDialogModule,
+        NgxMatSelectSearchModule,
+        MatSlideToggleModule,
+        MatStepperModule,
+        MatAutocompleteModule,
+        MatSnackBarModule,
+        MatTooltipModule,
+        DragDropModule,
+        A11yModule
+    ]
 
 })
 export class CocktailsModule { }

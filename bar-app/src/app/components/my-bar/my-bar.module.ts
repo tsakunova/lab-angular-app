@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MybarBoardComponent } from './mybar-board/mybar-board.component';
 import { MybarPageComponent } from './mybar-page/mybar-page.component';
+import {CdkAccordionModule} from "@angular/cdk/accordion";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MybarPageComponent } from './mybar-page/mybar-page.component';
     MatProgressSpinnerModule,
     ClipboardModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    CdkAccordionModule
   ]
 })
 export class MyBarModule {

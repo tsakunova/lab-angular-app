@@ -10,11 +10,28 @@
         <div class="column-title">
           In bar
         </div>
-        <div class="tasks-container" *ngFor="let item of bar">
-          <div class="task" cdkDrag >
-            {{item.name|titlecase}}
-          </div>
-        </div>
+        <cdk-accordion class="tasks-container" *ngFor="let item of bar">
+          <cdk-accordion-item
+            #accordionItem="cdkAccordionItem"
+            class="task"
+            role="button"
+            tabindex="0"
+            [attr.aria-expanded]="accordionItem.expanded">
+
+            <div (click)="accordionItem.toggle()"  cdkDrag >
+              {{ item.name }}
+              <span class="btn">
+        {{ accordionItem.expanded ? 'Close' : 'More info' }}
+      </span>
+            </div>
+            <div
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+            >
+              Specify the quantity of the product: _________
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
       </div>
       <div class="board-column"
            id="buy"
