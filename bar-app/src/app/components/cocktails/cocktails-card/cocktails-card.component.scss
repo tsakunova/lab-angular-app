@@ -1,0 +1,91 @@
+.cocktail-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 280px;
+  height: 450px;
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background: white;
+  flex-grow: 1;
+  flex-basis: 0;
+  &__title{
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__type{
+    font-size: 14px;
+    text-align: center;
+  }
+  &__description{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  &__composition{
+    list-style-type: none;
+    width: 70%;
+    li{
+      display: flex;
+      justify-content: space-between;
+      span{
+        display: block;
+      }
+    }
+  }
+  &__image{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 80%;
+    }
+  }
+  &__btn{
+    justify-items: flex-end;
+    justify-self: flex-end;
+    padding: 20px 50px;
+    text-transform: uppercase;
+    border: none;
+    background-color: aliceblue;
+    cursor: pointer;
+  }
+  [aria-label] {
+    position: relative;
+  }
+  [aria-label]:before {
+    top: -35px;
+    bottom: auto;
+    transform: translateX(-50%) scale(0);
+    transform-origin: bottom center;
+  }
+  [aria-label]:hover:before {
+    top: -35px;
+    bottom: auto;
+    transform: translateX(-50%) scale(0);
+    transition: transform 0.3s ease-in-out;
+    transform-origin: bottom center;
+  }
+  [aria-label]:hover:after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    padding: 2px 4px;
+    transform-origin: top;
+    background: #616161;
+    color: white;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    z-index: 9999;
+    min-width: 100px;
+    min-height: 10px;
+    transform: translateX(-50%) scale(1);
+  }
+
+}

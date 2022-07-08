@@ -1,27 +1,46 @@
 import { Injectable } from '@angular/core';
-import {INGREDIENTS} from "./ingredients";
-import {IIngredientItem} from "./ingredient-item.model";
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { delay, Observable } from 'rxjs';
+import { INGREDIENTS_TYPES, INGREDIENTS_UNIT } from './ingredients';
+import { IIngredientItem, IngredientsModel, IngredientUnitModel } from './ingredients.model';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class IngredientsService {
+  private ingredientTypes = [...INGREDIENTS_TYPES];
 
-  constructor() { }
-  getIngredients(): IIngredientItem[]{
-    return INGREDIENTS
+  private ingredientUnits = [...INGREDIENTS_UNIT];
+
+  constructor(private http: HttpClient) {
   }
-  getIngredient(id: number): IIngredientItem{
-    return INGREDIENTS[id]
+
+  getIngredients(types: string[]): Observable<IIngredientItem[]> {
+    let params = new HttpParams();
+    types.forEach((item) => params = params.append('type', item));
+
+    return this.http.get<IIngredientItem[]>('http://localhost:3000/ingredients', { params })
+      .pipe(delay(500));
   }
-  addIngredient(name: string, type: string, unit: string): void {
-    const newIngredient: IIngredientItem = {
-      'id': INGREDIENTS.length,
-      'name': name,
-      'type': type,
-      'unit': unit
-    };
-    INGREDIENTS.push(newIngredient);
+
+  editIngredient(id: number, data: IIngredientItem) {
+    return this.http.put<void>(`http://localhost:3000/ingredients/${id}`, data);
+  }
+
+  addIngredient(newItem: IIngredientItem): Observable<IIngredientItem> {
+    return this.http.post<IIngredientItem>('http://localhost:3000/ingredients', newItem);
+  }
+
+  getIngredientsTypes(): Array<{ id: number; name: IngredientsModel }> {
+    return this.ingredientTypes;
+  }
+
+  getIngredientsUnits(): Array<{ id: number; name: IngredientUnitModel }> {
+    return this.ingredientUnits;
+  }
+
+  deleteIngredients(id: number): Observable<void> {
+    return this.http.delete<void>(`http://localhost:3000/ingredients/${id}`);
   }
 }

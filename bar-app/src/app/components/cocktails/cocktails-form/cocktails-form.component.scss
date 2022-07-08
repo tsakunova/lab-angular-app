@@ -1,0 +1,57 @@
+mat-dialog-content {
+  height: 100%;
+
+  h2 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: white;
+    .mat-form-field{
+      width: 80%;
+    }
+    .add-ingredient{
+      display: flex;
+    }
+    .cocktail-info{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    .composition{
+      &__title{
+        display: flex;
+        justify-content: center;
+        font-family: 'Oswald', sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      &__item-name{
+        margin-right: 20px;
+      }
+    }
+
+  }
+  .textarea-container{
+    & div{
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

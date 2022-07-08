@@ -1,0 +1,53 @@
+<div class="board">
+  <div class="board-wrapper">
+    <div class="board-columns" cdkDropListGroup>
+      <div class="board-column"
+           id="bar"
+           cdkDropList
+           [cdkDropListData]="bar"
+           (cdkDropListDropped)="drop($event)"
+      >
+        <div class="column-title">
+          In bar
+        </div>
+        <cdk-accordion class="tasks-container" *ngFor="let item of bar">
+          <cdk-accordion-item
+            #accordionItem="cdkAccordionItem"
+            class="task"
+            role="button"
+            tabindex="0"
+            [attr.aria-expanded]="accordionItem.expanded">
+
+            <div (click)="accordionItem.toggle()"  cdkDrag >
+              {{ item.name }}
+              <span class="btn">
+        {{ accordionItem.expanded ? 'Close' : 'More info' }}
+      </span>
+            </div>
+            <div
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+            >
+              Specify the quantity of the product: _________
+            </div>
+          </cdk-accordion-item>
+        </cdk-accordion>
+      </div>
+      <div class="board-column"
+           id="buy"
+           cdkDropList
+           [cdkDropListData]="buy"
+           (cdkDropListDropped)="drop($event)"
+      >
+        <div class="column-title">
+          To buy
+        </div>
+        <div class="tasks-container" *ngFor="let item of buy">
+          <div class="task" cdkDrag >
+            {{item.name|titlecase }}
+          </div>
+        </div>
+      </div>
+  </div>
+
+</div>

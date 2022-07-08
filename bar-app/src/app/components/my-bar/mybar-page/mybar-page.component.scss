@@ -1,0 +1,14 @@
+.copy{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  color: gray;
+  transition: 1s all ease-in-out;
+  &:hover{
+    transform: scale(1.1);
+  }
+}

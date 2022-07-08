@@ -1,0 +1,32 @@
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  form{
+    border: 1px solid #1d1d1b;
+    padding: 20px;
+    display: flex;
+    margin: 30px;
+    width: 300px;
+    gap: 20px;
+    flex-direction: column;
+    button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 900;
+      padding: 20px 50px;
+      text-transform: uppercase;
+      border: none;
+      background-color: aliceblue;
+      cursor: pointer;
+    }
+  }
+  h2{
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+

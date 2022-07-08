@@ -1,0 +1,961 @@
+{
+  "ingredients": [
+    {
+      "name": "London dry gin",
+      "type": "Strong spirits",
+      "unit": "ml",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Silver tequila",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 4,
+      "name": "Cognac",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 5,
+      "name": "Bourbon",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 6,
+      "name": "Scotch whisky",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 7,
+      "name": "Absinthe",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 8,
+      "name": "Gold tequila",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 9,
+      "name": "Dark rum",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 10,
+      "name": "Gold rum",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 11,
+      "name": "Calvados",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 12,
+      "name": "Sambuca",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 13,
+      "name": "Mezcal",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 14,
+      "name": "Cachaca",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 15,
+      "name": "Grappa",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 16,
+      "name": "American whiskey",
+      "type": "Strong spirits",
+      "unit": "ml"
+    },
+    {
+      "id": 17,
+      "name": "Red vermouth",
+      "type": "Vermouth",
+      "unit": "ml"
+    },
+    {
+      "id": 18,
+      "name": "Dry vermouth",
+      "type": "Vermouth",
+      "unit": "ml"
+    },
+    {
+      "id": 19,
+      "name": "White vermouth",
+      "type": "Vermouth",
+      "unit": "ml"
+    },
+    {
+      "id": 20,
+      "name": "Rose vermouth",
+      "type": "Vermouth",
+      "unit": "ml"
+    },
+    {
+      "id": 21,
+      "name": "Triple sec",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 22,
+      "name": "Red bitter",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 23,
+      "name": "Coffee liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 24,
+      "name": "Irish cream liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 25,
+      "name": "Peach liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 26,
+      "name": "Coconut liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 27,
+      "name": "Amaretto liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 28,
+      "name": "Blue curacao liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 29,
+      "name": "Limoncello",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 30,
+      "name": "White cacao liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 31,
+      "name": "Becherovka",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 32,
+      "name": "Dark cacao liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 33,
+      "name": "Advocaat liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 34,
+      "name": "Aperol",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 35,
+      "name": "White mint liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 36,
+      "name": "Dubonnet",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 37,
+      "name": "Jagermeister",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 38,
+      "name": "Prosecco",
+      "type": "Wines",
+      "unit": "ml"
+    },
+    {
+      "id": 39,
+      "name": "Dry red wine",
+      "type": "Wines",
+      "unit": "ml"
+    },
+    {
+      "id": 40,
+      "name": "Dry white wine",
+      "type": "Wines",
+      "unit": "ml"
+    },
+    {
+      "id": 41,
+      "name": "Pedro Ximenez sherry",
+      "type": "Wines",
+      "unit": "ml"
+    },
+    {
+      "id": 42,
+      "name": "White wine dessert",
+      "type": "Wines",
+      "unit": "ml"
+    },
+    {
+      "id": 43,
+      "name": "Tawny port",
+      "type": "Wines",
+      "unit": "ml"
+    },
+    {
+      "id": 44,
+      "name": "Lager beer",
+      "type": "Beer and cider",
+      "unit": "ml"
+    },
+    {
+      "id": 45,
+      "name": "Apple Cider",
+      "type": "Beer and cider",
+      "unit": "ml"
+    },
+    {
+      "id": 46,
+      "name": "Dark beer",
+      "type": "Beer and cider",
+      "unit": "ml"
+    },
+    {
+      "id": 47,
+      "name": "Stout",
+      "type": "Beer and cider",
+      "unit": "ml"
+    },
+    {
+      "id": 48,
+      "name": "Hazelnut liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 49,
+      "name": "Strawberry liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml"
+    },
+    {
+      "id": 50,
+      "name": "Sugar syrup",
+      "type": "Syrups",
+      "unit": "ml"
+    },
+    {
+      "id": 51,
+      "name": "Tonic",
+      "type": "Water and drinks",
+      "unit": "ml"
+    },
+    {
+      "id": 52,
+      "name": "Lime",
+      "type": "Fruits",
+      "unit": "g"
+    },
+    {
+      "id": 53,
+      "name": "Ice cubes",
+      "type": "Ice",
+      "unit": "g"
+    },
+    {
+      "id": 54,
+      "name": "Sprite",
+      "type": "Water and drinks",
+      "unit": "ml"
+    },
+    {
+      "id": 55,
+      "name": "Pineapple",
+      "type": "Fruits",
+      "unit": "g"
+    },
+    {
+      "id": 56,
+      "name": "Club soda",
+      "type": "Water and drinks",
+      "unit": "ml"
+    },
+    {
+      "id": 57,
+      "name": "Orange",
+      "type": "Fruits",
+      "unit": "g"
+    },
+    {
+      "name": "banana",
+      "type": "Fruits",
+      "unit": "g",
+      "id": 58
+    },
+    {
+      "name": "Crushed ice",
+      "type": "Ice",
+      "unit": "g",
+      "id": 59
+    },
+    {
+      "name": "Aged rum",
+      "type": "Strong spirits",
+      "unit": "ml",
+      "id": 60
+    },
+    {
+      "name": "Amaro",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml",
+      "id": 61
+    },
+    {
+      "name": "Lavender bitters",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml",
+      "id": 62
+    },
+    {
+      "name": "Fig syrup",
+      "type": "Syrups",
+      "unit": "ml",
+      "id": 63
+    },
+    {
+      "name": "Fig",
+      "type": "Fruits",
+      "unit": "g",
+      "id": 64
+    },
+    {
+      "name": "Ice ball",
+      "type": "Ice",
+      "unit": "piece",
+      "id": 65
+    },
+    {
+      "name": "Chocolate scented wood chips",
+      "type": "Sweet treats",
+      "unit": "g",
+      "id": 66
+    },
+    {
+      "name": "Lavender",
+      "type": "Plants",
+      "unit": "g",
+      "id": 67
+    },
+    {
+      "name": "Mint",
+      "type": "Plants",
+      "unit": "g",
+      "id": 68
+    },
+    {
+      "name": "Maraschino liqueur",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml",
+      "id": 69
+    },
+    {
+      "name": "Orange bitters",
+      "type": "Liqueurs and Bitters",
+      "unit": "ml",
+      "id": 70
+    },
+    {
+      "name": "Grenadine syrup",
+      "type": "Syrups",
+      "unit": "ml",
+      "id": 71
+    },
+    {
+      "name": "Orange juice",
+      "type": "Juice",
+      "unit": "ml",
+      "id": 72
+    },
+    {
+      "name": "Orange flower water",
+      "type": "Water and drinks",
+      "unit": "ml",
+      "id": 73
+    },
+    {
+      "name": "Red maraschino cherry",
+      "type": "Fruits",
+      "unit": "g",
+      "id": 74
+    }
+  ],
+  "cocktails": [
+    {
+      "id": 0,
+      "favorite": true,
+      "imageSrc": "assets/img/cocktails/0.jpg",
+      "name": "Gin and Tonic",
+      "typeId": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "composition": [
+        {
+          "id": 2,
+          "amount": 50
+        },
+        {
+          "id": 51,
+          "amount": 150
+        },
+        {
+          "id": 52,
+          "amount": 20
+        },
+        {
+          "id": 53,
+          "amount": 180
+        }
+      ],
+      "recipe": [
+        "Fill a highball glass to the top with ice cubes",
+        "Pour in 50 ml of gin",
+        "Top up with tonic and stir gently",
+        "Garnish with 2 lime wheels"
+      ],
+      "description": "This is an immortal mix of gin and tonic, which is served in probably every bar on Earth. Herbal and slightly bitter cocktail perfectly refreshes and tones. You can decorate it with lime or cucumber, depending on what you prefer - freshness or sourness."
+    },
+    {
+      "id": 1,
+      "favorite": true,
+      "imageSrc": "assets/img/cocktails/1.jpg",
+      "name": "Blue Lagoon",
+      "typeId": [
+        0,
+        5,
+        6,
+        7,
+        8
+      ],
+      "composition": [
+        {
+          "id": 2,
+          "amount": 50
+        },
+        {
+          "id": 28,
+          "amount": 20
+        },
+        {
+          "id": 54,
+          "amount": 150
+        },
+        {
+          "id": 55,
+          "amount": 30
+        },
+        {
+          "id": 53,
+          "amount": 200
+        }
+      ],
+      "recipe": [
+        "Fill a hurricane glass to the top with ice cubes",
+        "Pour in 20 ml of blue curacao liqueur and 50 ml of vodka",
+        "Top up with sprite and stir gently",
+        "Garnish with a pineapple wedge"
+      ],
+      "description": "This is a sweet refreshing vodka long with the addition of blue curacao liqueur, which gives the cocktail a delicate blue hue. There is a legend that the Blue Lagoon was invented by the artist Paul Gauguin in Tahiti, but it is unlikely that he would suggest adding a sprite to the cocktail"
+    },
+    {
+      "id": 2,
+      "favorite": true,
+      "imageSrc": "assets/img/cocktails/2.jpg",
+      "name": "Aperol Spritz",
+      "typeId": [
+        0,
+        8,
+        9,
+        10,
+        11
+      ],
+      "composition": [
+        {
+          "id": 34,
+          "amount": 100
+        },
+        {
+          "id": 38,
+          "amount": 100
+        },
+        {
+          "id": 56,
+          "amount": 20
+        },
+        {
+          "id": 57,
+          "amount": 40
+        },
+        {
+          "id": 53,
+          "amount": 60
+        }
+      ],
+      "recipe": [
+        "Fill a wine glass with ice",
+        "Pour in 100 ml of prosecco and 100 ml of Aperol",
+        "Add a splash of club soda and mix with a bar spoon",
+        "Garnish with an orange wedge"
+      ],
+      "description": "Aperol Spritz is a favorite among summer season cocktails. In European resorts, it is difficult to find an institution where it is not served. The Italian (classic) version of Aperol contains 11% alcohol. The drink, made for shipments to Germany, is 4% stronger due to local legislation that requires drinks with an alcohol content of less than 15% to be bottled in refillable bottles."
+    },
+    {
+      "favorite": false,
+      "imageSrc": "https://uk.inshaker.com/uploads/cocktail/hires/12/1556296325-Above-the-clouds-w800px.jpg",
+      "name": "Above the clouds",
+      "typeId": [
+        8,
+        12,
+        13,
+        14,
+        15
+      ],
+      "composition": [
+        {
+          "id": 60,
+          "amount": 50
+        },
+        {
+          "id": 61,
+          "amount": 10
+        },
+        {
+          "id": 62,
+          "amount": 3
+        },
+        {
+          "id": 63,
+          "amount": 10
+        },
+        {
+          "id": 64,
+          "amount": 10
+        },
+        {
+          "id": 67,
+          "amount": 5
+        },
+        {
+          "id": 66,
+          "amount": 5
+        },
+        {
+          "id": 65,
+          "amount": 1
+        },
+        {
+          "id": 53,
+          "amount": 300
+        }
+      ],
+      "recipe": [
+        "Place an ice sphere into a rocks glass",
+        "\nPour 10 ml of fig syrup, 10 ml of amaro and 50 ml of aged rum into a mixing glass",
+        "\nAdd 3 dashes of lavender bitters",
+        "\nFill the glass with ice cubes and stir gently",
+        "\nStrain into the rocks glass",
+        "\nPlace wood chips with chocolate into a smoking gun",
+        "\nPlace the rocks glass under a bell jar and fill it with smoke",
+        "\nGarnish with fig wedges on a cocktail skewer and a lavender sprig",
+        ""
+      ],
+      "description": "Do you like cocktails with a non-standard serving? Then try this herbal, chocolate and sweet rum-based cocktail, alcoholic and strong.",
+      "id": 3
+    },
+    {
+      "favorite": false,
+      "imageSrc": "https://uk.inshaker.com/uploads/cocktail/hires/597/1556120892-Matador__highres.jpg",
+      "name": "Matador",
+      "typeId": [
+        5,
+        8,
+        15,
+        19,
+        20
+      ],
+      "composition": [
+        {
+          "id": 6,
+          "amount": 40
+        },
+        {
+          "id": 19,
+          "amount": 10
+        },
+        {
+          "id": 69,
+          "amount": 10
+        },
+        {
+          "id": 70,
+          "amount": 1
+        },
+        {
+          "id": 71,
+          "amount": 5
+        },
+        {
+          "id": 72,
+          "amount": 20
+        },
+        {
+          "id": 73,
+          "amount": 5
+        },
+        {
+          "id": 57,
+          "amount": 30
+        },
+        {
+          "id": 74,
+          "amount": 5
+        },
+        {
+          "id": 53,
+          "amount": 320
+        }
+      ],
+      "recipe": [
+        "Fill a rocks glass to the top with ice cubes",
+        "Pour 20 ml of orange juice, 5 ml of grenadine syrup, 10 ml of maraschino liqueur, 10 ml of white vermouth and 40 ml of scotch whisky into a shaker",
+        "Add 5 ml of orange flower water and 1 dash of orange bitters",
+        "Fill the shaker with ice cubes and shake",
+        "Strain into the rocks glass",
+        "Garnish with an orange wheel and a maraschino cherry"
+      ],
+      "description": "Do you like short drinks? Then try this strong citrus and sweet whiskey-based cocktail.",
+      "id": 4
+    }
+  ],
+  "history": [
+    {
+      "cocktailId": 2,
+      "dateAdd": "2022-05-30T23:45:36.668Z",
+      "id": 52
+    },
+    {
+      "cocktailId": 0,
+      "dateAdd": "2022-06-01T22:43:30.432Z",
+      "id": 53
+    },
+    {
+      "cocktailId": 0,
+      "dateAdd": "2022-06-04T19:10:55.270Z",
+      "id": 54
+    },
+    {
+      "cocktailId": 0,
+      "dateAdd": "2022-06-04T19:12:24.976Z",
+      "id": 55
+    },
+    {
+      "cocktailId": 2,
+      "dateAdd": "2022-06-04T19:13:33.308Z",
+      "id": 57
+    },
+    {
+      "cocktailId": 0,
+      "dateAdd": "2022-06-04T19:13:57.233Z",
+      "id": 58
+    },
+    {
+      "cocktailId": 3,
+      "dateAdd": "2022-06-04T19:14:04.973Z",
+      "id": 59
+    },
+    {
+      "cocktailId": 1,
+      "dateAdd": "2022-06-04T19:15:21.218Z",
+      "id": 60
+    },
+    {
+      "cocktailId": 2,
+      "dateAdd": "2022-06-04T19:15:35.669Z",
+      "id": 61
+    },
+    {
+      "cocktailId": 4,
+      "dateAdd": "2022-06-04T19:34:44.294Z",
+      "id": 62
+    },
+    {
+      "cocktailId": 1,
+      "dateAdd": "2022-06-04T20:46:51.170Z",
+      "id": 63
+    },
+    {
+      "cocktailId": 0,
+      "dateAdd": "2022-06-04T20:47:32.487Z",
+      "id": 64
+    },
+    {
+      "cocktailId": 1,
+      "dateAdd": "2022-06-04T20:57:32.976Z",
+      "id": 65
+    },
+    {
+      "cocktailId": 0,
+      "dateAdd": "2022-06-04T21:01:52.743Z",
+      "id": 66
+    },
+    {
+      "cocktailId": 1,
+      "dateAdd": "2022-06-04T21:06:20.425Z",
+      "id": 67
+    },
+    {
+      "cocktailId": 2,
+      "dateAdd": "2022-06-04T21:06:23.686Z",
+      "id": 68
+    },
+    {
+      "cocktailId": 0,
+      "dateAdd": "2022-06-04T21:17:55.522Z",
+      "id": 69
+    },
+    {
+      "cocktailId": 1,
+      "dateAdd": "2022-06-04T21:27:26.239Z",
+      "id": 70
+    },
+    {
+      "cocktailId": 2,
+      "dateAdd": "2022-06-04T21:28:13.593Z",
+      "id": 71
+    },
+    {
+      "cocktailId": 3,
+      "dateAdd": "2022-06-04T21:28:32.366Z",
+      "id": 72
+    }
+  ],
+  "typecocktails": [
+    {
+      "id": 0,
+      "name": "low-alcohol",
+      "cocktailsIds": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "name": "bitter",
+      "cocktailsIds": [
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "name": "gin based",
+      "cocktailsIds": [
+        0
+      ]
+    },
+    {
+      "id": 3,
+      "name": "mixes",
+      "cocktailsIds": [
+        0
+      ]
+    },
+    {
+      "id": 4,
+      "name": "long drinks",
+      "cocktailsIds": [
+        0
+      ]
+    },
+    {
+      "id": 5,
+      "name": "citrus",
+      "cocktailsIds": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": 6,
+      "name": "tropical",
+      "cocktailsIds": [
+        1
+      ]
+    },
+    {
+      "id": 7,
+      "name": "vodka based",
+      "cocktailsIds": [
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "name": "sweet",
+      "cocktailsIds": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 9,
+      "name": "sparkling",
+      "cocktailsIds": [
+        2
+      ]
+    },
+    {
+      "id": 10,
+      "name": "simple",
+      "cocktailsIds": [
+        2
+      ]
+    },
+    {
+      "id": 11,
+      "name": "fizz",
+      "cocktailsIds": [
+        2
+      ]
+    },
+    {
+      "id": 12,
+      "name": "rum based",
+      "cocktailsIds": [
+        3
+      ]
+    },
+    {
+      "id": 13,
+      "name": "herbal",
+      "cocktailsIds": [
+        3
+      ]
+    },
+    {
+      "id": 14,
+      "name": "chocolately",
+      "cocktailsIds": [
+        3
+      ]
+    },
+    {
+      "id": 15,
+      "name": "strong",
+      "cocktailsIds": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": 16,
+      "name": "dry",
+      "cocktailsIds": []
+    },
+    {
+      "id": 17,
+      "name": "vermouth based",
+      "cocktailsIds": []
+    },
+    {
+      "id": 18,
+      "name": "twists",
+      "cocktailsIds": []
+    },
+    {
+      "id": 19,
+      "name": "whiskey based",
+      "cocktailsIds": [
+        4
+      ]
+    },
+    {
+      "id": 20,
+      "name": "shorts",
+      "cocktailsIds": [
+        4
+      ]
+    }
+  ],
+  "mybar": {
+    "tobuy": [
+      46,
+      72,
+      47,
+      59
+    ],
+    "inbar": [
+      2,
+      3,
+      50,
+      45,
+      18,
+      52
+    ]
+  }
+}

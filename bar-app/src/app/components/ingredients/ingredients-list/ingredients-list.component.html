@@ -1,10 +1,16 @@
-<div class="ingredients__list">
-  <app-ingredients-card
-    *ngFor="let ingredient of ingredients"
-    [item]="ingredient"
-    (deleteCard)="deleteCardHandler($event)">
-    >
-  </app-ingredients-card>
-</div>
+  <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport">
+    <div class="ingredients__list" >
+      <app-ingredients-card
+        *cdkVirtualFor="let ingredient of ingredients | sort:sort :sortDirection |filter: search ; templateCacheSize: 0"
+        [item]="ingredient"
+        (addMyBarCard)="addMyBarCardHandler($event)"
+        (addToBuyCard)="addToBuyCardHandler($event)"
+        (editCard)="editCardHandler($event)"
+      >
+      </app-ingredients-card>
+    </div>
+
+  </cdk-virtual-scroll-viewport>
+
 
 

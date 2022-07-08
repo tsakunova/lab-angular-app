@@ -1,1 +1,19 @@
-<p>mybar-page works!</p>
+<div *ngIf="!isLoading;else loadingBlock">
+  <app-mybar-board
+                   [bar]="inBar"
+                   [buy]="toBuy"
+                   (reloadData)="reloadMybar($event)"
+  >
+  </app-mybar-board>
+  <div class="copy">
+    Copy shoplist to clipboard
+    <button mat-mini-fab color="primary" [cdkCopyToClipboard]="toBuyShopList">
+
+      <mat-icon>content_copy</mat-icon>
+    </button>
+  </div>
+</div>
+
+<ng-template #loadingBlock>
+  <mat-spinner color="accent"></mat-spinner>
+</ng-template>

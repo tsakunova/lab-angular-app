@@ -1,0 +1,20 @@
+<h3>personal top 5 cocktails</h3>
+<table cdk-table [dataSource]="topFive">
+  <ng-container cdkColumnDef="number">
+    <th cdk-header-cell *cdkHeaderCellDef> № </th>
+    <td cdk-cell *cdkCellDef="let element"> {{element.id+1}} </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="name">
+    <th cdk-header-cell *cdkHeaderCellDef>Cocktail name</th>
+    <td cdk-cell *cdkCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="count">
+    <th cdk-header-cell *cdkHeaderCellDef>How much is drunk</th>
+    <td cdk-cell *cdkCellDef="let element"> {{topFiveCount[element.id]}} </td>
+  </ng-container>
+
+  <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+</table>

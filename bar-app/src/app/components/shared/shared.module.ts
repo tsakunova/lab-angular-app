@@ -1,14 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {IngredientsService} from "./ingredients/ingredients.service";
+import { HttpClientModule } from '@angular/common/http';
+import { IngredientsService } from './ingredients/ingredients.service';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    FilterPipe,
+    SortPipe
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
+  ],
+  exports: [
+    FilterPipe,
+    SortPipe,
+    HttpClientModule
   ],
   providers: [
     IngredientsService
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

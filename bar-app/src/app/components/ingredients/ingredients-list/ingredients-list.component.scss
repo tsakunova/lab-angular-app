@@ -1,6 +1,14 @@
-.ingredients__list{
+.ingredients__list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+
+}
+
+cdk-virtual-scroll-viewport {
+  height: 50vh;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }

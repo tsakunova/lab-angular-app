@@ -1,0 +1,35 @@
+.last-cocktail-card{
+  position: relative;
+  width: 70%;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  button{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  &__title{
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__text-container{
+    display: flex;
+    flex-direction: column;
+  }
+  &__description{
+    display: flex;
+    div{
+      margin: 20px;
+    }
+
+  }
+  &__image{
+    height: 200px;
+    img{
+      height: 100%;
+    }
+  }
+}

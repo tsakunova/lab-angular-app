@@ -8,9 +8,9 @@ describe('MybarPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MybarPageComponent ]
+      declarations: [MybarPageComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
